@@ -10,6 +10,26 @@ body {
   overflow-x: hidden;
 }
 
+/* Apply to whole page */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 /* Navbar Styles */
 .navbar {
   background-color: rgba(0, 0, 0, 0.85);
@@ -179,24 +199,26 @@ body {
 }
 
 /* Hero/Banner Section */
-.banner {
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
-      no-repeat center center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.banner-slide {
   position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 .banner-content {
-  color: var(--text-light);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
   max-width: 800px;
-  margin: 0 auto;
-  padding-top: 380px;
+  padding: 0 20px;
+  color: var(--text-light);
+  z-index: 20;
+  padding-top: 60px;
 }
 
 .banner h1 {
@@ -307,6 +329,12 @@ body {
   .carousel-control-prev,
   .carousel-control-next {
     display: none;
+  }
+  .banner-slide {
+    height: 100dvh;
+  }
+  .banner-content {
+    padding-top: 60px;
   }
 }
 /*Carousel end */
