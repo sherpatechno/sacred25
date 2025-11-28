@@ -10,24 +10,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Apply to whole page */
 html,
 body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 100%;
-}
-
-/* Hide scrollbar for Chrome, Safari, Edge */
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-/* Hide scrollbar for Firefox */
-body {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow-y: overlay;
 }
 
 /* Navbar Styles */
@@ -1009,8 +994,6 @@ body {
 }
 
 .footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 10px 0;
 }
 
@@ -1037,6 +1020,7 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 1.25rem;
+  width: 80%;
 }
 
 .footer ul {
@@ -1064,7 +1048,7 @@ body {
   font-family: "Lato", Sans-serif;
   font-size: 16px;
   font-weight: 400;
-  width: 90%;
+  width: 80%;
 }
 
 .footer .mt-3 p {
@@ -1186,7 +1170,7 @@ body {
   border: 1px solid #666;
   color: #000;
   border-radius: 4px;
-  max-width: 80%;
+  max-width: 70%;
   height: calc(2.25rem + 2px);
 }
 
@@ -1198,7 +1182,7 @@ body {
   font-weight: bold;
   padding: 8px 20px;
   height: calc(2.25rem + 2px);
-  width: 80%;
+  width: 70%;
   margin-top: 5px;
 }
 
@@ -1565,6 +1549,7 @@ body {
   .trip-status-container {
     flex-direction: column;
     gap: 8px;
+    width: 45%;
   }
 
   .nepal-card {
