@@ -1,2079 +1,2860 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel with Carlo - Omo Valley</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        :root {
-            --primary-color: #1a1a1a;
-            --accent-color: #d4af37;
-            --text-light: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            overflow-x: hidden;
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-            position: fixed;
-            width: calc(100% - 40px);
-            top: 60px;
-            left: 20px;
-            right: 20px;
-            z-index: 1030;
-            border-radius: 30px;
-        }
-        
-        .navbar.scrolled {
-            background-color: rgba(0, 0, 0, 0.95);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            border-radius: 0;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--text-light) !important;
-            letter-spacing: 1px;
-            margin-left: 20px;
-        }
-        
-        .navbar-nav .nav-link {
-            color: var(--text-light) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .navbar-nav .nav-link:hover {
-            color: var(--accent-color) !important;
-        }
-        
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            background-color: rgba(0, 0, 0, 0.95);
-            border: none;
-            padding: 10px 0;
-            margin-top: 10px;
-            display: block;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            transform: translateY(10px);
-            min-width: 220px;
-        }
-        
-        /* Show dropdown on hover */
-        .dropdown:hover > .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-item {
-            color: var(--text-light);
-            padding: 8px 20px;
-            transition: all 0.3s ease;
-            position: relative;
-            white-space: nowrap;
-            border-radius: 0 !important;
-        }
-        
-        .dropdown-item:hover {
-            background-color: transparent;
-            color: var(--accent-color);
-            padding-left: 25px;
-        }
-        
-        .dropdown-toggle::after {
-            display: none;
-        }
-        
-        /* Main nav dropdown chevrons */
-        .nav-item.dropdown .nav-link .chevron-down {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-        
-        .nav-item.dropdown .nav-link .chevron-up {
-            display: none;
-            transition: transform 0.3s ease;
-        }
-        
-        .nav-item.dropdown:hover .nav-link .chevron-down {
-            display: none;
-        }
-        
-        .nav-item.dropdown:hover .nav-link .chevron-up {
-            display: inline-block;
-        }
-        
-        /* Submenu dropdown chevrons */
-        .dropdown-submenu > .dropdown-item::after {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-        
-        .dropdown-submenu:hover > .dropdown-item::after {
-            transform: translateY(-50%) rotate(0deg);
-        }
-        
-        /* Smart submenu positioning */
-        .dropdown-submenu {
-            position: relative;
-        }
-        
-        .dropdown-submenu > .dropdown-menu {
-            top: 0;
-            left: 100%;
-            margin-top: -10px;
-            margin-left: 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(10px);
-            border-radius: 0;
-        }
-        
-        /* Default right-aligned submenu */
-        .dropdown-submenu:hover > .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-        }
-        
-        /* Left-aligned submenu for when there's not enough space on the right */
-        .dropdown-submenu.left-aligned > .dropdown-menu {
-            left: auto;
-            right: 100%;
-            transform: translateX(-10px);
-        }
-        
-        .dropdown-submenu.left-aligned:hover > .dropdown-menu {
-            transform: translateX(0);
-        }
-        
-        /* Hero/Banner Section */
-        .banner {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: flex-end;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .banner-content {
-            color: var(--text-light);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 80px;
-        }
-        
-        .banner h1 {
-            font-family: 'Kanit';
-            color: RGBA(255, 255, 255, 0);
-            font-size: 600%;
-            text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
-            line-height: 0.8;
-            font-weight: normal;
-            font-style: normal;
-            text-decoration: none;
-            text-align: inherit;
-            letter-spacing: 10px;
-            word-spacing: normal;
-            text-transform: uppercase;
-            font-weight: 500;
-            -webkit-text-stroke-width: 2px;
-            stroke-width: 2px;
-            -webkit-text-stroke-color: #FFFFFF;
-            stroke: #FFFFFF;
-            margin-bottom: 30px;
-        }
-        
-        .banner p {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-        
-        .btn-primary-custom {
-            background-color: var(--accent-color);
-            border: none;
-            color: var(--primary-color);
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn-primary-custom:hover {
-            background-color: #b8941f;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* About Section */
-        .about-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        /* Why With Us Section */
-        .why-section {
-            position: relative;
-            padding: 120px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            color: var(--text-light);
-            overflow: hidden;
-        }
-        
-        .why-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .why-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .why-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        .why-highlight {
-            color: var(--accent-color);
-            font-weight: 500;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
-        .why-signature {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-top: 2rem;
-            color: var(--accent-color);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 1.5rem;
-            display: inline-block;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Nepal Section */
-        .nepal-section {
-            padding: 100px 0;
-            background-color: #fff;
-        }
-        
-        .nepal-content {
-            padding-right: 40px;
-        }
-        
-        .nepal-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-        }
-        
-        .nepal-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        
-        .nepal-read-more {
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-color);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-        
-        .nepal-read-more:hover {
-            color: #b8941f;
-            transform: translateX(5px);
-        }
-        
-        .nepal-read-more i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .nepal-read-more:hover i {
-            transform: translateX(3px);
-        }
-        
-        /* Nepal Slider */
-        .nepal-slider-container {
-            position: relative;
-        }
-        
-        .nepal-slider-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        
-        .nepal-slider-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 0;
-        }
-        
-        .nepal-slider-controls {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .nepal-slider-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            background-color: transparent;
-            color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .nepal-slider-btn:hover {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        
-        .nepal-slider-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .nepal-slider-btn:disabled:hover {
-            background-color: transparent;
-            color: var(--accent-color);
-        }
-        
-        .nepal-slider {
-            display: flex;
-            overflow: hidden;
-            gap: 20px;
-        }
-        
-        .nepal-slider-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 20px;
-        }
-        
-        .nepal-card {
-            flex: 0 0 calc(33.333% - 14px);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .nepal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .nepal-card-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .nepal-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .nepal-card:hover .nepal-card-image img {
-            transform: scale(1.05);
-        }
-        
-        .nepal-card-content {
-            padding: 20px;
-        }
-        
-        .nepal-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--primary-color);
-        }
-        
-        .nepal-card-trips {
-            color: var(--accent-color);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        /* Trips Section */
-        .trips-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-        
-        /* Trip Cards Styling */
-        .trip-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            height: 100%;
-        }
-        
-        .trip-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .trip-image-container {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .trip-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .trip-card:hover .trip-image {
-            transform: scale(1.05);
-        }
-        
-        .trip-badge-container {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .trip-date-badge, .trip-price-badge {
-            /*background-color: rgba(0, 0, 0, 0.7);
+      :root {
+        --primary-color: #1a1a1a;
+        --accent-color: #d4af37;
+        --text-light: #f8f9fa;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--primary-color);
+        overflow-x: hidden;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        position: fixed;
+        width: calc(100% - 40px);
+        top: 60px;
+        left: 20px;
+        right: 20px;
+        z-index: 1030;
+        border-radius: 30px;
+      }
+
+      .navbar.scrolled {
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--text-light) !important;
+        letter-spacing: 1px;
+        margin-left: 20px;
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--text-light) !important;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--accent-color) !important;
+      }
+
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Dropdown Menu Styles */
+      .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.95);
+        border: none;
+        padding: 10px 0;
+        margin-top: 10px;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        transform: translateY(10px);
+        min-width: 220px;
+      }
+
+      /* Show dropdown on hover */
+      .dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        color: var(--text-light);
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        white-space: nowrap;
+        border-radius: 0 !important;
+      }
+
+      .dropdown-item:hover {
+        background-color: transparent;
+        color: var(--accent-color);
+        padding-left: 25px;
+      }
+
+      .dropdown-toggle::after {
+        display: none;
+      }
+
+      /* Main nav dropdown chevrons */
+      .nav-item.dropdown .nav-link .chevron-down {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-item.dropdown .nav-link .chevron-up {
+        display: none;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-item.dropdown:hover .nav-link .chevron-down {
+        display: none;
+      }
+
+      .nav-item.dropdown:hover .nav-link .chevron-up {
+        display: inline-block;
+      }
+
+      /* Submenu dropdown chevrons */
+      .dropdown-submenu > .dropdown-item::after {
+        content: "\f105";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+      }
+
+      .dropdown-submenu:hover > .dropdown-item::after {
+        transform: translateY(-50%) rotate(0deg);
+      }
+
+      /* Smart submenu positioning */
+      .dropdown-submenu {
+        position: relative;
+      }
+
+      .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -10px;
+        margin-left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(10px);
+        border-radius: 0;
+      }
+
+      /* Default right-aligned submenu */
+      .dropdown-submenu:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      /* Left-aligned submenu for when there's not enough space on the right */
+      .dropdown-submenu.left-aligned > .dropdown-menu {
+        left: auto;
+        right: 100%;
+        transform: translateX(-10px);
+      }
+
+      .dropdown-submenu.left-aligned:hover > .dropdown-menu {
+        transform: translateX(0);
+      }
+
+      /* Hero/Banner Section */
+      .banner {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+          url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .banner-content {
+        color: var(--text-light);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 380px;
+      }
+
+      .banner h1 {
+        font-family: "Kanit";
+        color: RGBA(255, 255, 255, 0);
+        font-size: 600%;
+        text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
+        line-height: 0.8;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        text-align: inherit;
+        letter-spacing: 10px;
+        word-spacing: normal;
+        text-transform: uppercase;
+        font-weight: 500;
+        -webkit-text-stroke-width: 2px;
+        stroke-width: 2px;
+        -webkit-text-stroke-color: #ffffff;
+        stroke: #ffffff;
+        margin-bottom: 30px;
+      }
+
+      .banner p {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .btn-primary-custom {
+        background-color: var(--accent-color);
+        border: none;
+        color: var(--primary-color);
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn-primary-custom:hover {
+        background-color: #b8941f;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      /* Carousel control buttons */
+      .carousel-control-prev,
+      .carousel-control-next {
+        position: absolute;
+        bottom: 30px;
+        top: auto;
+        width: 60px;
+        height: 60px;
+        background: transparent;
+        border: none;
+        opacity: 1;
+        z-index: 20;
+        transform: translateY(0);
+      }
+
+      .carousel-control-prev {
+        right: 90px;
+        left: auto;
+      }
+
+      .carousel-control-next {
+        right: 30px;
+        left: auto;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background: none;
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+
+      .carousel-control-prev-icon::before,
+      .carousel-control-next-icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+      }
+
+      .carousel-control-prev-icon::before {
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+
+      .carousel-control-next-icon::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 0.8;
+      }
+
+      /* Mobile responsive adjustments */
+      @media (max-width: 768px) {
+        .carousel-control-prev,
+        .carousel-control-next {
+          display: none;
+        }
+      }
+      /*Carousel end */
+
+      /* About Section */
+      .about-section {
+        padding: 100px 0;
+        background-color: #f8f9fa;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+
+      /* Why With Us Section */
+      .why-section {
+        position: relative;
+        padding: 120px 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+            no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        color: var(--text-light);
+        overflow: hidden;
+      }
+
+      .why-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .why-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .why-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .why-highlight {
+        color: var(--accent-color);
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      .why-signature {
+        font-style: italic;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        color: var(--accent-color);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 1.5rem;
+        display: inline-block;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Nepal Section */
+      .nepal-section {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .nepal-content {
+        padding-right: 40px;
+      }
+
+      .nepal-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+        line-height: 1.2;
+      }
+
+      .nepal-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+
+      .nepal-read-more {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent-color);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .nepal-read-more:hover {
+        color: #b8941f;
+        transform: translateX(5px);
+      }
+
+      .nepal-read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .nepal-read-more:hover i {
+        transform: translateX(3px);
+      }
+
+      /* Nepal Slider */
+      .nepal-slider-container {
+        position: relative;
+      }
+
+      .nepal-slider-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .nepal-slider-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .nepal-slider-controls {
+        display: flex;
+        gap: 10px;
+      }
+
+      .nepal-slider-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-color);
+        background-color: transparent;
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nepal-slider-btn:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      .nepal-slider-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .nepal-slider-btn:disabled:hover {
+        background-color: transparent;
+        color: var(--accent-color);
+      }
+
+      .nepal-slider {
+        display: flex;
+        overflow: hidden;
+        gap: 20px;
+      }
+
+      .nepal-slider-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 20px;
+      }
+
+      .nepal-card {
+        flex: 0 0 calc(33.333% - 14px);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .nepal-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .nepal-card-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .nepal-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .nepal-card:hover .nepal-card-image img {
+        transform: scale(1.05);
+      }
+
+      .nepal-card-content {
+        padding: 20px;
+      }
+
+      .nepal-card-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--primary-color);
+      }
+
+      .nepal-card-trips {
+        color: var(--accent-color);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* Trips Section */
+      .trips-section {
+        padding: 100px 0;
+        background-color: #f8f9fa;
+      }
+
+      /* Trip Cards Styling */
+      .trip-card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .trip-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .trip-image-container {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .trip-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .trip-card:hover .trip-image {
+        transform: scale(1.05);
+      }
+
+      .trip-badge-container {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .trip-date-badge,
+      .trip-price-badge {
+        /*background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 6px 12px;
             border-radius: 5px;
             font-size: 0.85rem;
             font-weight: 500;*/
-            background-color: #f4f4f4;
-            color: #6a6c6c;
-            padding: 6px 12px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-        
-        .trip-price-badge {
-            /*background-color: var(--accent-color);
+        background-color: #f4f4f4;
+        color: #6a6c6c;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .trip-price-badge {
+        /*background-color: var(--accent-color);
             color: var(--primary-color);*/
-            background-color:#e0fcd7;
-            color:#2e5f41;
+        background-color: #e0fcd7;
+        color: #2e5f41;
+      }
+
+      .trip-status-container {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .trip-status-btn {
+        border: none;
+        /*border-radius: 20px;*/
+        border-radius: 5px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .trip-status-confirmed {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .trip-status-available {
+        background-color: #17a2b8;
+        color: white;
+      }
+
+      .trip-status-complete {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      .trip-card-body {
+        padding: 20px;
+      }
+
+      .trip-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+        line-height: 1.3;
+      }
+
+      .trip-tagline {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+
+      .trip-read-more {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent-color);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .trip-read-more:hover {
+        color: #b8941f;
+        transform: translateX(5px);
+      }
+
+      .trip-read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .trip-read-more:hover i {
+        transform: translateX(3px);
+      }
+
+      /* Dynamic card sizing based on number of cards */
+      .trips-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+      }
+
+      .trip-col {
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      /* Default for 4 cards */
+      .trip-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      /* For 3 cards */
+      .trips-row.three-cards .trip-col {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+
+      /* For 2 cards */
+      .trips-row.two-cards .trip-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      /* For 1 card */
+      .trips-row.one-card .trip-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      /* Reviews Section Styles - Updated with 4-Card Slider */
+      .reviews-section {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .reviews-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .reviews-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .reviews-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .reviews-slider-container {
+        position: relative;
+        margin-top: 30px;
+      }
+
+      .reviews-slider-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .reviews-slider-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .reviews-slider-controls {
+        display: flex;
+        gap: 10px;
+      }
+
+      .reviews-slider-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-color);
+        background-color: transparent;
+        color: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .reviews-slider-btn:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      .reviews-slider-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .reviews-slider-btn:disabled:hover {
+        background-color: transparent;
+        color: var(--accent-color);
+      }
+
+      .reviews-slider {
+        overflow: hidden;
+      }
+
+      .reviews-slider-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 30px;
+      }
+
+      .review-card {
+        flex: 0 0 calc(25% - 23px);
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .review-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
+      }
+
+      .reviewer-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: 600;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .reviewer-details {
+        flex: 1;
+      }
+
+      .reviewer-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+      }
+
+      .review-date {
+        color: #888;
+        font-size: 0.9rem;
+      }
+
+      .review-rating {
+        margin-bottom: 20px;
+      }
+
+      .stars {
+        color: #ffc107;
+        margin-bottom: 5px;
+      }
+
+      .review-text {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex-grow: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .review-read-more {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent-color);
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .review-read-more:hover {
+        color: #b8941f;
+      }
+
+      .review-read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .review-read-more:hover i {
+        transform: translateX(3px);
+      }
+
+      .reviews-verified {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #eaeaea;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .verified-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background-color: #e1f5fe;
+        color: #0288d1;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 100px 0;
+        background-color: #1a1a1a;
+        color: var(--text-light);
+      }
+
+      .contact-section .section-title::after {
+        background-color: var(--text-light);
+      }
+
+      .form-control {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 8px;
+        margin-bottom: 30px;
+        background: transparent;
+        color: var(--text-light);
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+        border-bottom: 1px solid var(--accent-color);
+      }
+
+      /* Footer Section*/
+
+      /* FOOTER BASE */
+      .footer {
+        background-color: #595552;
+        color: #fff;
+        padding: 30px 0 30px;
+        font-family: "Lato", Sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      /* FOOTER CONTENT */
+      .footer-content {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .align-top {
+        align-self: flex-start;
+      }
+
+      .footer .technical-org p {
+        font-size: 12px;
+        width: 100%;
+      }
+
+      .footer h5,
+      .footer h6 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer ul li a {
+        color: #82b8e4;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 16px;
+      }
+
+      .footer ul li a:hover {
+        color: #fff;
+      }
+
+      .footer p {
+        color: #fff;
+        font-family: "Lato", Sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        width: 90%;
+      }
+
+      .footer .mt-3 p {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+
+      /* CONTACT + PHONE */
+      .phone-number {
+        color: #82b8e4;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .phone-number:hover {
+        cursor: pointer;
+      }
+
+      .contact-number p {
+        font-size: 12px;
+        margin-bottom: 0;
+        font-family: "Lato", Sans-serif;
+        font-weight: 400;
+      }
+
+      /* RATING SECTION */
+      .rating-content {
+        color: #000;
+        font-family: "Lato", Sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .verified {
+        font-size: 11px;
+      }
+
+      .google-rating {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 10px;
+        margin-top: 20px;
+        max-width: 220px;
+      }
+
+      .google-icon {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+      }
+
+      .rating-stars {
+        margin-bottom: 5px;
+      }
+
+      .star {
+        color: #ffc107;
+        font-size: 14px;
+      }
+
+      .rating-value,
+      .top-rated {
+        font-weight: bold;
+      }
+
+      .top-rated {
+        margin-bottom: 5px;
+      }
+
+      /* SOCIAL ICONS */
+      .social-links a {
+        margin: 0 10px;
+        font-size: 1.2rem;
+        display: inline-block;
+        width: 28px;
+        height: 26px;
+        background-color: #595552;
+        border: 3px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 22px;
+
+        transition: all 0.3s;
+        color: #fff;
+      }
+
+      .social-links a:hover {
+        background-color: #fff;
+        color: #595552;
+        transform: translateY(-3px);
+      }
+
+      /* CONTACT INFO BOX */
+      .contact-info {
+        background-color: #444;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      /* COPYRIGHT */
+      .copyright {
+        background-color: #333;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      /* LOGO */
+      .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
+        filter: brightness(0) invert(1);
+      }
+
+      /* NEWSLETTER */
+      .newsletter-form .form-control {
+        background-color: #fff;
+        border: 1px solid #666;
+        color: #000;
+        border-radius: 4px;
+        max-width: 80%;
+        height: calc(2.25rem + 2px);
+      }
+
+      .signup-btn {
+        background-color: #82b8e4;
+        border: 1px solid #82b8e4;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: bold;
+        padding: 8px 20px;
+        height: calc(2.25rem + 2px);
+        width: 80%;
+        margin-top: 5px;
+      }
+
+      .signup-btn:hover {
+        background-color: #6da5d9;
+        border-color: #6da5d9;
+      }
+
+      .form-check-label {
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .form-check-input {
+        background-color: #fff;
+        border: 1px solid #666;
+      }
+
+      .form-check-input:checked {
+        background-color: #fff;
+        border-color: #666;
+        position: relative;
+      }
+
+      .form-check-input:checked::after {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #8b4513;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .form-check-input:focus {
+        box-shadow: none;
+      }
+
+      /* MOBILE RESPONSIVE FOOTER */
+      @media (max-width: 767px) {
+        .footer-content {
+          padding-left: 25px;
         }
-        
-        .trip-status-container {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            display: flex;
-            gap: 10px;
+
+        .footer .container {
+          padding-left: 15px;
+          padding-right: 10px;
         }
-        
-        .trip-status-btn {
-            border: none;
-            /*border-radius: 20px;*/
-            border-radius: 5px;
-            padding: 6px 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+
+        .mt-4 {
+          margin-left: 15px;
         }
-        
-        .trip-status-confirmed {
-            background-color: #28a745;
-            color: white;
+
+        .footer-content .mt-4:first-child {
+          margin-left: 0;
         }
-        
-        .trip-status-available {
-            background-color: #17a2b8;
-            color: white;
+      }
+
+      /*Footer Section Ends */
+
+      /* Fixed Side Buttons */
+
+      .fixed-side-buttons {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 9999;
+        width: auto;
+      }
+
+      /* Make each button independent  */
+      .fixed-side-buttons .side-btn {
+        position: relative;
+        background-color: #e63946;
+        color: #fff;
+        padding: 12px 15px;
+        width: 50px;
+        border-radius: 8px 0 0 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: width 0.3s ease, z-index 0s;
+        z-index: 1;
+      }
+
+      /* Icon inside button */
+      .fixed-side-buttons .side-btn i {
+        font-size: 20px;
+        min-width: 24px;
+        text-align: center;
+      }
+
+      /* Phone button different color */
+      .fixed-side-buttons .phone-call {
+        background-color: #2a9d8f;
+      }
+
+      .side-wrap {
+        width: 180px;
+        display: block;
+        position: relative;
+        overflow: visible;
+      }
+
+      .side-wrap .side-btn {
+        width: 50px;
+        margin-left: auto;
+        transition: width 0.5s ease;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .side-wrap:hover .side-btn,
+      .side-wrap:focus-within .side-btn {
+        width: 180px;
+        z-index: 10;
+      }
+
+      /* Hide text by default */
+      .side-wrap .side-btn span {
+        opacity: 0;
+        transition: opacity 0.2s ease 0.05s;
+        pointer-events: none;
+      }
+
+      /* Show text only when that button is hovered or focused */
+      .side-wrap:hover .side-btn span,
+      .side-wrap:focus-within .side-btn span {
+        opacity: 1;
+      }
+
+      /* Accessibility: allow keyboard users to see the labels */
+      .side-wrap .side-btn:focus,
+      .side-wrap .side-btn:focus-within {
+        outline: none;
+      }
+
+      /* Hide buttons on mobile */
+      @media (max-width: 768px) {
+        .fixed-side-buttons {
+          display: none;
         }
-        
-        .trip-status-complete {
-            background-color: #6c757d;
-            color: white;
+      }
+
+      /*Fixed side buttons end*/
+
+      /* Responsive Adjustments */
+      @media (max-width: 1199px) {
+        .navbar-nav .nav-link {
+          margin: 0 8px;
+          font-size: 0.9rem;
         }
-        
-        .trip-card-body {
-            padding: 20px;
+
+        .banner h1 {
+          font-size: 500%;
         }
-        
-        .trip-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            line-height: 1.3;
+
+        .why-title {
+          font-size: 3rem;
         }
-        
-        .trip-tagline {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-            font-size: 0.95rem;
+
+        .nepal-title {
+          font-size: 2.2rem;
         }
-        
-        .trip-read-more {
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-color);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .trip-read-more:hover {
-            color: #b8941f;
-            transform: translateX(5px);
-        }
-        
-        .trip-read-more i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .trip-read-more:hover i {
-            transform: translateX(3px);
-        }
-        
-        /* Dynamic card sizing based on number of cards */
-        .trips-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-        
+
+        /* Adjust card layout for medium screens */
         .trip-col {
-            padding: 0 15px;
-            margin-bottom: 30px;
+          flex: 0 0 33.333333%;
+          max-width: 33.333333%;
         }
-        
-        /* Default for 4 cards */
-        .trip-col {
-            flex: 0 0 25%;
-            max-width: 25%;
-        }
-        
-        /* For 3 cards */
-        .trips-row.three-cards .trip-col {
-            flex: 0 0 33.333333%;
-            max-width: 33.333333%;
-        }
-        
-        /* For 2 cards */
+
         .trips-row.two-cards .trip-col {
-            flex: 0 0 50%;
-            max-width: 50%;
+          flex: 0 0 50%;
+          max-width: 50%;
         }
-        
-        /* For 1 card */
+
         .trips-row.one-card .trip-col {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        
-        /* Reviews Section Styles - Updated with 4-Card Slider */
-        .reviews-section {
-            padding: 100px 0;
-            background-color: #fff;
+          flex: 0 0 100%;
+          max-width: 100%;
         }
 
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .reviews-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .reviews-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .reviews-slider-container {
-            position: relative;
-            margin-top: 30px;
-        }
-
-        .reviews-slider-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .reviews-slider-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 0;
-        }
-
-        .reviews-slider-controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .reviews-slider-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            background-color: transparent;
-            color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .reviews-slider-btn:hover {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .reviews-slider-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .reviews-slider-btn:disabled:hover {
-            background-color: transparent;
-            color: var(--accent-color);
-        }
-
-        .reviews-slider {
-            overflow: hidden;
-        }
-
-        .reviews-slider-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 30px;
+        .nepal-card {
+          flex: 0 0 calc(50% - 10px);
         }
 
         .review-card {
-            flex: 0 0 calc(25% - 23px);
-            border: 1px solid #eaeaea;
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            background-color: #fff;
-            min-height: 380px;
-            display: flex;
-            flex-direction: column;
+          flex: 0 0 calc(33.333% - 20px);
+        }
+      }
+
+      @media (max-width: 991px) {
+        .navbar-nav .nav-link {
+          margin: 0 5px;
+          font-size: 0.85rem;
         }
 
-        .review-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transform: translateY(-5px);
+        .banner h1 {
+          font-size: 400%;
+          letter-spacing: 8px;
+        }
+
+        .banner p {
+          font-size: 1.3rem;
+        }
+
+        .why-title {
+          font-size: 2.5rem;
+        }
+
+        .why-text {
+          font-size: 1.1rem;
+        }
+
+        .nepal-content {
+          padding-right: 0;
+          margin-bottom: 50px;
+        }
+
+        .nepal-title {
+          font-size: 2rem;
+        }
+
+        .trip-title {
+          font-size: 1.3rem;
+        }
+
+        .reviews-title {
+          font-size: 2.2rem;
+        }
+
+        /* Adjust card layout for tablets */
+        .trip-col {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        .trips-row.three-cards .trip-col,
+        .trips-row.two-cards .trip-col {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        .trips-row.one-card .trip-col {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        .nepal-card {
+          flex: 0 0 calc(50% - 10px);
+        }
+
+        .review-card {
+          flex: 0 0 calc(50% - 15px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .banner h1 {
+          font-size: 300%;
+          letter-spacing: 5px;
+        }
+
+        .banner p {
+          font-size: 1.2rem;
+        }
+
+        .why-section {
+          padding: 80px 0;
+          background-attachment: scroll;
+        }
+
+        .why-title {
+          font-size: 2.2rem;
+        }
+
+        .why-text {
+          font-size: 1rem;
+        }
+
+        .nepal-title {
+          font-size: 1.8rem;
+        }
+
+        .nepal-text {
+          font-size: 1rem;
+        }
+
+        .navbar-nav {
+          text-align: center;
+          padding-top: 15px;
+        }
+
+        .navbar {
+          width: calc(100% - 30px);
+          left: 15px;
+          right: 15px;
+        }
+
+        /* Mobile dropdown behavior */
+        .dropdown-menu {
+          display: none;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dropdown.show > .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown-submenu > .dropdown-menu {
+          position: static;
+          margin-top: 5px;
+          margin-left: 20px;
+          border-left: 1px solid rgba(255, 255, 255, 0.1);
+          display: none;
+        }
+
+        .dropdown-submenu.show > .dropdown-menu {
+          display: block;
+        }
+
+        .nav-item.dropdown .nav-link .chevron-down,
+        .nav-item.dropdown .nav-link .chevron-up {
+          display: none !important;
+        }
+
+        .dropdown-submenu > .dropdown-item::after {
+          display: none;
+        }
+
+        .trip-card {
+          margin-bottom: 25px;
+        }
+
+        /* Adjust card layout for mobile */
+        .trip-col {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        .trips-row.three-cards .trip-col,
+        .trips-row.two-cards .trip-col,
+        .trips-row.one-card .trip-col {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        .trip-status-container {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .nepal-card {
+          flex: 0 0 100%;
+        }
+
+        .nepal-slider-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .nepal-slider-controls {
+          align-self: flex-end;
+        }
+
+        .reviews-title {
+          font-size: 2rem;
+        }
+
+        .reviews-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .reviews-slider-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .reviews-slider-controls {
+          align-self: flex-end;
+        }
+
+        .review-card {
+          flex: 0 0 100%;
+        }
+
+        .reviews-slider-track {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .banner h1 {
+          font-size: 250%;
+          letter-spacing: 3px;
+        }
+
+        .banner p {
+          font-size: 1.1rem;
+        }
+
+        .why-title {
+          font-size: 1.8rem;
+        }
+
+        .why-text {
+          font-size: 0.95rem;
+        }
+
+        .nepal-title {
+          font-size: 1.6rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.5rem;
+          margin-left: 10px;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .nepal-slider-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .nepal-slider-controls {
+          align-self: flex-end;
+        }
+
+        .reviews-title {
+          font-size: 1.8rem;
+        }
+
+        .review-card {
+          padding: 20px;
+          min-height: 350px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .banner h1 {
+          font-size: 200%;
+        }
+
+        .banner p {
+          font-size: 1rem;
+        }
+
+        .why-title {
+          font-size: 1.6rem;
+        }
+
+        .nepal-title {
+          font-size: 1.4rem;
+        }
+
+        .btn-primary-custom {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .nepal-slider-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .nepal-slider-controls {
+          align-self: flex-end;
         }
 
         .reviewer-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+          flex-direction: column;
+          text-align: center;
         }
 
         .reviewer-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-weight: 600;
-            color: white;
-            font-size: 1.2rem;
+          margin-right: 0;
+          margin-bottom: 10px;
         }
-
-        .reviewer-details {
-            flex: 1;
-        }
-
-        .reviewer-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-
-        .review-date {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .review-rating {
-            margin-bottom: 20px;
-        }
-
-        .stars {
-            color: #ffc107;
-            margin-bottom: 5px;
-        }
-
-        .review-text {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 6;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .review-read-more {
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-color);
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .review-read-more:hover {
-            color: #b8941f;
-        }
-
-        .review-read-more i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .review-read-more:hover i {
-            transform: translateX(3px);
-        }
-
-        .reviews-verified {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #eaeaea;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background-color: #e1f5fe;
-            color: #0288d1;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 100px 0;
-            background-color: #1a1a1a;
-            color: var(--text-light);
-        }
-        
-        .contact-section .section-title::after {
-            background-color: var(--text-light);
-        }
-        
-        .form-control {
-            border-radius: 0;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-            margin-bottom: 30px;
-            background: transparent;
-            color: var(--text-light);
-        }
-        
-        .form-control:focus {
-            box-shadow: none;
-            border-bottom: 1px solid var(--accent-color);
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: #111;
-            color: var(--text-light);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .social-links a {
-            color: var(--text-light);
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 1199px) {
-            .navbar-nav .nav-link {
-                margin: 0 8px;
-                font-size: 0.9rem;
-            }
-            
-            .banner h1 {
-                font-size: 500%;
-            }
-            
-            .why-title {
-                font-size: 3rem;
-            }
-            
-            .nepal-title {
-                font-size: 2.2rem;
-            }
-            
-            /* Adjust card layout for medium screens */
-            .trip-col {
-                flex: 0 0 33.333333%;
-                max-width: 33.333333%;
-            }
-            
-            .trips-row.two-cards .trip-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            
-            .trips-row.one-card .trip-col {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .nepal-card {
-                flex: 0 0 calc(50% - 10px);
-            }
-            
-            .review-card {
-                flex: 0 0 calc(33.333% - 20px);
-            }
-        }
-        
-        @media (max-width: 991px) {
-            .navbar-nav .nav-link {
-                margin: 0 5px;
-                font-size: 0.85rem;
-            }
-            
-            .banner h1 {
-                font-size: 400%;
-                letter-spacing: 8px;
-            }
-            
-            .banner p {
-                font-size: 1.3rem;
-            }
-            
-            .why-title {
-                font-size: 2.5rem;
-            }
-            
-            .why-text {
-                font-size: 1.1rem;
-            }
-            
-            .nepal-content {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-            
-            .nepal-title {
-                font-size: 2rem;
-            }
-            
-            .trip-title {
-                font-size: 1.3rem;
-            }
-            
-            .reviews-title {
-                font-size: 2.2rem;
-            }
-            
-            /* Adjust card layout for tablets */
-            .trip-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            
-            .trips-row.three-cards .trip-col,
-            .trips-row.two-cards .trip-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            
-            .trips-row.one-card .trip-col {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .nepal-card {
-                flex: 0 0 calc(50% - 10px);
-            }
-            
-            .review-card {
-                flex: 0 0 calc(50% - 15px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 300%;
-                letter-spacing: 5px;
-            }
-            
-            .banner p {
-                font-size: 1.2rem;
-            }
-            
-            .why-section {
-                padding: 80px 0;
-                background-attachment: scroll;
-            }
-            
-            .why-title {
-                font-size: 2.2rem;
-            }
-            
-            .why-text {
-                font-size: 1rem;
-            }
-            
-            .nepal-title {
-                font-size: 1.8rem;
-            }
-            
-            .nepal-text {
-                font-size: 1rem;
-            }
-            
-            .navbar-nav {
-                text-align: center;
-                padding-top: 15px;
-            }
-            
-            .navbar {
-                width: calc(100% - 30px);
-                left: 15px;
-                right: 15px;
-            }
-            
-            /* Mobile dropdown behavior */
-            .dropdown-menu {
-                display: none;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-            
-            .dropdown.show > .dropdown-menu {
-                display: block;
-            }
-            
-            .dropdown-submenu > .dropdown-menu {
-                position: static;
-                margin-top: 5px;
-                margin-left: 20px;
-                border-left: 1px solid rgba(255, 255, 255, 0.1);
-                display: none;
-            }
-            
-            .dropdown-submenu.show > .dropdown-menu {
-                display: block;
-            }
-            
-            .nav-item.dropdown .nav-link .chevron-down,
-            .nav-item.dropdown .nav-link .chevron-up {
-                display: none !important;
-            }
-            
-            .dropdown-submenu > .dropdown-item::after {
-                display: none;
-            }
-            
-            .trip-card {
-                margin-bottom: 25px;
-            }
-            
-            /* Adjust card layout for mobile */
-            .trip-col {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .trips-row.three-cards .trip-col,
-            .trips-row.two-cards .trip-col,
-            .trips-row.one-card .trip-col {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .trip-status-container {
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .nepal-card {
-                flex: 0 0 100%;
-            }
-            
-            .nepal-slider-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .nepal-slider-controls {
-                align-self: flex-end;
-            }
-            
-            .reviews-title {
-                font-size: 2rem;
-            }
-            
-            .reviews-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .reviews-slider-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .reviews-slider-controls {
-                align-self: flex-end;
-            }
-            
-            .review-card {
-                flex: 0 0 100%;
-            }
-            
-            .reviews-slider-track {
-                gap: 20px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .banner h1 {
-                font-size: 250%;
-                letter-spacing: 3px;
-            }
-            
-            .banner p {
-                font-size: 1.1rem;
-            }
-            
-            .why-title {
-                font-size: 1.8rem;
-            }
-            
-            .why-text {
-                font-size: 0.95rem;
-            }
-            
-            .nepal-title {
-                font-size: 1.6rem;
-            }
-            
-            .navbar-brand {
-                font-size: 1.5rem;
-                margin-left: 10px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .nepal-slider-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .nepal-slider-controls {
-                align-self: flex-end;
-            }
-            
-            .reviews-title {
-                font-size: 1.8rem;
-            }
-            
-            .review-card {
-                padding: 20px;
-                min-height: 350px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .banner h1 {
-                font-size: 200%;
-            }
-            
-            .banner p {
-                font-size: 1rem;
-            }
-            
-            .why-title {
-                font-size: 1.6rem;
-            }
-            
-            .nepal-title {
-                font-size: 1.4rem;
-            }
-            
-            .btn-primary-custom {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .nepal-slider-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .nepal-slider-controls {
-                align-self: flex-end;
-            }
-            
-            .reviewer-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .reviewer-avatar {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">sacredhimalaya.com</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">SACRED HIMALAYA</a>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">sacredhimalaya.com</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">SACRED HIMALAYA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trips">TRIP5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#upcoming">UPCOMING DEPARTURES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ABOUT US
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Company</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Our Story</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Mission & Values</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#trips">TRIP5</a>
+                    <li>
+                      <a class="dropdown-item" href="#">Sustainability</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#upcoming">UPCOMING DEPARTURES</a>
+                    <li><a class="dropdown-item" href="#">Awards</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Our Team</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                    <li><a class="dropdown-item" href="#">Guides</a></li>
+                    <li><a class="dropdown-item" href="#">Partners</a></li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#"
+                        >Regional Experts</a
+                      >
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Africa Specialists</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Asia Specialists</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Europe Specialists</a
+                          >
+                        </li>
+                      </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ABOUT US 
-                            <i class="fas fa-chevron-down chevron-down ms-1"></i>
-                            <i class="fas fa-chevron-up chevron-up ms-1"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Company</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Our Story</a></li>
-                                    <li><a class="dropdown-item" href="#">Mission & Values</a></li>
-                                    <li><a class="dropdown-item" href="#">Sustainability</a></li>
-                                    <li><a class="dropdown-item" href="#">Awards</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Our Team</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Leadership</a></li>
-                                    <li><a class="dropdown-item" href="#">Guides</a></li>
-                                    <li><a class="dropdown-item" href="#">Partners</a></li>
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Regional Experts</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Africa Specialists</a></li>
-                                            <li><a class="dropdown-item" href="#">Asia Specialists</a></li>
-                                            <li><a class="dropdown-item" href="#">Europe Specialists</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Testimonials</a></li>
-                            <li><a class="dropdown-item" href="#">Press</a></li>
-                            <li><a class="dropdown-item" href="#">Careers</a></li>
-                        </ul>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                <li><a class="dropdown-item" href="#">Press</a></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SERVICES
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Travel Types</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Adventure Travel</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            SERVICES 
-                            <i class="fas fa-chevron-down chevron-down ms-1"></i>
-                            <i class="fas fa-chevron-up chevron-up ms-1"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Travel Types</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Adventure Travel</a></li>
-                                    <li><a class="dropdown-item" href="#">Cultural Immersion</a></li>
-                                    <li><a class="dropdown-item" href="#">Luxury Expeditions</a></li>
-                                    <li><a class="dropdown-item" href="#">Photography Tours</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item dropdown-toggle" href="#">Destinations</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Africa</a></li>
-                                    <li><a class="dropdown-item" href="#">Asia</a></li>
-                                    <li><a class="dropdown-item" href="#">South America</a></li>
-                                    <li><a class="dropdown-item" href="#">Europe</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Custom Trips</a></li>
-                            <li><a class="dropdown-item" href="#">Group Bookings</a></li>
-                        </ul>
+                    <li>
+                      <a class="dropdown-item" href="#">Cultural Immersion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACTS</a>
+                    <li>
+                      <a class="dropdown-item" href="#">Luxury Expeditions</a>
                     </li>
-                </ul>
-            </div>
+                    <li>
+                      <a class="dropdown-item" href="#">Photography Tours</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Destinations</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Africa</a></li>
+                    <li><a class="dropdown-item" href="#">Asia</a></li>
+                    <li><a class="dropdown-item" href="#">South America</a></li>
+                    <li><a class="dropdown-item" href="#">Europe</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Custom Trips</a></li>
+                <li><a class="dropdown-item" href="#">Group Bookings</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACTS</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero/Banner Section -->
     <section class="banner" id="home">
-        <div class="container">
-            <div class="banner-content">
-                <h1>TREKKING AND<br>ADVENTURES IN THE<br>HIMALAYA</h1>
+      <div
+        id="homeCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="6000"
+      >
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div
+            class="carousel-item active banner-slide"
+            style="background-image: url('images/slide1.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
                 <p>Experience the Himalaya, One Step at a Time.</p>
-                <a href="#trips" class="btn btn-primary-custom">TRAVEL WITH US</a>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
             </div>
+          </div>
+
+          <!-- Slide 2  -->
+          <div
+            class="carousel-item banner-slide"
+            style="background-image: url('images/slide2.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
+                <p>Experience the Himalaya, One Step at a Time.</p>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3  -->
+          <div
+            class="carousel-item banner-slide"
+            style="background-image: url('images/slide3.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
+                <p>Experience the Himalaya, One Step at a Time.</p>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- Prev Button -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#homeCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <!-- Next Button -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#homeCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </section>
 
     <!-- About Section -->
     <section class="about-section" id="about">
-        <div class="container">
-            <h2 class="section-title">Who We Are</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>At Sacred Himalaya, we believe that travel is more than just visiting places - it's about immersing yourself in cultures, connecting with people, and creating lifelong memories.</p>
-                    <p>Founded by Carlo, an experienced traveler and cultural enthusiast, our company specializes in unique journeys to some of the world's most fascinating destinations.</p>
-                </div>
-                <div class="col-md-6">
-                    <p>Our focus on the Omo Valley stems from our passion for preserving and sharing ancient cultures that are rapidly changing in our modern world.</p>
-                    <p>We work closely with local communities to ensure our travels are respectful, sustainable, and beneficial to the people who welcome us into their homes.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              At Sacred Himalaya, we believe that travel is more than just
+              visiting places - it's about immersing yourself in cultures,
+              connecting with people, and creating lifelong memories.
+            </p>
+            <p>
+              Founded by Carlo, an experienced traveler and cultural enthusiast,
+              our company specializes in unique journeys to some of the world's
+              most fascinating destinations.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              Our focus on the Omo Valley stems from our passion for preserving
+              and sharing ancient cultures that are rapidly changing in our
+              modern world.
+            </p>
+            <p>
+              We work closely with local communities to ensure our travels are
+              respectful, sustainable, and beneficial to the people who welcome
+              us into their homes.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Why With Us Section -->
     <section class="why-section">
-        <div class="container">
-            <div class="why-content">
-                <h2 class="why-title">Why With Us?</h2>
-                <p class="why-text">
-                    <span class="why-highlight">Nepal is where everything began for me and my second home.</span> It's a lifelong destination for many. 
-                    I owe to the country and its people the motivations that drove me to travel for a living, to the point of making it my profession.
-                </p>
-                <p class="why-text">
-                    With <span class="why-highlight">Sacred Himalaya</span> specialized in Nepal, as a travel and life destination: I also dedicated the 
-                    <span class="why-highlight">Finale for Nepal</span> project to the people, their history, and their culture, which must be protected and supported.
-                </p>
-                <div class="why-signature">- Carlo, Founder</div>
-            </div>
+      <div class="container">
+        <div class="why-content">
+          <h2 class="why-title">Why With Us?</h2>
+          <p class="why-text">
+            <span class="why-highlight"
+              >Nepal is where everything began for me and my second home.</span
+            >
+            It's a lifelong destination for many. I owe to the country and its
+            people the motivations that drove me to travel for a living, to the
+            point of making it my profession.
+          </p>
+          <p class="why-text">
+            With <span class="why-highlight">Sacred Himalaya</span> specialized
+            in Nepal, as a travel and life destination: I also dedicated the
+            <span class="why-highlight">Finale for Nepal</span> project to the
+            people, their history, and their culture, which must be protected
+            and supported.
+          </p>
+          <div class="why-signature">- Carlo, Founder</div>
         </div>
+      </div>
     </section>
 
     <!-- Nepal Section -->
     <section class="nepal-section">
-        <div class="container">
-            <div class="row">
-                <!-- Left Content (30%) -->
-                <div class="col-lg-4 col-md-5">
-                    <div class="nepal-content">
-                        <h2 class="nepal-title">NEPAL IS MORE THAN A DESTINATION</h2>
-                        <p class="nepal-text">
-                            Nepal is more than a destination. It's the place that has seen all of us become expert travelers. 
-                            That's why we've made it the protagonist of our destinations. But it's its spirit that has influenced 
-                            the way we make Nepal trips a total experience.
-                        </p>
-                        <a href="#" class="nepal-read-more">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Right Content (70%) -->
-                <div class="col-lg-8 col-md-7">
-                    <div class="nepal-slider-container">
-                        <div class="nepal-slider-header">
-                            <h3 class="nepal-slider-title">Nepal Regions</h3>
-                            <div class="nepal-slider-controls">
-                                <button class="nepal-slider-btn" id="nepalSliderPrev">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="nepal-slider-btn" id="nepalSliderNext">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="nepal-slider">
-                            <div class="nepal-slider-track" id="nepalSliderTrack">
-                                <!-- Card 1 -->
-                                <div class="nepal-card">
-                                    <div class="nepal-card-image">
-                                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Everest Region">
-                                    </div>
-                                    <div class="nepal-card-content">
-                                        <h4 class="nepal-card-title">Everest Region</h4>
-                                        <div class="nepal-card-trips">
-                                            <i class="fas fa-map-marked-alt"></i> 8 Trips
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 2 -->
-                                <div class="nepal-card">
-                                    <div class="nepal-card-image">
-                                        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Annapurna Region">
-                                    </div>
-                                    <div class="nepal-card-content">
-                                        <h4 class="nepal-card-title">Annapurna Region</h4>
-                                        <div class="nepal-card-trips">
-                                            <i class="fas fa-map-marked-alt"></i> 12 Trips
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 3 -->
-                                <div class="nepal-card">
-                                    <div class="nepal-card-image">
-                                        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Langtang Region">
-                                    </div>
-                                    <div class="nepal-card-content">
-                                        <h4 class="nepal-card-title">Langtang Region</h4>
-                                        <div class="nepal-card-trips">
-                                            <i class="fas fa-map-marked-alt"></i> 5 Trips
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 4 -->
-                                <div class="nepal-card">
-                                    <div class="nepal-card-image">
-                                        <img src="https://images.unsplash.com/photo-1623053538109-84f581c5d5b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mustang Region">
-                                    </div>
-                                    <div class="nepal-card-content">
-                                        <h4 class="nepal-card-title">Mustang Region</h4>
-                                        <div class="nepal-card-trips">
-                                            <i class="fas fa-map-marked-alt"></i> 4 Trips
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 5 -->
-                                <div class="nepal-card">
-                                    <div class="nepal-card-image">
-                                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Kathmandu Valley">
-                                    </div>
-                                    <div class="nepal-card-content">
-                                        <h4 class="nepal-card-title">Kathmandu Valley</h4>
-                                        <div class="nepal-card-trips">
-                                            <i class="fas fa-map-marked-alt"></i> 7 Trips
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <!-- Left Content (30%) -->
+          <div class="col-lg-4 col-md-5">
+            <div class="nepal-content">
+              <h2 class="nepal-title">NEPAL IS MORE THAN A DESTINATION</h2>
+              <p class="nepal-text">
+                Nepal is more than a destination. It's the place that has seen
+                all of us become expert travelers. That's why we've made it the
+                protagonist of our destinations. But it's its spirit that has
+                influenced the way we make Nepal trips a total experience.
+              </p>
+              <a href="#" class="nepal-read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- Right Content (70%) -->
+          <div class="col-lg-8 col-md-7">
+            <div class="nepal-slider-container">
+              <div class="nepal-slider-header">
+                <h3 class="nepal-slider-title">Nepal Regions</h3>
+                <div class="nepal-slider-controls">
+                  <button class="nepal-slider-btn" id="nepalSliderPrev">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="nepal-slider-btn" id="nepalSliderNext">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="nepal-slider">
+                <div class="nepal-slider-track" id="nepalSliderTrack">
+                  <!-- Card 1 -->
+                  <div class="nepal-card">
+                    <div class="nepal-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                        alt="Everest Region"
+                      />
+                    </div>
+                    <div class="nepal-card-content">
+                      <h4 class="nepal-card-title">Everest Region</h4>
+                      <div class="nepal-card-trips">
+                        <i class="fas fa-map-marked-alt"></i> 8 Trips
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="nepal-card">
+                    <div class="nepal-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                        alt="Annapurna Region"
+                      />
+                    </div>
+                    <div class="nepal-card-content">
+                      <h4 class="nepal-card-title">Annapurna Region</h4>
+                      <div class="nepal-card-trips">
+                        <i class="fas fa-map-marked-alt"></i> 12 Trips
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="nepal-card">
+                    <div class="nepal-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                        alt="Langtang Region"
+                      />
+                    </div>
+                    <div class="nepal-card-content">
+                      <h4 class="nepal-card-title">Langtang Region</h4>
+                      <div class="nepal-card-trips">
+                        <i class="fas fa-map-marked-alt"></i> 5 Trips
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4 -->
+                  <div class="nepal-card">
+                    <div class="nepal-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1623053538109-84f581c5d5b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Mustang Region"
+                      />
+                    </div>
+                    <div class="nepal-card-content">
+                      <h4 class="nepal-card-title">Mustang Region</h4>
+                      <div class="nepal-card-trips">
+                        <i class="fas fa-map-marked-alt"></i> 4 Trips
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5 -->
+                  <div class="nepal-card">
+                    <div class="nepal-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+                        alt="Kathmandu Valley"
+                      />
+                    </div>
+                    <div class="nepal-card-content">
+                      <h4 class="nepal-card-title">Kathmandu Valley</h4>
+                      <div class="nepal-card-trips">
+                        <i class="fas fa-map-marked-alt"></i> 7 Trips
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Trips Section -->
     <section class="trips-section" id="trips">
-        <div class="container">
-            <h2 class="section-title">Featured Trips</h2>
-            <div class="trips-row three-cards">
-                <!-- Trip 1 -->
-                <div class="trip-col">
-                    <div class="trip-card">
-                        <div class="trip-image-container">
-                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="trip-image" alt="Mursi Tribe">
-                            <div class="trip-badge-container">
-                                <div class="trip-date-badge">15 Oct - 25 Oct 2023</div>
-                                <div class="trip-price-badge">$2,850</div>
-                            </div>
-                            <div class="trip-status-container">
-                                <button class="trip-status-btn trip-status-confirmed">
-                                    <i class="fas fa-check-circle"></i> Confirmed
-                                </button>
-                                <button class="trip-status-btn trip-status-available">
-                                    <i class="fas fa-users"></i> 4 Available
-                                </button>
-                            </div>
-                        </div>
-                        <div class="trip-card-body">
-                            <h3 class="trip-title">Mursi Tribe Cultural Immersion</h3>
-                            <p class="trip-tagline">Experience the unique traditions of the Mursi people in Ethiopia's Omo Valley</p>
-                            <a href="#" class="trip-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+      <div class="container">
+        <h2 class="section-title">Featured Trips</h2>
+        <div class="trips-row three-cards">
+          <!-- Trip 1 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  class="trip-image"
+                  alt="Mursi Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">15 Oct - 25 Oct 2023</div>
+                  <div class="trip-price-badge">$2,850</div>
                 </div>
-                
-                <!-- Trip 2 -->
-                <div class="trip-col">
-                    <div class="trip-card">
-                        <div class="trip-image-container">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="trip-image" alt="Hamar Tribe">
-                            <div class="trip-badge-container">
-                                <div class="trip-date-badge">5 Nov - 15 Nov 2023</div>
-                                <div class="trip-price-badge">$3,150</div>
-                            </div>
-                            <div class="trip-status-container">
-                                <button class="trip-status-btn trip-status-confirmed">
-                                    <i class="fas fa-check-circle"></i> Confirmed
-                                </button>
-                                <button class="trip-status-btn trip-status-available">
-                                    <i class="fas fa-users"></i> 2 Available
-                                </button>
-                            </div>
-                        </div>
-                        <div class="trip-card-body">
-                            <h3 class="trip-title">Hamar Bull Jumping Ceremony</h3>
-                            <p class="trip-tagline">Witness the incredible coming-of-age ceremony of the Hamar people</p>
-                            <a href="#" class="trip-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed
+                  </button>
+                  <button class="trip-status-btn trip-status-available">
+                    <i class="fas fa-users"></i> 4 Available
+                  </button>
                 </div>
-                
-                <!-- Trip 3 -->
-                <div class="trip-col">
-                    <div class="trip-card">
-                        <div class="trip-image-container">
-                            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" class="trip-image" alt="Karo Tribe">
-                            <div class="trip-badge-container">
-                                <div class="trip-date-badge">20 Dec - 30 Dec 2023</div>
-                                <div class="trip-price-badge">$2,950</div>
-                            </div>
-                            <div class="trip-status-container">
-                                <button class="trip-status-btn trip-status-confirmed">
-                                    <i class="fas fa-check-circle"></i> Confirmed
-                                </button>
-                                <button class="trip-status-btn trip-status-complete">
-                                    <i class="fas fa-ban"></i> Complete
-                                </button>
-                            </div>
-                        </div>
-                        <div class="trip-card-body">
-                            <h3 class="trip-title">Karo River Village Experience</h3>
-                            <p class="trip-tagline">Visit the Karo people famous for their elaborate body painting</p>
-                            <a href="#" class="trip-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Mursi Tribe Cultural Immersion</h3>
+                <p class="trip-tagline">
+                  Experience the unique traditions of the Mursi people in
+                  Ethiopia's Omo Valley
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
+          </div>
+
+          <!-- Trip 2 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                  class="trip-image"
+                  alt="Hamar Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">5 Nov - 15 Nov 2023</div>
+                  <div class="trip-price-badge">$3,150</div>
+                </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed
+                  </button>
+                  <button class="trip-status-btn trip-status-available">
+                    <i class="fas fa-users"></i> 2 Available
+                  </button>
+                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Hamar Bull Jumping Ceremony</h3>
+                <p class="trip-tagline">
+                  Witness the incredible coming-of-age ceremony of the Hamar
+                  people
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip 3 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                  class="trip-image"
+                  alt="Karo Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">20 Dec - 30 Dec 2023</div>
+                  <div class="trip-price-badge">$2,950</div>
+                </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed`
+                  </button>
+                  <button class="trip-status-btn trip-status-complete">
+                    <i class="fas fa-ban"></i> Complete
+                  </button>
+                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Karo River Village Experience</h3>
+                <p class="trip-tagline">
+                  Visit the Karo people famous for their elaborate body painting
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Reviews Section -->
     <section class="reviews-section" id="reviews">
-        <div class="container">
-            <div class="reviews-header">
-                <h2 class="reviews-title">See What Our Customers Say About Working With Us</h2>
-                <p class="reviews-subtitle">See what our clients say about the results we've delivered and the impact we've made.</p>
-            </div>
-            
-            <div class="reviews-slider-container">
-                <div class="reviews-slider-header">
-                    <h3 class="reviews-slider-title">Customer Reviews</h3>
-                    <div class="reviews-slider-controls">
-                        <button class="reviews-slider-btn" id="reviewsSliderPrev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="reviews-slider-btn" id="reviewsSliderNext">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="reviews-slider">
-                    <div class="reviews-slider-track" id="reviewsSliderTrack">
-                        <!-- Review Card 1 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">R</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Ross Newman</h4>
-                                    <p class="review-date">7 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                As a local business owner, I'm constantly bombarded by marketing agencies. Cold emails, DMs, big promises. It's refreshing to work with a company that actually delivers on their promises. The Omo Valley tour was beyond my expectations.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 2 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">E</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Emily Bex</h4>
-                                    <p class="review-date">7 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                We'd tried planning our own trip to Nepal but didn't really know what we were doing. We ended up wasting time and missing out on incredible experiences. Traveling with Carlo changed everything - every detail was perfectly arranged.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 3 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">J</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Jade Gray</h4>
-                                    <p class="review-date">7 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                We were looking for an authentic cultural experience in Ethiopia and came across Travel with Carlo. From the first conversation, they made everything so simple. The attention to detail and cultural sensitivity was remarkable.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 4 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">A</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Alex Morgan</h4>
-                                    <p class="review-date">7 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                We've been working with Travel with Carlo for a little while now, and it's been brilliant from the start. The support has been spot on, and the experiences they've curated are simply unforgettable. Highly recommend their services!
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 5 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">S</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Sophia Williams</h4>
-                                    <p class="review-date">5 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                The photography tour in the Omo Valley was absolutely incredible. The guides were knowledgeable about both photography and the local culture, and the access we had to remote villages was unparalleled. Truly a once-in-a-lifetime experience.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 6 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">M</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Michael Chen</h4>
-                                    <p class="review-date">4 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                I've traveled extensively throughout Asia, but the Nepal trekking experience with Carlo was something special. The team's attention to safety, comfort, and cultural immersion made this my best travel experience to date.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 7 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">L</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">Lisa Rodriguez</h4>
-                                    <p class="review-date">3 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                The cultural immersion in the Omo Valley was eye-opening. We were able to interact with local tribes in a respectful and meaningful way, thanks to Carlo's connections and cultural sensitivity. This wasn't just tourism; it was genuine cultural exchange.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                        
-                        <!-- Review Card 8 -->
-                        <div class="review-card">
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">D</div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">David Thompson</h4>
-                                    <p class="review-date">2 months ago</p>
-                                </div>
-                            </div>
-                            <div class="review-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                As a solo traveler, I was initially hesitant about joining a group tour, but Travel with Carlo made me feel completely comfortable. The small group size allowed for personal connections, and the itinerary was perfectly balanced between structured activities and free time.
-                            </p>
-                            <a href="#" class="review-read-more">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="reviews-verified">
-                <p>Verified by TrustIndex 😊</p>
-                <div class="verified-badge">
-                    <i class="fas fa-check-circle"></i> All reviews are verified
-                </div>
-            </div>
+      <div class="container">
+        <div class="reviews-header">
+          <h2 class="reviews-title">
+            See What Our Customers Say About Working With Us
+          </h2>
+          <p class="reviews-subtitle">
+            See what our clients say about the results we've delivered and the
+            impact we've made.
+          </p>
         </div>
+
+        <div class="reviews-slider-container">
+          <div class="reviews-slider-header">
+            <h3 class="reviews-slider-title">Customer Reviews</h3>
+            <div class="reviews-slider-controls">
+              <button class="reviews-slider-btn" id="reviewsSliderPrev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="reviews-slider-btn" id="reviewsSliderNext">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="reviews-slider">
+            <div class="reviews-slider-track" id="reviewsSliderTrack">
+              <!-- Review Card 1 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">R</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Ross Newman</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  As a local business owner, I'm constantly bombarded by
+                  marketing agencies. Cold emails, DMs, big promises. It's
+                  refreshing to work with a company that actually delivers on
+                  their promises. The Omo Valley tour was beyond my
+                  expectations.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 2 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">E</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Emily Bex</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We'd tried planning our own trip to Nepal but didn't really
+                  know what we were doing. We ended up wasting time and missing
+                  out on incredible experiences. Traveling with Carlo changed
+                  everything - every detail was perfectly arranged.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 3 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">J</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Jade Gray</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We were looking for an authentic cultural experience in
+                  Ethiopia and came across Travel with Carlo. From the first
+                  conversation, they made everything so simple. The attention to
+                  detail and cultural sensitivity was remarkable.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 4 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">A</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Alex Morgan</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We've been working with Travel with Carlo for a little while
+                  now, and it's been brilliant from the start. The support has
+                  been spot on, and the experiences they've curated are simply
+                  unforgettable. Highly recommend their services!
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 5 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">S</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Sophia Williams</h4>
+                    <p class="review-date">5 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  The photography tour in the Omo Valley was absolutely
+                  incredible. The guides were knowledgeable about both
+                  photography and the local culture, and the access we had to
+                  remote villages was unparalleled. Truly a once-in-a-lifetime
+                  experience.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 6 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">M</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Michael Chen</h4>
+                    <p class="review-date">4 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  I've traveled extensively throughout Asia, but the Nepal
+                  trekking experience with Carlo was something special. The
+                  team's attention to safety, comfort, and cultural immersion
+                  made this my best travel experience to date.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 7 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">L</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Lisa Rodriguez</h4>
+                    <p class="review-date">3 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  The cultural immersion in the Omo Valley was eye-opening. We
+                  were able to interact with local tribes in a respectful and
+                  meaningful way, thanks to Carlo's connections and cultural
+                  sensitivity. This wasn't just tourism; it was genuine cultural
+                  exchange.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 8 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">D</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">David Thompson</h4>
+                    <p class="review-date">2 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  As a solo traveler, I was initially hesitant about joining a
+                  group tour, but Travel with Carlo made me feel completely
+                  comfortable. The small group size allowed for personal
+                  connections, and the itinerary was perfectly balanced between
+                  structured activities and free time.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-verified">
+          <p>Verified by TrustIndex 😊</p>
+          <div class="verified-badge">
+            <i class="fas fa-check-circle"></i> All reviews are verified
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section---->
     <section class="contact-section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Your Email">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Subject">
-                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn-primary-custom mt-3">Send Message</button>
-                    </form>
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                  />
                 </div>
-            </div>
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                  />
+                </div>
+              </div>
+              <input type="text" class="form-control" placeholder="Subject" />
+              <textarea
+                class="form-control"
+                rows="5"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn-primary-custom mt-3">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
+    <!---sliding tabs -->
+    <div class="fixed-side-buttons">
+      <div class="side-wrap">
+        <a href="#" class="side-btn request-info">
+          <i class="fas fa-info-circle"></i> <span>Request Info</span>
+        </a>
+      </div>
+
+      <div class="side-wrap">
+        <a href="tel:+1234567890" class="side-btn phone-call">
+          <i class="fas fa-phone"></i> <span>Call Us</span>
+        </a>
+      </div>
+    </div>
+
+    <!--Footer section -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
-            <div class="social-links">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4 footer-content align-top">
+            <img src="v.svg" alt="sacred himalaya Logo" class="logo" />
+            <h5 class="text-uppercase">Sacred Himalaya</h5>
+            <p>
+              Tour operator for mountaineering, hiking, and trekking, adventure
+              and solidarity travel, as well as cultural and leisure tours.
+              <span class="destinations-link">Discover the destinations</span>
+              with Sacred Himalaya.
+            </p>
+
+            <div class="mt-3">
+              <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
+            </div>
+
+            <div class="mt-2 contact-number">
+              <p>
+                Mobile and WhatsApp:
+                <a href="tel:+393492970535" class="phone-number"
+                  >+39 349.2970535</a
+                >
+              </p>
+            </div>
+
+            <div class="google-rating mt-3">
+              <div class="rating-content d-flex align-items-center">
+                <img
+                  src="icon.svg"
+                  alt="Google Icon"
+                  class="google-icon me-3"
+                />
+                <div>
+                  <div class="rating-stars">
+                    <span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span>
+                    <span class="rating-value ms-2">4.9</span>
+                  </div>
+                  <div class="top-rated fw-bold">Top Rated Service</div>
+                  <div class="verified">verified by Trustindex</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">
+                Subscribe to the Sacred Himalaya Newsletter
+              </h5>
+              <form class="newsletter-form">
+                <div class="mb-2">
+                  <input
+                    type="email"
+                    class="form-control newsletter-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyPolicy"
+                  />
+                  <label class="form-check-label" for="privacyPolicy">
+                    I accept the Privacy Policy
+                  </label>
+                </div>
+                <button class="btn signup-btn" type="submit">Signup</button>
+              </form>
+            </div>
+
+            <div class="mt-4">
+              <h5>Information</h5>
+              <ul>
+                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="#">General Travel Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">let's stay in touch</h5>
+              <div class="social-links mt-3">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
             </div>
+
+            <div class="mt-4 technical-org">
+              <h5>TECHNICAL ORGANIZATION</h5>
+              <p>
+                Modern Nomads of Viaggigiovani.it Srl<br />
+                Via Milano 17, 38122, Trento<br />
+                Website: www.viaggigiovani.it<br />
+                Registration number, VAT number and Fiscal Code:02092650221<br />
+                Sole Shareholder – Share Capital: €10,000<br />
+                PAT License no. 52 of 12/02/2009<br />
+                RC Policy 1/75910/319/100972789 UnipolSai Assicurazioni SpA
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar scroll effect
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('.navbar');
-        const scrolledClass = 'scrolled';
-        
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Always check if we've scrolled past the threshold
-            if (scrollTop > 50) {
-                navbar.classList.add(scrolledClass);
-            } else {
-                navbar.classList.remove(scrolledClass);
-            }
-            
-            lastScrollTop = scrollTop;
-        });
+      // Navbar scroll effect
+      let lastScrollTop = 0;
+      const navbar = document.querySelector(".navbar");
+      const scrolledClass = "scrolled";
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+      window.addEventListener("scroll", function () {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
 
-        // Enhanced submenu positioning
-        function adjustSubmenuPosition() {
-            // Only run on desktop
-            if (window.innerWidth < 768) return;
-            
-            document.querySelectorAll('.dropdown-submenu').forEach(submenu => {
-                const menu = submenu.querySelector('.dropdown-menu');
-                const submenuRect = menu.getBoundingClientRect();
-                const viewportWidth = window.innerWidth;
-                const parentRect = submenu.getBoundingClientRect();
-                
-                // Calculate if submenu would extend beyond viewport
-                const wouldExtendBeyond = (parentRect.right + menu.offsetWidth) > viewportWidth;
-                
-                // Check if there's enough space on the left
-                const enoughSpaceOnLeft = parentRect.left - menu.offsetWidth > 0;
-                
-                if (wouldExtendBeyond && enoughSpaceOnLeft) {
-                    submenu.classList.add('left-aligned');
-                } else {
-                    submenu.classList.remove('left-aligned');
-                }
-            });
+        // Always check if we've scrolled past the threshold
+        if (scrollTop > 50) {
+          navbar.classList.add(scrolledClass);
+        } else {
+          navbar.classList.remove(scrolledClass);
         }
 
-        // Nepal Slider Functionality
-        function initNepalSlider() {
-            const track = document.getElementById('nepalSliderTrack');
-            const cards = document.querySelectorAll('.nepal-card');
-            const prevBtn = document.getElementById('nepalSliderPrev');
-            const nextBtn = document.getElementById('nepalSliderNext');
-            
-            if (!track || !prevBtn || !nextBtn) return;
-            
-            let currentPosition = 0;
-            const cardWidth = cards[0].offsetWidth + 20; // card width + gap
-            const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
-            let maxPosition = (cards.length - visibleCards) * cardWidth;
-            
-            function updateButtons() {
-                prevBtn.disabled = currentPosition === 0;
-                nextBtn.disabled = currentPosition >= maxPosition;
-            }
-            
-            function slide(direction) {
-                if (direction === 'next' && currentPosition < maxPosition) {
-                    currentPosition += cardWidth;
-                } else if (direction === 'prev' && currentPosition > 0) {
-                    currentPosition -= cardWidth;
-                }
-                
-                track.style.transform = `translateX(-${currentPosition}px)`;
-                updateButtons();
-            }
-            
-            prevBtn.addEventListener('click', () => slide('prev'));
-            nextBtn.addEventListener('click', () => slide('next'));
-            
-            // Initialize button states
-            updateButtons();
-            
-            // Recalculate on window resize
-            window.addEventListener('resize', function() {
-                const newVisibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
-                const newMaxPosition = (cards.length - newVisibleCards) * cardWidth;
-                
-                if (currentPosition > newMaxPosition) {
-                    currentPosition = newMaxPosition;
-                    track.style.transform = `translateX(-${currentPosition}px)`;
-                }
-                
-                maxPosition = newMaxPosition;
-                updateButtons();
+        lastScrollTop = scrollTop;
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
             });
+          }
+        });
+      });
+
+      // Enhanced submenu positioning
+      function adjustSubmenuPosition() {
+        // Only run on desktop
+        if (window.innerWidth < 768) return;
+
+        document.querySelectorAll(".dropdown-submenu").forEach((submenu) => {
+          const menu = submenu.querySelector(".dropdown-menu");
+          const submenuRect = menu.getBoundingClientRect();
+          const viewportWidth = window.innerWidth;
+          const parentRect = submenu.getBoundingClientRect();
+
+          // Calculate if submenu would extend beyond viewport
+          const wouldExtendBeyond =
+            parentRect.right + menu.offsetWidth > viewportWidth;
+
+          // Check if there's enough space on the left
+          const enoughSpaceOnLeft = parentRect.left - menu.offsetWidth > 0;
+
+          if (wouldExtendBeyond && enoughSpaceOnLeft) {
+            submenu.classList.add("left-aligned");
+          } else {
+            submenu.classList.remove("left-aligned");
+          }
+        });
+      }
+
+      // Nepal Slider Functionality
+      function initNepalSlider() {
+        const track = document.getElementById("nepalSliderTrack");
+        const cards = document.querySelectorAll(".nepal-card");
+        const prevBtn = document.getElementById("nepalSliderPrev");
+        const nextBtn = document.getElementById("nepalSliderNext");
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        let currentPosition = 0;
+        const cardWidth = cards[0].offsetWidth + 20; // card width + gap
+        const visibleCards =
+          window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
+        let maxPosition = (cards.length - visibleCards) * cardWidth;
+
+        function updateButtons() {
+          prevBtn.disabled = currentPosition === 0;
+          nextBtn.disabled = currentPosition >= maxPosition;
         }
 
-        // Reviews Slider Functionality
-        function initReviewsSlider() {
-            const track = document.getElementById('reviewsSliderTrack');
-            const cards = document.querySelectorAll('.review-card');
-            const prevBtn = document.getElementById('reviewsSliderPrev');
-            const nextBtn = document.getElementById('reviewsSliderNext');
-            
-            if (!track || !prevBtn || !nextBtn) return;
-            
-            let currentPosition = 0;
-            const cardWidth = cards[0].offsetWidth + 30; // card width + gap
-            const visibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : window.innerWidth < 1200 ? 3 : 4;
-            let maxPosition = (cards.length - visibleCards) * cardWidth;
-            
-            function updateButtons() {
-                prevBtn.disabled = currentPosition === 0;
-                nextBtn.disabled = currentPosition >= maxPosition;
-            }
-            
-            function slide(direction) {
-                if (direction === 'next' && currentPosition < maxPosition) {
-                    currentPosition += cardWidth;
-                } else if (direction === 'prev' && currentPosition > 0) {
-                    currentPosition -= cardWidth;
-                }
-                
-                track.style.transform = `translateX(-${currentPosition}px)`;
-                updateButtons();
-            }
-            
-            prevBtn.addEventListener('click', () => slide('prev'));
-            nextBtn.addEventListener('click', () => slide('next'));
-            
-            // Initialize button states
-            updateButtons();
-            
-            // Recalculate on window resize
-            window.addEventListener('resize', function() {
-                const newVisibleCards = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : window.innerWidth < 1200 ? 3 : 4;
-                const newMaxPosition = (cards.length - newVisibleCards) * cardWidth;
-                
-                if (currentPosition > newMaxPosition) {
-                    currentPosition = newMaxPosition;
-                    track.style.transform = `translateX(-${currentPosition}px)`;
-                }
-                
-                maxPosition = newMaxPosition;
-                updateButtons();
-            });
+        function slide(direction) {
+          if (direction === "next" && currentPosition < maxPosition) {
+            currentPosition += cardWidth;
+          } else if (direction === "prev" && currentPosition > 0) {
+            currentPosition -= cardWidth;
+          }
+
+          track.style.transform = `translateX(-${currentPosition}px)`;
+          updateButtons();
         }
 
-        // Run on page load and window resize
-        window.addEventListener('load', function() {
-            adjustSubmenuPosition();
-            initNepalSlider();
-            initReviewsSlider();
-        });
-        window.addEventListener('resize', adjustSubmenuPosition);
-        
-        // Also run when dropdowns are hovered (in case of dynamic content)
-        document.querySelectorAll('.dropdown-submenu').forEach(submenu => {
-            submenu.addEventListener('mouseenter', adjustSubmenuPosition);
-        });
+        prevBtn.addEventListener("click", () => slide("prev"));
+        nextBtn.addEventListener("click", () => slide("next"));
 
-        // Pre-calculate positions for all dropdowns on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add a small delay to ensure all elements are rendered
-            setTimeout(adjustSubmenuPosition, 100);
-            
-            // Automatically detect number of cards and apply appropriate class
-            const tripsRow = document.querySelector('.trips-row');
-            const tripCards = document.querySelectorAll('.trip-col');
-            const cardCount = tripCards.length;
-            
-            // Remove any existing card count classes
-            tripsRow.classList.remove('one-card', 'two-cards', 'three-cards');
-            
-            // Add appropriate class based on card count
-            if (cardCount === 1) {
-                tripsRow.classList.add('one-card');
-            } else if (cardCount === 2) {
-                tripsRow.classList.add('two-cards');
-            } else if (cardCount === 3) {
-                tripsRow.classList.add('three-cards');
-            }
-            // For 4+ cards, no special class needed (uses default)
+        // Initialize button states
+        updateButtons();
+
+        // Recalculate on window resize
+        window.addEventListener("resize", function () {
+          const newVisibleCards =
+            window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3;
+          const newMaxPosition = (cards.length - newVisibleCards) * cardWidth;
+
+          if (currentPosition > newMaxPosition) {
+            currentPosition = newMaxPosition;
+            track.style.transform = `translateX(-${currentPosition}px)`;
+          }
+
+          maxPosition = newMaxPosition;
+          updateButtons();
         });
+      }
+
+      // Reviews Slider Functionality
+      function initReviewsSlider() {
+        const track = document.getElementById("reviewsSliderTrack");
+        const cards = document.querySelectorAll(".review-card");
+        const prevBtn = document.getElementById("reviewsSliderPrev");
+        const nextBtn = document.getElementById("reviewsSliderNext");
+
+        if (!track || !prevBtn || !nextBtn) return;
+
+        let currentPosition = 0;
+        const cardWidth = cards[0].offsetWidth + 30; // card width + gap
+        const visibleCards =
+          window.innerWidth < 768
+            ? 1
+            : window.innerWidth < 992
+            ? 2
+            : window.innerWidth < 1200
+            ? 3
+            : 4;
+        let maxPosition = (cards.length - visibleCards) * cardWidth;
+
+        function updateButtons() {
+          prevBtn.disabled = currentPosition === 0;
+          nextBtn.disabled = currentPosition >= maxPosition;
+        }
+
+        function slide(direction) {
+          if (direction === "next" && currentPosition < maxPosition) {
+            currentPosition += cardWidth;
+          } else if (direction === "prev" && currentPosition > 0) {
+            currentPosition -= cardWidth;
+          }
+
+          track.style.transform = `translateX(-${currentPosition}px)`;
+          updateButtons();
+        }
+
+        prevBtn.addEventListener("click", () => slide("prev"));
+        nextBtn.addEventListener("click", () => slide("next"));
+
+        // Initialize button states
+        updateButtons();
+
+        // Recalculate on window resize
+        window.addEventListener("resize", function () {
+          const newVisibleCards =
+            window.innerWidth < 768
+              ? 1
+              : window.innerWidth < 992
+              ? 2
+              : window.innerWidth < 1200
+              ? 3
+              : 4;
+          const newMaxPosition = (cards.length - newVisibleCards) * cardWidth;
+
+          if (currentPosition > newMaxPosition) {
+            currentPosition = newMaxPosition;
+            track.style.transform = `translateX(-${currentPosition}px)`;
+          }
+
+          maxPosition = newMaxPosition;
+          updateButtons();
+        });
+      }
+
+      // Run on page load and window resize
+      window.addEventListener("load", function () {
+        adjustSubmenuPosition();
+        initNepalSlider();
+        initReviewsSlider();
+      });
+      window.addEventListener("resize", adjustSubmenuPosition);
+
+      // Also run when dropdowns are hovered (in case of dynamic content)
+      document.querySelectorAll(".dropdown-submenu").forEach((submenu) => {
+        submenu.addEventListener("mouseenter", adjustSubmenuPosition);
+      });
+
+      // Pre-calculate positions for all dropdowns on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add a small delay to ensure all elements are rendered
+        setTimeout(adjustSubmenuPosition, 100);
+
+        // Automatically detect number of cards and apply appropriate class
+        const tripsRow = document.querySelector(".trips-row");
+        const tripCards = document.querySelectorAll(".trip-col");
+        const cardCount = tripCards.length;
+
+        // Remove any existing card count classes
+        tripsRow.classList.remove("one-card", "two-cards", "three-cards");
+
+        // Add appropriate class based on card count
+        if (cardCount === 1) {
+          tripsRow.classList.add("one-card");
+        } else if (cardCount === 2) {
+          tripsRow.classList.add("two-cards");
+        } else if (cardCount === 3) {
+          tripsRow.classList.add("three-cards");
+        }
+        // For 4+ cards, no special class needed (uses default)
+      });
     </script>
-</body>
+  </body>
 </html>
