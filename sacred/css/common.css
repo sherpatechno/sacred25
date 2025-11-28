@@ -1213,7 +1213,7 @@ body {
 /* MOBILE RESPONSIVE FOOTER */
 @media (max-width: 767px) {
   .footer-content {
-    padding-left: 25px;
+    padding-left: 15px;
   }
   footer {
     overflow-x: hidden;
@@ -1226,7 +1226,7 @@ body {
   }
 
   .mt-4 {
-    margin-left: 15px;
+    margin-left: 10px;
   }
 
   .footer-content .mt-4:first-child {
