@@ -208,9 +208,9 @@
             no-repeat center center;
         background-size: cover;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        padding-bottom: 15px;
       }
 
       .banner-content {
@@ -218,7 +218,7 @@
         text-align: center;
         max-width: 800px;
         margin: 0 auto;
-        padding-top: 80px;
+        padding-top: 380px;
       }
 
       .banner h1 {
@@ -266,6 +266,72 @@
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
+      /* Carousel control buttons */
+      .carousel-control-prev,
+      .carousel-control-next {
+        position: absolute;
+        bottom: 30px;
+        top: auto;
+        width: 60px;
+        height: 60px;
+        background: transparent;
+        border: none;
+        opacity: 1;
+        z-index: 20;
+        transform: translateY(0);
+      }
+
+      .carousel-control-prev {
+        right: 90px;
+        left: auto;
+      }
+
+      .carousel-control-next {
+        right: 30px;
+        left: auto;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background: none;
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+
+      .carousel-control-prev-icon::before,
+      .carousel-control-next-icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+      }
+
+      .carousel-control-prev-icon::before {
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+
+      .carousel-control-next-icon::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 0.8;
+      }
+
+      /* Mobile responsive adjustments */
+      @media (max-width: 768px) {
+        .carousel-control-prev,
+        .carousel-control-next {
+          display: none;
+        }
+      }
+      /*Carousel end */
 
       /* About Section */
       .about-section {
@@ -924,24 +990,363 @@
         border-bottom: 1px solid var(--accent-color);
       }
 
-      /* Footer */
+      /* Footer Section*/
+
+      /* FOOTER BASE */
       .footer {
-        background-color: #111;
-        color: var(--text-light);
-        padding: 40px 0;
-        text-align: center;
+        background-color: #595552;
+        color: #fff;
+        padding: 30px 0 30px;
+        font-family: "Lato", Sans-serif;
+        font-size: 16px;
+        font-weight: 400;
       }
 
+      .footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      /* FOOTER CONTENT */
+      .footer-content {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .align-top {
+        align-self: flex-start;
+      }
+
+      .footer .technical-org p {
+        font-size: 12px;
+        width: 100%;
+      }
+
+      .footer h5,
+      .footer h6 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer ul li a {
+        color: #82b8e4;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 16px;
+      }
+
+      .footer ul li a:hover {
+        color: #fff;
+      }
+
+      .footer p {
+        color: #fff;
+        font-family: "Lato", Sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        width: 90%;
+      }
+
+      .footer .mt-3 p {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+
+      /* CONTACT + PHONE */
+      .phone-number {
+        color: #82b8e4;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .phone-number:hover {
+        cursor: pointer;
+      }
+
+      .contact-number p {
+        font-size: 12px;
+        margin-bottom: 0;
+        font-family: "Lato", Sans-serif;
+        font-weight: 400;
+      }
+
+      /* RATING SECTION */
+      .rating-content {
+        color: #000;
+        font-family: "Lato", Sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .verified {
+        font-size: 11px;
+      }
+
+      .google-rating {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 10px;
+        margin-top: 20px;
+        max-width: 220px;
+      }
+
+      .google-icon {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+      }
+
+      .rating-stars {
+        margin-bottom: 5px;
+      }
+
+      .star {
+        color: #ffc107;
+        font-size: 14px;
+      }
+
+      .rating-value,
+      .top-rated {
+        font-weight: bold;
+      }
+
+      .top-rated {
+        margin-bottom: 5px;
+      }
+
+      /* SOCIAL ICONS */
       .social-links a {
-        color: var(--text-light);
         margin: 0 10px;
         font-size: 1.2rem;
-        transition: color 0.3s ease;
+        display: inline-block;
+        width: 28px;
+        height: 26px;
+        background-color: #595552;
+        border: 3px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 22px;
+
+        transition: all 0.3s;
+        color: #fff;
       }
 
       .social-links a:hover {
-        color: var(--accent-color);
+        background-color: #fff;
+        color: #595552;
+        transform: translateY(-3px);
       }
+
+      /* CONTACT INFO BOX */
+      .contact-info {
+        background-color: #444;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      /* COPYRIGHT */
+      .copyright {
+        background-color: #333;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      /* LOGO */
+      .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
+        filter: brightness(0) invert(1);
+      }
+
+      /* NEWSLETTER */
+      .newsletter-form .form-control {
+        background-color: #fff;
+        border: 1px solid #666;
+        color: #000;
+        border-radius: 4px;
+        max-width: 80%;
+        height: calc(2.25rem + 2px);
+      }
+
+      .signup-btn {
+        background-color: #82b8e4;
+        border: 1px solid #82b8e4;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: bold;
+        padding: 8px 20px;
+        height: calc(2.25rem + 2px);
+        width: 80%;
+        margin-top: 5px;
+      }
+
+      .signup-btn:hover {
+        background-color: #6da5d9;
+        border-color: #6da5d9;
+      }
+
+      .form-check-label {
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .form-check-input {
+        background-color: #fff;
+        border: 1px solid #666;
+      }
+
+      .form-check-input:checked {
+        background-color: #fff;
+        border-color: #666;
+        position: relative;
+      }
+
+      .form-check-input:checked::after {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #8b4513;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .form-check-input:focus {
+        box-shadow: none;
+      }
+
+      /* MOBILE RESPONSIVE FOOTER */
+      @media (max-width: 767px) {
+        .footer-content {
+          padding-left: 25px;
+        }
+
+        .footer .container {
+          padding-left: 15px;
+          padding-right: 10px;
+        }
+
+        .mt-4 {
+          margin-left: 15px;
+        }
+
+        .footer-content .mt-4:first-child {
+          margin-left: 0;
+        }
+      }
+
+      /*Footer Section Ends */
+
+      /* Fixed Side Buttons */
+
+      .fixed-side-buttons {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 9999;
+        width: auto;
+      }
+
+      /* Make each button independent  */
+      .fixed-side-buttons .side-btn {
+        position: relative;
+        background-color: #e63946;
+        color: #fff;
+        padding: 12px 15px;
+        width: 50px;
+        border-radius: 8px 0 0 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: width 0.3s ease, z-index 0s;
+        z-index: 1;
+      }
+
+      /* Icon inside button */
+      .fixed-side-buttons .side-btn i {
+        font-size: 20px;
+        min-width: 24px;
+        text-align: center;
+      }
+
+      /* Phone button different color */
+      .fixed-side-buttons .phone-call {
+        background-color: #2a9d8f;
+      }
+
+      .side-wrap {
+        width: 180px;
+        display: block;
+        position: relative;
+        overflow: visible;
+      }
+
+      .side-wrap .side-btn {
+        width: 50px;
+        margin-left: auto;
+        transition: width 0.5s ease;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .side-wrap:hover .side-btn,
+      .side-wrap:focus-within .side-btn {
+        width: 180px;
+        z-index: 10;
+      }
+
+      /* Hide text by default */
+      .side-wrap .side-btn span {
+        opacity: 0;
+        transition: opacity 0.2s ease 0.05s;
+        pointer-events: none;
+      }
+
+      /* Show text only when that button is hovered or focused */
+      .side-wrap:hover .side-btn span,
+      .side-wrap:focus-within .side-btn span {
+        opacity: 1;
+      }
+
+      /* Accessibility: allow keyboard users to see the labels */
+      .side-wrap .side-btn:focus,
+      .side-wrap .side-btn:focus-within {
+        outline: none;
+      }
+
+      /* Hide buttons on mobile */
+      @media (max-width: 768px) {
+        .fixed-side-buttons {
+          display: none;
+        }
+      }
+
+      /*Fixed side buttons end*/
 
       /* Responsive Adjustments */
       @media (max-width: 1199px) {
@@ -1433,13 +1838,81 @@
 
     <!-- Hero/Banner Section -->
     <section class="banner" id="home">
-      <div class="container">
-        <div class="banner-content">
-          <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
-          <p>Experience the Himalaya, One Step at a Time.</p>
-          <a href="#trips" class="btn btn-primary-custom">TRAVEL WITH US</a>
+      <div
+        id="homeCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="6000"
+      >
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div
+            class="carousel-item active banner-slide"
+            style="background-image: url('images/slide1.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
+                <p>Experience the Himalaya, One Step at a Time.</p>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2  -->
+          <div
+            class="carousel-item banner-slide"
+            style="background-image: url('images/slide2.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
+                <p>Experience the Himalaya, One Step at a Time.</p>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3  -->
+          <div
+            class="carousel-item banner-slide"
+            style="background-image: url('images/slide3.jpg')"
+          >
+            <div class="container">
+              <div class="banner-content">
+                <h1>TREKKING AND<br />ADVENTURES IN THE<br />HIMALAYA</h1>
+                <p>Experience the Himalaya, One Step at a Time.</p>
+                <a href="#trips" class="btn btn-primary-custom"
+                  >TRAVEL WITH US</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- Prev Button -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#homeCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <!-- Next Button -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#homeCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </section>
 
     <!-- About Section -->
@@ -1714,7 +2187,7 @@
                 </div>
                 <div class="trip-status-container">
                   <button class="trip-status-btn trip-status-confirmed">
-                    <i class="fas fa-check-circle"></i> Confirmed
+                    <i class="fas fa-check-circle"></i> Confirmed`
                   </button>
                   <button class="trip-status-btn trip-status-complete">
                     <i class="fas fa-ban"></i> Complete
@@ -1996,7 +2469,7 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section---->
     <section class="contact-section" id="contact">
       <div class="container">
         <h2 class="section-title">Contact Us</h2>
@@ -2034,15 +2507,131 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!---sliding tabs -->
+    <div class="fixed-side-buttons">
+      <div class="side-wrap">
+        <a href="#" class="side-btn request-info">
+          <i class="fas fa-info-circle"></i> <span>Request Info</span>
+        </a>
+      </div>
+
+      <div class="side-wrap">
+        <a href="tel:+1234567890" class="side-btn phone-call">
+          <i class="fas fa-phone"></i> <span>Call Us</span>
+        </a>
+      </div>
+    </div>
+
+    <!--Footer section -->
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4 footer-content align-top">
+            <img src="v.svg" alt="sacred himalaya Logo" class="logo" />
+            <h5 class="text-uppercase">Sacred Himalaya</h5>
+            <p>
+              Tour operator for mountaineering, hiking, and trekking, adventure
+              and solidarity travel, as well as cultural and leisure tours.
+              <span class="destinations-link">Discover the destinations</span>
+              with Sacred Himalaya.
+            </p>
+
+            <div class="mt-3">
+              <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
+            </div>
+
+            <div class="mt-2 contact-number">
+              <p>
+                Mobile and WhatsApp:
+                <a href="tel:+393492970535" class="phone-number"
+                  >+39 349.2970535</a
+                >
+              </p>
+            </div>
+
+            <div class="google-rating mt-3">
+              <div class="rating-content d-flex align-items-center">
+                <img
+                  src="icon.svg"
+                  alt="Google Icon"
+                  class="google-icon me-3"
+                />
+                <div>
+                  <div class="rating-stars">
+                    <span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span>
+                    <span class="rating-value ms-2">4.9</span>
+                  </div>
+                  <div class="top-rated fw-bold">Top Rated Service</div>
+                  <div class="verified">verified by Trustindex</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">
+                Subscribe to the Sacred Himalaya Newsletter
+              </h5>
+              <form class="newsletter-form">
+                <div class="mb-2">
+                  <input
+                    type="email"
+                    class="form-control newsletter-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyPolicy"
+                  />
+                  <label class="form-check-label" for="privacyPolicy">
+                    I accept the Privacy Policy
+                  </label>
+                </div>
+                <button class="btn signup-btn" type="submit">Signup</button>
+              </form>
+            </div>
+
+            <div class="mt-4">
+              <h5>Information</h5>
+              <ul>
+                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="#">General Travel Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">let's stay in touch</h5>
+              <div class="social-links mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="mt-4 technical-org">
+              <h5>TECHNICAL ORGANIZATION</h5>
+              <p>
+                Modern Nomads of Viaggigiovani.it Srl<br />
+                Via Milano 17, 38122, Trento<br />
+                Website: www.viaggigiovani.it<br />
+                Registration number, VAT number and Fiscal Code:02092650221<br />
+                Sole Shareholder – Share Capital: €10,000<br />
+                PAT License no. 52 of 12/02/2009<br />
+                RC Policy 1/75910/319/100972789 UnipolSai Assicurazioni SpA
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
