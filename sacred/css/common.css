@@ -316,7 +316,7 @@ body {
     display: none;
   }
   .banner-slide {
-    height: 100dvh;
+    height: 65dvh;
   }
   .banner-content {
     padding-top: 60px;
@@ -1489,8 +1489,8 @@ body {
   }
 
   .navbar {
-    width: calc(100% - 30px);
-    left: 15px;
+    width: calc(100% - 15px);
+    left: 5px;
     right: 15px;
   }
 
@@ -1595,8 +1595,8 @@ body {
 
 @media (max-width: 576px) {
   .banner h1 {
-    font-size: 250%;
-    letter-spacing: 3px;
+    font-size: 200%;
+    letter-spacing: 5px;
   }
 
   .banner p {
@@ -1616,7 +1616,7 @@ body {
   }
 
   .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-left: 10px;
   }
 
