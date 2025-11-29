@@ -319,7 +319,7 @@ body {
     height: 65dvh;
   }
   .banner-content {
-    padding-top: 60px;
+    top: 60%;
   }
 }
 /*Carousel end */
@@ -1646,11 +1646,13 @@ body {
 
 @media (max-width: 400px) {
   .banner h1 {
-    font-size: 200%;
+    font-size: 180%;
+    margin-bottom: 10px;
   }
 
   .banner p {
     font-size: 1rem;
+    margin-bottom: 10px;
   }
 
   .why-title {
