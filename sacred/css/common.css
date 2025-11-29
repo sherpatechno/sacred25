@@ -189,7 +189,13 @@ body {
   position: relative;
   height: 100vh;
   background-size: cover;
+
   background-position: center;
+}
+@media (min-width: 768px) {
+  .banner-slide {
+    min-height: 800px;
+  }
 }
 
 .banner-content {
@@ -1555,7 +1561,7 @@ body {
   }
 
   .navbar-nav {
-    text-align: center;
+    text-align: start;
     padding-top: 15px;
   }
 
@@ -1571,7 +1577,7 @@ body {
     opacity: 1;
     visibility: visible;
     transform: none;
-    text-align: center;
+    text-align: start;
     background-color: rgba(0, 0, 0, 0.8);
   }
 
