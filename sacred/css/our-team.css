@@ -75,6 +75,7 @@
   margin: 0 0 0.4rem;
   letter-spacing: 0.6px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  text-transform: uppercase;
 }
 
 .sh-card-sub {
@@ -92,6 +93,7 @@
   text-decoration: none;
   font-size: 0.95rem;
   z-index: 5;
+  text-transform: uppercase;
 }
 
 /* hover & focus: only image zoom + elevated shadow (no text animation) */
@@ -144,5 +146,75 @@
   .sh-badge {
     padding: 0.28rem 0.7rem;
     font-size: 0.78rem;
+  }
+}
+/* profile section */
+
+/* overall section */
+.profile-section {
+  background: #ffffff;
+  color: #444;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* image */
+.profile-img {
+  display: block;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* name and title */
+.profile-name {
+  font-size: 44px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #464646;
+  margin-bottom: 0;
+}
+
+.profile-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a7a7a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* intro (first highlighted paragraph) */
+.profile-intro {
+  color: #6b6b6b;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* longer paragraphs */
+.profile-paragraph {
+  color: #707070;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  .profile-img {
+    height: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+  }
+  .profile-name {
+    font-size: 32px;
+    text-align: center;
+  }
+  .profile-title {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .profile-intro,
+  .profile-paragraph {
+    text-align: left;
   }
 }
