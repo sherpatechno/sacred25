@@ -163,6 +163,7 @@
   display: block;
   height: 450px;
   object-fit: cover;
+  width: 90%;
 }
 
 /* name and title */
@@ -220,5 +221,6 @@
   .profile-intro,
   .profile-paragraph {
     text-align: left;
+    font-size: 14px;
   }
 }
