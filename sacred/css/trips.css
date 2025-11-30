@@ -1,0 +1,104 @@
+/* HERO SECTION */
+
+.hero-banner {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  /* Keep your current background-image inline or via CSS */
+}
+
+/* Overlay to dim the background */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-banner .hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px 0px 20px;
+}
+
+.hero-overlay h4 {
+  font-size: 26px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* DESCRIPTION SECTION */
+.hero-description {
+  padding: 50px 0 10px 0px;
+  background: #f7f7f7;
+}
+
+.hero-description p {
+  margin: 50px auto 30px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.trip-filter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trip-filter select {
+  width: 230px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 70vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 25px;
+  }
+  .hero-overlay h4 {
+    font-size: 20px;
+  }
+
+  .hero-description p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .trip-filter {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .trip-filter select {
+    width: 210px;
+    font-size: 14px;
+  }
+}

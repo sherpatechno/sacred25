@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel with Carlo - Omo Valley</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/trips.css" />
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">sacredhimalaya.com</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">SACRED HIMALAYA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trips">TRIP5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#upcoming">UPCOMING DEPARTURES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ABOUT US
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Company</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Our Story</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Mission & Values</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Sustainability</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Awards</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Our Team</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                    <li><a class="dropdown-item" href="#">Guides</a></li>
+                    <li><a class="dropdown-item" href="#">Partners</a></li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#"
+                        >Regional Experts</a
+                      >
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Africa Specialists</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Asia Specialists</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Europe Specialists</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                <li><a class="dropdown-item" href="#">Press</a></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SERVICES
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Travel Types</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Adventure Travel</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Cultural Immersion</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Luxury Expeditions</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Photography Tours</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Destinations</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Africa</a></li>
+                    <li><a class="dropdown-item" href="#">Asia</a></li>
+                    <li><a class="dropdown-item" href="#">South America</a></li>
+                    <li><a class="dropdown-item" href="#">Europe</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Custom Trips</a></li>
+                <li><a class="dropdown-item" href="#">Group Bookings</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACTS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero/Banner Section -->
+    <section
+      class="hero-banner"
+      style="background-image: url('./images/Gokyo-Renjo-Pass.jpg')"
+    >
+      <div class="hero-overlay">
+        <h4>EVEREST</h4>
+
+        <h1>
+          Vibrant culture, stunning peaks, and<br />
+          unforgettable experiences in the heart<br />
+          of the Himalayas.
+        </h1>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="hero-description">
+      <div class="container">
+        <p>
+          The Everest region offers trekkers spectacular mountain views, vibrant
+          Sherpa culture, and welcoming lodges, making it a dream destination
+          for adventurers of all levels. Whether you're embarking on a short
+          trek or a two-week challenge, you'll be embraced by the warmth of
+          local hospitality amidst the majestic peaks. From iconic routes to
+          more demanding treks like Gokyo Lakes and the Three Passes, the
+          Everest region caters to every type of trekker. Explore this legendary
+          area with customized trekking packages designed for all ages and
+          experience the true essence of the Himalayas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trips Section -->
+    <section class="trips-section" id="trips">
+      <div class="container">
+        <div class="trip-filter mb-4">
+          <select id="tripSort" class="form-select">
+            <option value="">Default order</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="duration-asc">Duration: Short to Long</option>
+            <option value="duration-desc">Duration: Long to Short</option>
+          </select>
+        </div>
+
+        <div class="trips-row three-cards">
+          <!-- Trip 1 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  class="trip-image"
+                  alt="Mursi Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">15 Oct - 30 Oct 2023</div>
+                  <div class="trip-price-badge">$2,850</div>
+                </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed
+                  </button>
+                  <button class="trip-status-btn trip-status-available">
+                    <i class="fas fa-users"></i> 4 Available
+                  </button>
+                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Mursi Tribe Cultural Immersion</h3>
+                <p class="trip-tagline">
+                  Experience the unique traditions of the Mursi people in
+                  Ethiopia's Omo Valley
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip 2 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                  class="trip-image"
+                  alt="Hamar Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">5 Nov - 15 Nov 2023</div>
+                  <div class="trip-price-badge">$3,150</div>
+                </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed
+                  </button>
+                  <button class="trip-status-btn trip-status-available">
+                    <i class="fas fa-users"></i> 2 Available
+                  </button>
+                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Hamar Bull Jumping Ceremony</h3>
+                <p class="trip-tagline">
+                  Witness the incredible coming-of-age ceremony of the Hamar
+                  people
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip 3 -->
+          <div class="trip-col">
+            <div class="trip-card">
+              <div class="trip-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                  class="trip-image"
+                  alt="Karo Tribe"
+                />
+                <div class="trip-badge-container">
+                  <div class="trip-date-badge">20 Dec - 30 Dec 2023</div>
+                  <div class="trip-price-badge">$2,950</div>
+                </div>
+                <div class="trip-status-container">
+                  <button class="trip-status-btn trip-status-confirmed">
+                    <i class="fas fa-check-circle"></i> Confirmed`
+                  </button>
+                  <button class="trip-status-btn trip-status-complete">
+                    <i class="fas fa-ban"></i> Complete
+                  </button>
+                </div>
+              </div>
+              <div class="trip-card-body">
+                <h3 class="trip-title">Karo River Village Experience</h3>
+                <p class="trip-tagline">
+                  Visit the Karo people famous for their elaborate body painting
+                </p>
+                <a href="#" class="trip-read-more"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---sliding tabs -->
+    <div class="fixed-side-buttons">
+      <div class="side-wrap">
+        <a href="#" class="side-btn request-info">
+          <i class="fas fa-info-circle"></i> <span>Request Info</span>
+        </a>
+      </div>
+
+      <div class="side-wrap">
+        <a href="tel:+1234567890" class="side-btn phone-call">
+          <i class="fas fa-phone"></i> <span>Call Us</span>
+        </a>
+      </div>
+    </div>
+
+    <!--Footer section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4 footer-content align-top">
+            <img src="v.svg" alt="sacred himalaya Logo" class="logo" />
+            <h5 class="text-uppercase">Sacred Himalaya</h5>
+            <p>
+              Tour operator for mountaineering, hiking, and trekking, adventure
+              and solidarity travel, as well as cultural and leisure tours.
+              <span class="destinations-link">Discover the destinations</span>
+              with Sacred Himalaya.
+            </p>
+
+            <div class="mt-3">
+              <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
+            </div>
+
+            <div class="mt-2 contact-number">
+              <p>
+                Mobile and WhatsApp:
+                <a href="tel:+393492970535" class="phone-number"
+                  >+39 349.2970535</a
+                >
+              </p>
+            </div>
+
+            <div class="google-rating mt-3">
+              <div class="rating-content d-flex align-items-center">
+                <img
+                  src="icon.svg"
+                  alt="Google Icon"
+                  class="google-icon me-3"
+                />
+                <div>
+                  <div class="rating-stars">
+                    <span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span>
+                    <span class="rating-value ms-2">4.9</span>
+                  </div>
+                  <div class="top-rated fw-bold">Top Rated Service</div>
+                  <div class="verified">verified by Trustindex</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">
+                Subscribe to the Sacred Himalaya Newsletter
+              </h5>
+              <form class="newsletter-form">
+                <div class="mb-2">
+                  <input
+                    type="email"
+                    class="form-control newsletter-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyPolicy"
+                  />
+                  <label class="form-check-label" for="privacyPolicy">
+                    I accept the Privacy Policy
+                  </label>
+                </div>
+                <button class="btn signup-btn" type="submit">Signup</button>
+              </form>
+            </div>
+
+            <div class="mt-4">
+              <h5>Information</h5>
+              <ul>
+                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="#">General Travel Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">let's stay in touch</h5>
+              <div class="social-links mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="mt-4 technical-org">
+              <h5>TECHNICAL ORGANIZATION</h5>
+              <p>
+                Modern Nomads of Viaggigiovani.it Srl<br />
+                Via Milano 17, 38122, Trento<br />
+                Website: www.viaggigiovani.it<br />
+                Registration number, VAT number and Fiscal Code:02092650221<br />
+                Sole Shareholder – Share Capital: €10,000<br />
+                PAT License no. 52 of 12/02/2009<br />
+                RC Policy 1/75910/319/100972789 UnipolSai Assicurazioni SpA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/trips.js"></script>
+  </body>
+</html>

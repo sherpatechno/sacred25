@@ -573,7 +573,7 @@ body {
 
 /* Trips Section */
 .trips-section {
-  padding: 100px 0;
+  padding: 50px 0;
   background-color: #f8f9fa;
 }
 
@@ -595,7 +595,7 @@ body {
 
 .trip-image-container {
   position: relative;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -997,10 +997,6 @@ body {
   padding: 60px 0;
   overflow: hidden;
 }
-
-/*.hero-wrapper {
-  padding: 100px 0;
-}*/
 
 /* Image on the right */
 .hero img {
@@ -1624,9 +1620,8 @@ body {
   }
 
   .trip-status-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
-    width: 45%;
   }
 
   .nepal-card {
