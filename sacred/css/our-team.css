@@ -1,0 +1,148 @@
+/* card container */
+.sh-card {
+  position: relative;
+  height: 360px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(15, 20, 25, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #000;
+}
+
+/* background image (cover) */
+.sh-card-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  filter: brightness(0.68);
+  transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.2, 1), filter 0.35s ease;
+}
+
+/* permanent dark gradient at bottom so text always readable 
+.sh-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%; 
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0.68) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}*/
+
+/* badge top-right */
+.sh-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  background: #c8232c;
+  color: #fff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* content sits above image */
+.sh-card-body {
+  position: relative;
+  z-index: 4;
+  padding: 26px;
+}
+
+/* Title, subtitle and CTA — always visible */
+.sh-card-title {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.sh-card-sub {
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  max-width: 95%;
+}
+
+/* CTA */
+.sh-cta {
+  color: #2d8fe6;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.95rem;
+  z-index: 5;
+}
+
+/* hover & focus: only image zoom + elevated shadow (no text animation) */
+.sh-card:hover,
+.sh-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(8, 15, 20, 0.22);
+  outline: none;
+}
+
+.sh-card:hover .sh-card-media,
+.sh-card:focus .sh-card-media {
+  transform: scale(1.06) translateY(-3px);
+  filter: brightness(0.62);
+}
+
+/* keyboard focus visible */
+.sh-card:focus {
+  box-shadow: 0 0 0 4px rgba(45, 143, 230, 0.1),
+    0 20px 44px rgba(8, 15, 20, 0.22);
+}
+
+/* responsive adjustments */
+@media (max-width: 992px) {
+  .sh-card {
+    height: 320px;
+  }
+}
+@media (max-width: 768px) {
+  .sh-card {
+    height: 320px;
+  }
+}
+@media (max-width: 576px) {
+  .sh-card {
+    height: 300px;
+    transform: none;
+    box-shadow: 0 12px 28px rgba(8, 15, 20, 0.18);
+  }
+
+  .sh-card-body {
+    padding: 18px;
+  }
+  .sh-card-title {
+    font-size: 1rem;
+  }
+  .sh-card-sub {
+    font-size: 0.92rem;
+  }
+  .sh-badge {
+    padding: 0.28rem 0.7rem;
+    font-size: 0.78rem;
+  }
+}

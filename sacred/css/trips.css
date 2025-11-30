@@ -29,6 +29,7 @@
   text-align: center;
   color: #fff;
   padding: 100px 20px 0px 20px;
+  width: 50%;
 }
 
 .hero-overlay h4 {
@@ -90,6 +91,9 @@
   .hero-description p {
     font-size: 16px;
     padding: 0 15px;
+  }
+  .hero-banner .hero-overlay {
+    width: 100%;
   }
 
   .trip-filter {

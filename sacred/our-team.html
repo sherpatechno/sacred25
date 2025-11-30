@@ -22,6 +22,7 @@
   </head>
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/trips.css" />
+  <link rel="stylesheet" href="css/our-team.css" />
 
   <body>
     <!-- Navigation -->
@@ -172,152 +173,125 @@
       style="background-image: url('./images/Gokyo-Renjo-Pass.jpg')"
     >
       <div class="hero-overlay">
-        <h4>EVEREST</h4>
+        <h4>Our Team</h4>
 
         <h1>
-          Vibrant culture, stunning peaks, and unforgettable experiences in the
-          heart of the Himalayas.
+          A team trusted for success in trekking, adventure, and mountaineering.
         </h1>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="hero-description">
+    <!-- TEAM CARDS -->
+    <section id="team" class="py-5">
       <div class="container">
-        <p>
-          The Everest region offers trekkers spectacular mountain views, vibrant
-          Sherpa culture, and welcoming lodges, making it a dream destination
-          for adventurers of all levels. Whether you're embarking on a short
-          trek or a two-week challenge, you'll be embraced by the warmth of
-          local hospitality amidst the majestic peaks. From iconic routes to
-          more demanding treks like Gokyo Lakes and the Three Passes, the
-          Everest region caters to every type of trekker. Explore this legendary
-          area with customized trekking packages designed for all ages and
-          experience the true essence of the Himalayas.
-        </p>
-      </div>
-    </section>
+        <h2 class="mb-4">Guides and Companions</h2>
 
-    <!-- Trips Section -->
-    <section class="trips-section" id="trips">
-      <div class="container">
-        <div class="trip-filter mb-4">
-          <select id="tripSort" class="form-select">
-            <option value="">Default order</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="duration-asc">Duration: Short to Long</option>
-            <option value="duration-desc">Duration: Long to Short</option>
-          </select>
-        </div>
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article
+              class="sh-card h-200 rounded-2 overflow-hidden"
+              tabindex="0"
+            >
+              <div
+                class="sh-card-media"
+                style="background-image: url('./images/lopsang_sherpa.jpg')"
+              ></div>
 
-        <div class="trips-row three-cards">
-          <!-- Trip 1 -->
-          <div class="trip-col">
-            <div class="trip-card">
-              <div class="trip-image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  class="trip-image"
-                  alt="Mursi Tribe"
-                />
-                <div class="trip-badge-container">
-                  <div class="trip-date-badge">15 Oct - 30 Oct 2023</div>
-                  <div class="trip-price-badge">$2,850</div>
-                </div>
-                <div class="trip-status-container">
-                  <button class="trip-status-btn trip-status-confirmed">
-                    <i class="fas fa-check-circle"></i> Confirmed
-                  </button>
-                  <button class="trip-status-btn trip-status-available">
-                    <i class="fas fa-users"></i> 4 Available
-                  </button>
-                </div>
-              </div>
-              <div class="trip-card-body">
-                <h3 class="trip-title">Mursi Tribe Cultural Immersion</h3>
-                <p class="trip-tagline">
-                  Experience the unique traditions of the Mursi people in
-                  Ethiopia's Omo Valley
+              <span class="sh-badge">MANAGING DIRECTOR</span>
+
+              <div
+                class="sh-card-body p-4 d-flex flex-column justify-content-end"
+              >
+                <h3 class="sh-card-title mb-2">LOPSANG SHERPA</h3>
+                <p class="sh-card-sub mb-3">
+                  Lopsang Sherpa is a top UIAGM/IFMGA mountain guide with
+                  extensive 8000m peak experience.
                 </p>
-                <a href="#" class="trip-read-more"
-                  >Read More <i class="fas fa-arrow-right"></i
-                ></a>
+                <a class="sh-cta" href="#"> MEET LOPSANG SHERPA</a>
               </div>
-            </div>
+            </article>
           </div>
 
-          <!-- Trip 2 -->
-          <div class="trip-col">
-            <div class="trip-card">
-              <div class="trip-image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-                  class="trip-image"
-                  alt="Hamar Tribe"
-                />
-                <div class="trip-badge-container">
-                  <div class="trip-date-badge">5 Nov - 15 Nov 2023</div>
-                  <div class="trip-price-badge">$3,150</div>
-                </div>
-                <div class="trip-status-container">
-                  <button class="trip-status-btn trip-status-confirmed">
-                    <i class="fas fa-check-circle"></i> Confirmed
-                  </button>
-                  <button class="trip-status-btn trip-status-available">
-                    <i class="fas fa-users"></i> 2 Available
-                  </button>
-                </div>
-              </div>
-              <div class="trip-card-body">
-                <h3 class="trip-title">Hamar Bull Jumping Ceremony</h3>
-                <p class="trip-tagline">
-                  Witness the incredible coming-of-age ceremony of the Hamar
-                  people
+          <!-- Card 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article
+              class="sh-card h-200 rounded-2 overflow-hidden"
+              tabindex="0"
+            >
+              <div
+                class="sh-card-media"
+                style="background-image: url('./images/Chhongba_Sherpa.jpg')"
+              ></div>
+
+              <span class="sh-badge">DIRECTOR</span>
+
+              <div
+                class="sh-card-body p-4 d-flex flex-column justify-content-end"
+              >
+                <h3 class="sh-card-title mb-2">Ang Chhongba Sherpa</h3>
+                <p class="sh-card-sub mb-3">
+                  I am a guide originally from Nepal.
                 </p>
-                <a href="#" class="trip-read-more"
-                  >Read More <i class="fas fa-arrow-right"></i
-                ></a>
+                <a class="sh-cta" href="#">MEET ANG CHHONGBA SHERPA</a>
               </div>
-            </div>
+            </article>
           </div>
 
-          <!-- Trip 3 -->
-          <div class="trip-col">
-            <div class="trip-card">
-              <div class="trip-image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-                  class="trip-image"
-                  alt="Karo Tribe"
-                />
-                <div class="trip-badge-container">
-                  <div class="trip-date-badge">20 Dec - 30 Dec 2023</div>
-                  <div class="trip-price-badge">$2,950</div>
-                </div>
-                <div class="trip-status-container">
-                  <button class="trip-status-btn trip-status-confirmed">
-                    <i class="fas fa-check-circle"></i> Confirmed`
-                  </button>
-                  <button class="trip-status-btn trip-status-complete">
-                    <i class="fas fa-ban"></i> Complete
-                  </button>
-                </div>
-              </div>
-              <div class="trip-card-body">
-                <h3 class="trip-title">Karo River Village Experience</h3>
-                <p class="trip-tagline">
-                  Visit the Karo people famous for their elaborate body painting
+          <!-- Card 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article
+              class="sh-card h-200 rounded-2 overflow-hidden"
+              tabindex="0"
+            >
+              <div
+                class="sh-card-media"
+                style="background-image: url('./images/pem_gelje_sherpa.jpg')"
+              ></div>
+
+              <span class="sh-badge">DIRECTOR</span>
+
+              <div
+                class="sh-card-body p-4 d-flex flex-column justify-content-end"
+              >
+                <h3 class="sh-card-title mb-2">PREM GELJEN SHERPA</h3>
+                <p class="sh-card-sub mb-3">
+                  Pem Geljen Sherpa grew up in the Everest region and has been
+                  working as a trekking leader.
                 </p>
-                <a href="#" class="trip-read-more"
-                  >Read More <i class="fas fa-arrow-right"></i
-                ></a>
+                <a class="sh-cta" href="#">MEET PREM GELJEN SHERPA</a>
               </div>
-            </div>
+            </article>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article
+              class="sh-card h-200 rounded-2 overflow-hidden"
+              tabindex="0"
+            >
+              <div
+                class="sh-card-media"
+                style="background-image: url('./images/arthur.jpg')"
+              ></div>
+
+              <span class="sh-badge">Uk Agent</span>
+
+              <div
+                class="sh-card-body p-4 d-flex flex-column justify-content-end"
+              >
+                <h3 class="sh-card-title mb-2">ARTHUR DAVIS</h3>
+                <p class="sh-card-sub mb-3">
+                  Arthur is a keen and enthusiastic hill walker and mountaineer.
+                </p>
+                <a class="sh-cta" href="#">MEET ARTHUR DAVIS</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- END TEAM CARDS -->
 
     <!---sliding tabs -->
     <div class="fixed-side-buttons">
@@ -451,6 +425,5 @@
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/trips.js"></script>
   </body>
 </html>
