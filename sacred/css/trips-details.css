@@ -498,7 +498,7 @@
   font-size: 0.96rem;
 }
 
-/* Page font and smoothing */
+/* ITINEARY-1 CONTENT */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -549,6 +549,108 @@ body {
 @media (min-width: 992px) {
   .accordion-body {
     padding: 2.5rem !important;
+  }
+}
+/*ITINEARY-2 CONTENT*/
+.it-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #6f6763;
+  margin-bottom: 0.6rem;
+}
+
+.it-list {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.2rem;
+  color: #6f6763;
+}
+
+.it-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
+  color: #6f6763;
+}
+
+.it-list strong {
+  color: #6f6763;
+  font-weight: 700;
+}
+
+.it-list em {
+  color: #7b858c;
+  font-style: italic;
+}
+
+.it-link {
+  color: #019fcb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.it-link:hover {
+  text-decoration: underline;
+}
+
+/*ITINERARY-3 CONTENT*/
+
+.lead-text {
+  color: #6f6763; /* body soft gray */
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-size: 0.98rem;
+}
+
+.muted-small {
+  color: #6f6763;
+  margin-bottom: 1rem;
+  font-size: 0.94rem;
+}
+
+/* Headings */
+.sched-heading {
+  color: #6f6763;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sched-subhead {
+  color: #6f6763;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+/* List */
+.sched-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  color: #6f6763;
+  margin-bottom: 0.8rem;
+}
+
+.sched-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+  font-size: 0.97rem;
+}
+
+/* Emphasize certain tokens if needed */
+.sched-list li strong {
+  color: #6f6763;
+  font-weight: 700;
+}
+
+/* Small responsive tweak: slightly larger spacing on wide screens */
+@media (min-width: 992px) {
+  .sched-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .lead-text {
+    font-size: 1rem;
   }
 }
 
@@ -664,7 +766,7 @@ body {
   align-items: flex-start;
 }
 
-/* icon box — we let the SVG draw its colored rect, center it */
+/* icon box  */
 .side-info .icon-box {
   width: 55px;
   height: 55px;
@@ -736,7 +838,7 @@ body {
   outline: none;
 }
 
-/* Blue / Red variants (outer stroke) */
+/* Blue / Red variants */
 .side-info .card-blue {
   border-color: #82b8e4;
 }
@@ -747,6 +849,38 @@ body {
 /* Ensure anchors don't inherit unexpected decoration */
 .side-info a {
   color: inherit;
+}
+
+/*Technical Data Sheet*/
+
+.tds-card {
+  border: 2px solid #b7aea7;
+  border-radius: 14px;
+  background-color: #ffffff;
+  padding: 14px 18px;
+  display: flex;
+  column-gap: 14px;
+}
+
+/* Icon box */
+.tds-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #e7ded7;
+  color: #70655f;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Text */
+.tds-text {
+  font-weight: 700;
+  color: #6b5f5a;
+  letter-spacing: 1px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /* Mobile */
