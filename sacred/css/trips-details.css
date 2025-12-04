@@ -1,0 +1,777 @@
+:root {
+  --card-border: #8b6b61;
+  --muted-text: #8e8b88;
+  --title-color: #6b4f47;
+  --accent-bg: #e8eef0;
+  --icon-square-bg: #dfe6ea;
+}
+
+#departures {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin-top: 1.5rem;
+}
+
+.departure-card {
+  border: 1.5px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(12, 16, 18, 0.04);
+  overflow: hidden;
+}
+
+.departure-card a {
+  color: #8b6b61;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.departure-card .d-flex > div:last-child {
+  min-width: 0;
+}
+
+.departure-card .card-header {
+  padding: 18px 20px 0 20px;
+}
+.muted-label {
+  color: #8b6b61;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 0.9rem;
+}
+
+.departure-card .card-body {
+  padding: 18px 20px 22px 20px;
+}
+
+.icon-square {
+  width: 56px;
+  height: 56px;
+  background: #e9eef2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.icon-square svg {
+  width: 27px;
+  height: 24px;
+  display: block;
+}
+
+.icon-square.like {
+  color: #59814b;
+}
+
+.icon-square.calendar {
+  color: #8a817c;
+}
+
+.icon-square.euro {
+  color: #847770;
+}
+
+.icon-square.icon-button {
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.icon-square.icon-button:active {
+  transform: translateY(1px);
+}
+
+.icon-square.icon-button:focus {
+  outline: 3px solid rgba(89, 129, 75, 0.18);
+  outline-offset: 2px;
+}
+
+.icon-square.icon-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.status-title {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.6px;
+  color: #85736c;
+  font-weight: 800;
+}
+
+.muted-small {
+  color: #85736c;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+.custom-small {
+  color: #85736c;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.price-link {
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  color: var(--title-color);
+  margin-bottom: 4px;
+}
+.price-amount {
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: #85736c;
+  margin-top: 4px;
+}
+
+.places-title {
+  font-weight: 800;
+  color: #85736c;
+  letter-spacing: 0.6px;
+}
+
+.badge-square {
+  background: var(--icon-square-bg);
+  position: relative;
+}
+.badge-number {
+  display: inline-block;
+  font-weight: 800;
+  color: #e26b2f;
+  font-size: 1rem;
+}
+.badge-green .badge-number {
+  color: #3f8a5c;
+}
+
+/* Spacing and responsiveness tweaks */
+@media (max-width: 767.98px) {
+  .icon-square {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .status-title {
+    font-size: 1rem;
+  }
+  .price-amount {
+    font-size: 1.2rem;
+  }
+  .mt-4 {
+    margin-left: 0px;
+  }
+}
+/*Book-Trip-Section*/
+.book-trip-wrapper {
+  margin: 20px 0;
+}
+
+.book-trip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #70b560; /* match screenshot green */
+  color: #fff;
+  padding: 14px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease;
+  height: 60px;
+  width: 100%;
+}
+
+.book-trip-btn i {
+  font-size: 20px;
+}
+
+/* Hover effect like modern UI */
+.book-trip-btn:hover {
+  background: #63a653;
+}
+
+/*characteristics*/
+.custom-characteristics {
+  background-color: #7d6e67;
+  height: 50px;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+.custom-border {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.characteristics-text {
+  color: #7d6e67;
+}
+.custom-icon {
+  color: #7d6e67 !important;
+}
+
+/* Information Request*/
+
+.info-request .form-control {
+  color: #333 !important;
+  background-color: #fff !important;
+  opacity: 1 !important;
+  z-index: 5 !important;
+  position: relative !important;
+}
+
+.info-request label,
+.info-request .privacy-link,
+.info-request .collapse-icon {
+  position: relative;
+  z-index: 6;
+}
+.info-request {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.info-request .info-header {
+  background: #7d6e67;
+  padding: 14px 18px;
+  border-radius: 10px 10px 0 0;
+}
+
+.info-request .collapse-icon {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.info-request .card-body {
+  background: white;
+  padding: 20px;
+}
+
+.small-muted {
+  color: #6f6660;
+  font-size: 0.9rem;
+}
+
+.info-request .form-control {
+  background: #f7f7f7;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 42px;
+}
+
+.info-request textarea.form-control {
+  height: auto;
+  min-height: 120px;
+}
+
+.flag-addon {
+  background: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 0;
+}
+
+.flag-img {
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.privacy-link {
+  color: #3b7a85;
+  text-decoration: underline;
+}
+
+.btn-send {
+  background: #69b050;
+  color: white;
+  padding: 12px 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-send:hover {
+  filter: brightness(0.95);
+}
+
+/* Container text style */
+.egypt-content {
+  color: #6f6763;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Main title */
+.egypt-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #6e615b;
+  letter-spacing: 0.02em;
+}
+.custom-content {
+  width: 90%;
+}
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .egypt-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .custom-content {
+    width: 100%;
+  }
+}
+
+/* Egypt-map */
+
+.egypt-map-block {
+  color: #6f6763;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  line-height: 1.7;
+}
+
+.egypt-map-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #6e615b;
+  letter-spacing: 0.02em;
+}
+
+/* List styling */
+.egypt-map-list {
+  padding-left: 1.12rem;
+  margin-bottom: 1rem;
+  color: #6f6763;
+  font-size: 1rem;
+}
+
+/* Figure / image container */
+.map-figure {
+  position: relative;
+  margin: 0;
+  padding: 0.6rem;
+  background: #efeaea;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(30, 28, 26, 0.06);
+  overflow: hidden;
+}
+
+/* Image itself */
+.map-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  object-fit: cover;
+  /* ensure sharp edges inside the soft frame */
+  background-color: #dcd6d3;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Small-screen adjustments */
+@media (max-width: 767.98px) {
+  .egypt-map-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* Itinerary*/
+
+/* base */
+.left-itinerary-accordion {
+  color: #6f6763;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  line-height: 1.7;
+}
+
+/* FLAT header bar (no rounded pill) */
+.custom-acc-item .accordion-button {
+  background: #7f6f68;
+  color: #ffffff;
+  border-radius: 0 !important;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: none;
+  border: none;
+  height: auto;
+  border-radius: 10px !important;
+}
+.accordion-item:first-of-type {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+/* Remove default radius from last accordion item */
+.accordion-item:last-of-type {
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+/* when open: still flat and slightly darker */
+.custom-acc-item .accordion-button:not(.collapsed) {
+  background: #6e615b;
+  border-radius: 10px !important;
+}
+
+/* space between items */
+.custom-acc-item + .custom-acc-item {
+  margin-top: 0.9rem;
+}
+
+.custom-acc-item,
+.accordion-item,
+.custom-acc-item .accordion-header {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/*indicator as plain text without box */
+.custom-acc-item .accordion-button::after {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  content: "+";
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 6px;
+}
+
+.custom-acc-item .accordion-button:not(.collapsed)::after {
+  content: "−";
+}
+
+.custom-acc-item .accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(110, 97, 91, 0.12);
+}
+
+.custom-acc-item .accordion-body {
+  color: #6f6763;
+  padding: 1.1rem 1.15rem;
+}
+.accordion-item {
+  border: 1px #84776f solid !important;
+  border-radius: 11px;
+}
+
+.body-title {
+  color: #6e615b;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.section-sub {
+  color: #6e615b;
+  font-weight: 700;
+  margin-top: 0.65rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+}
+
+.included-list {
+  padding-left: 1.15rem;
+  color: #6f6763;
+}
+.included-list li {
+  margin: 0.45rem 0;
+  line-height: 1.55;
+  font-size: 0.96rem;
+}
+
+/* Page font and smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Itinerary container tweaks */
+.itinerary {
+  max-width: 100%;
+}
+
+/* Each day block spacing */
+.day-block {
+  margin-bottom: 1.75rem;
+}
+
+/* Day title style */
+.day-title {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* Body paragraph style */
+.day-text {
+  margin: 0 0 0.6rem 0;
+  line-height: 1.5;
+  color: #6f6763;
+}
+
+.day-meta {
+  margin: 0.25rem 0;
+  font-weight: 600;
+  color: #6e615b;
+}
+
+.meta-label {
+  color: #6e615b;
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+/* Make accordion-body visually similar: remove rounded corners on accordion if desired */
+.accordion .accordion-body {
+  background: transparent;
+}
+
+/* Responsive tweaks */
+@media (min-width: 992px) {
+  .accordion-body {
+    padding: 2.5rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .custom-acc-item .accordion-button {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .custom-acc-item .accordion-body {
+    padding: 0.9rem;
+  }
+}
+
+/* flex-gallery.css
+   
+
+/* container */
+.flex-gallery {
+  --cols: 3;
+  --gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+/* each tile */
+.flex-gallery .gallery-cell {
+  flex: 0 0
+    calc((100% / var(--cols)) - (var(--gap) - (var(--gap) / var(--cols))));
+  box-shadow: 0 6px 18px rgba(30, 28, 26, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+  position: relative;
+}
+
+.flex-gallery .gallery-cell:last-child {
+  margin-bottom: 0;
+}
+
+.flex-gallery .gallery-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.35s ease;
+}
+
+/* hover zoom on capable devices */
+@media (hover: hover) and (pointer: fine) {
+  .flex-gallery .gallery-cell:hover img {
+    transform: scale(1.03);
+  }
+}
+
+/* fallback for browsers without aspect-ratio */
+@supports not (aspect-ratio: 1/1) {
+  .flex-gallery .gallery-cell img {
+    height: 140px; /* default fallback; you can tweak these */
+  }
+  /* increase fallback height on wide screens */
+  @media (min-width: 992px) {
+    .flex-gallery .gallery-cell img {
+      height: 180px;
+    }
+  }
+}
+
+/* Tablet / desktop: override --cols */
+@media (min-width: 768px) {
+  .flex-gallery {
+    --cols: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-gallery {
+    --cols: 3;
+  }
+}
+
+/* Small tweak so the math doesn't produce sub-pixel rounding issues */
+.flex-gallery .gallery-cell {
+  box-sizing: border-box;
+}
+
+/* Right-column info cards  */
+
+.side-info {
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* card container */
+.side-info .info-card {
+  border-radius: 8px;
+  padding: 18px;
+  background: #fff;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+/* top row (icon + title) */
+.side-info .info-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* icon box — we let the SVG draw its colored rect, center it */
+.side-info .icon-box {
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+/* SVG size inside icon box */
+.side-info .icon-box svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+/* title */
+.side-info .info-title {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  color: #7a7a7a;
+  line-height: 19px;
+  padding-top: 5px;
+  width: 75%;
+}
+
+/* paragraph text */
+.side-info .info-text {
+  color: #6f6763;
+  line-height: 1.7;
+  font-size: 0.96rem;
+  margin-left: 70px;
+}
+
+/* link inside paragraph */
+.side-info .info-text a.info-link {
+  color: #6f6763;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* button area */
+.side-info .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: left;
+  margin-left: 65px;
+}
+.side-info .btn-quote {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: #82b8e4;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.02em;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  text-decoration: none;
+}
+.side-info .btn-quote:hover,
+.side-info .btn-quote:focus {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 26px rgba(31, 45, 60, 0.12);
+  outline: none;
+}
+
+/* Blue / Red variants (outer stroke) */
+.side-info .card-blue {
+  border-color: #82b8e4;
+}
+.side-info .card-red {
+  border-color: #bc0b16;
+}
+
+/* Ensure anchors don't inherit unexpected decoration */
+.side-info a {
+  color: inherit;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .side-info .info-card {
+    padding: 14px;
+  }
+  .side-info .icon-box {
+    width: 44px;
+    height: 44px;
+  }
+  .side-info .icon-box svg {
+    width: 50px;
+    height: 50px;
+  }
+  .side-info .info-title {
+    font-size: 14px;
+    padding-top: 0px;
+  }
+  .side-info .info-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-left: 70px;
+  }
+  .side-info .btn-quote {
+    padding: 10px 20px;
+  }
+}

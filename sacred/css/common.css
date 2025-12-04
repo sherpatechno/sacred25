@@ -207,7 +207,7 @@ body {
   width: 100%;
   max-width: 800px;
   padding: 0 20px;
-  color: var(--text-light);
+  color: #f8f9fa;
   z-index: 20;
   padding-top: 60px;
 }
@@ -1042,6 +1042,32 @@ body {
   font-weight: 800;
 }
 
+.custom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #c8102e; /* red */
+  color: #ffffff; /* white text */
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid #c8102e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+.custom-btn i {
+  font-size: 14px;
+}
+
+/* Hover effect */
+.custom-btn:hover {
+  background-color: #ffffff; /* white background */
+  color: #c8102e; /* red text */
+  border-color: #c8102e;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 40px 0;
@@ -1366,6 +1392,10 @@ body {
   background-color: #2a9d8f;
 }
 
+.fixed-side-buttons .book-trip {
+  background-color: #6cac5a;
+}
+
 .side-wrap {
   width: 180px;
   display: block;
@@ -1376,7 +1406,7 @@ body {
 .side-wrap .side-btn {
   width: 50px;
   margin-left: auto;
-  transition: width 0.5s ease;
+  transition: width 0.6s ease;
   overflow: hidden;
   white-space: nowrap;
 }

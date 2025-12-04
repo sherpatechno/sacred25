@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel with Carlo - Omo Valley</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/trips.css" />
+  <link rel="stylesheet" href="css/trips-details.css" />
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">sacredhimalaya.com</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">SACRED HIMALAYA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trips">TRIP5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#upcoming">UPCOMING DEPARTURES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ABOUT US
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Company</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Our Story</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Mission & Values</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Sustainability</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Awards</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Our Team</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                    <li><a class="dropdown-item" href="#">Guides</a></li>
+                    <li><a class="dropdown-item" href="#">Partners</a></li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#"
+                        >Regional Experts</a
+                      >
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Africa Specialists</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Asia Specialists</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Europe Specialists</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                <li><a class="dropdown-item" href="#">Press</a></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SERVICES
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Travel Types</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Adventure Travel</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Cultural Immersion</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Luxury Expeditions</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Photography Tours</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Destinations</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Africa</a></li>
+                    <li><a class="dropdown-item" href="#">Asia</a></li>
+                    <li><a class="dropdown-item" href="#">South America</a></li>
+                    <li><a class="dropdown-item" href="#">Europe</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Custom Trips</a></li>
+                <li><a class="dropdown-item" href="#">Group Bookings</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACTS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero/Banner Section -->
+    <section
+      class="banner"
+      id="home"
+      style="
+        --banner-img: url('../images/photo-1506905925346-21bda4d32df4.jpg');
+      "
+    >
+      <div class="container">
+        <div class="banner-content">
+          <h1>TREKKING AND ADVENTURES IN THE HIMALAYA</h1>
+          <p>Experience the Himalaya, One Step at a Time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!---Departures-section-->
+    <section class="container py-4" id="departures">
+      <div class="row g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-lg d-flex">
+          <article class="departure-card h-100 w-100">
+            <header class="card-header">
+              <small class="muted-label">NEXT DEPARTURE:</small>
+            </header>
+
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div
+                  class="icon-square icon-button like"
+                  role="button"
+                  aria-label="Departure confirmed"
+                >
+                  <!-- Inline SVG (use fill="currentColor" so CSS controls color) -->
+                  <svg
+                    width="27"
+                    height="24"
+                    viewBox="0 0 27 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M26.1292 10.4167C26.1292 9.80771 25.8872 9.22369 25.4566 8.79309C25.026 8.36249 24.442 8.12058 23.8331 8.12058H16.5774L17.6795 2.87399C17.7025 2.75918 17.714 2.6329 17.714 2.50661C17.714 2.03591 17.5188 1.59965 17.2088 1.28968L15.9919 0.0842285L8.43772 7.63839C8.01294 8.06317 7.76037 8.6372 7.76037 9.26863V20.7491C7.76037 21.3581 8.00228 21.9421 8.43288 22.3727C8.86348 22.8033 9.4475 23.0452 10.0565 23.0452H20.3889C21.3418 23.0452 22.1569 22.4712 22.5013 21.6446L25.9684 13.5508C26.0718 13.2868 26.1292 13.0113 26.1292 12.7128V10.4167ZM0.87207 23.0452H5.46427V9.26863H0.87207V23.0452Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="status-title">DEPARTURE CONFIRMED</h4>
+                  <div class="muted-small">
+                    27/12/2025 – 05/01/2026
+                    <span class="muted-small">(10 days)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 my-3">
+                <div class="icon-square euro">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <a href="#" class="price-link">Price (tax excluded)</a>
+                  <div class="price-amount">€3390</div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="icon-square badge-square">
+                  <span class="badge-number">0</span>
+                </div>
+                <div>
+                  <div class="places-title">PLACES AVAILABLE</div>
+                  <div class="custom-small">Participants: min 10 - max 14</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-lg d-flex">
+          <article class="departure-card h-100 w-100">
+            <header class="card-header">
+              <small class="muted-label">ANOTHER DEPARTURE:</small>
+            </header>
+
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div
+                  class="icon-square icon-button like"
+                  role="button"
+                  aria-label="Departure confirmed"
+                >
+                  <svg
+                    width="27"
+                    height="24"
+                    viewBox="0 0 27 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M26.1292 10.4167C26.1292 9.80771 25.8872 9.22369 25.4566 8.79309C25.026 8.36249 24.442 8.12058 23.8331 8.12058H16.5774L17.6795 2.87399C17.7025 2.75918 17.714 2.6329 17.714 2.50661C17.714 2.03591 17.5188 1.59965 17.2088 1.28968L15.9919 0.0842285L8.43772 7.63839C8.01294 8.06317 7.76037 8.6372 7.76037 9.26863V20.7491C7.76037 21.3581 8.00228 21.9421 8.43288 22.3727C8.86348 22.8033 9.4475 23.0452 10.0565 23.0452H20.3889C21.3418 23.0452 22.1569 22.4712 22.5013 21.6446L25.9684 13.5508C26.0718 13.2868 26.1292 13.0113 26.1292 12.7128V10.4167ZM0.87207 23.0452H5.46427V9.26863H0.87207V23.0452Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="status-title">DEPARTURE CONFIRMED</h4>
+                  <div class="muted-small">
+                    January 23, 2026 – February 1, 2026
+                    <span class="muted-small">(10 days)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 my-3">
+                <div class="icon-square euro">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <a href="#" class="price-link">Price (tax excluded)</a>
+                  <div class="price-amount">€3190</div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="icon-square badge-square">
+                  <span class="badge-number">0</span>
+                </div>
+                <div>
+                  <div class="places-title">PLACES AVAILABLE</div>
+                  <div class="custom-small">Participants: min 4 - max 8</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-lg d-flex">
+          <article class="departure-card h-100 w-100">
+            <header class="card-header">
+              <small class="muted-label">ANOTHER DEPARTURE:</small>
+            </header>
+
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="icon-square calendar">
+                  <svg
+                    width="26"
+                    height="27"
+                    viewBox="0 0 26 27"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.4 23.637H2.8V9.39832H22.4M18.2 0.337341V2.92619H7V0.337341H4.2V2.92619H2.8C1.246 2.92619 0 4.07823 0 5.51504V23.637C0 24.3236 0.294999 24.9821 0.820101 25.4676C1.3452 25.9531 2.05739 26.2259 2.8 26.2259H22.4C23.1426 26.2259 23.8548 25.9531 24.3799 25.4676C24.905 24.9821 25.2 24.3236 25.2 23.637V5.51504C25.2 4.82844 24.905 4.16995 24.3799 3.68445C23.8548 3.19895 23.1426 2.92619 22.4 2.92619H21V0.337341M19.6 14.576H12.6V21.0482H19.6V14.576Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="status-title">DEPARTURE DATE</h4>
+                  <div class="muted-small">
+                    February 21, 2026 – March 2, 2026
+                    <span class="muted-small">(10 days)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 my-3">
+                <div class="icon-square euro">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <a href="#" class="price-link">Price (tax excluded)</a>
+                  <div class="price-amount">€3190</div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="icon-square badge-square badge-green">
+                  <span class="badge-number">5</span>
+                </div>
+                <div>
+                  <div class="places-title">PLACES AVAILABLE</div>
+                  <div class="custom-small">Participants: min 4 - max 8</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-lg d-flex">
+          <article class="departure-card h-100 w-100">
+            <header class="card-header">
+              <small class="muted-label">ANOTHER DEPARTURE:</small>
+            </header>
+
+            <div class="card-body">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="icon-square calendar">
+                  <svg
+                    width="26"
+                    height="27"
+                    viewBox="0 0 26 27"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.4 23.637H2.8V9.39832H22.4M18.2 0.337341V2.92619H7V0.337341H4.2V2.92619H2.8C1.246 2.92619 0 4.07823 0 5.51504V23.637C0 24.3236 0.294999 24.9821 0.820101 25.4676C1.3452 25.9531 2.05739 26.2259 2.8 26.2259H22.4C23.1426 26.2259 23.8548 25.9531 24.3799 25.4676C24.905 24.9821 25.2 24.3236 25.2 23.637V5.51504C25.2 4.82844 24.905 4.16995 24.3799 3.68445C23.8548 3.19895 23.1426 2.92619 22.4 2.92619H21V0.337341M19.6 14.576H12.6V21.0482H19.6V14.576Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="status-title">DEPARTURE DATE</h4>
+                  <div class="muted-small">
+                    February 21, 2026 – March 2, 2026
+                    <span class="muted-small">(10 days)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 my-3">
+                <div class="icon-square euro">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                    />
+                  </svg>
+                </div>
+
+                <div>
+                  <a href="#" class="price-link">Price (tax excluded)</a>
+                  <div class="price-amount">€3190</div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mt-4">
+                <div class="icon-square badge-square badge-green">
+                  <span class="badge-number">5</span>
+                </div>
+                <div>
+                  <div class="places-title">PLACES AVAILABLE</div>
+                  <div class="custom-small">Participants: min 4 - max 8</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--Left-Column Itinerary accordion -->
+    <section id="ethiopia-section" class="container py-5">
+      <div class="row g-4">
+        <div class="col-12 col-lg-8">
+          <div class="custom-content">
+            <article class="egypt-content">
+              <h1 class="egypt-title mb-4">EGYPT, PHARAOHS AND DESERT</h1>
+
+              <p>
+                <strong>Egypt</strong>, land of the Pharaohs. Cradle of
+                civilization and guardian of history's best-kept secrets. It
+                will forever be associated with the <strong>pyramids</strong>,
+                the <strong>Great Sphinx</strong>, and the
+                <strong>Valley of the Kings</strong>, but Egypt's allure extends
+                far beyond the archaeological mysteries still being uncovered
+                beneath its sands. It is a country of profound charm, intriguing
+                culture, and countless stories:
+                <strong>a trip to Egypt</strong> offers an unforgettable
+                experience that will last a lifetime.
+              </p>
+
+              <p>
+                On one side are the <strong>Pyramids of Giza</strong>, the
+                temples of <strong>Luxor</strong> and <strong>Karnak</strong>,
+                and the <strong>Valley of the Kings</strong>. You'll see
+                centuries of history unfold before you. You'll follow in the
+                footsteps of the pharaohs, from some of the world's oldest
+                pyramids to the ancient tombs of the pharaohs, along a
+                fascinating cradle of over 5,000 years of history and culture.
+              </p>
+
+              <p>
+                On the other, the oases of <strong>Bahariya</strong>,
+                <strong>Dakhla</strong>, and <strong>Farafra</strong>, with the
+                spectacular <strong>White Desert</strong>. Prepare to sleep
+                under the stars on what was once an ocean floor millions of
+                years ago, guarded by towering white sentinels, sculpted by sand
+                and wind. This is Egypt like you've never seen before.
+              </p>
+            </article>
+
+            <article class="egypt-map-block">
+              <h2 class="egypt-map-title mt-4 mb-3">
+                3 MEMORABLE MOMENTS ON A TRIP TO EGYPT
+              </h2>
+
+              <ol class="egypt-map-list mb-4">
+                <li>
+                  Count the stars in the company of the rock formations of the
+                  <strong>White Desert</strong>.
+                </li>
+                <li>
+                  Be amazed by the grandeur of the <strong>Sphinx</strong> and
+                  the <strong>Pyramids of Giza</strong>.
+                </li>
+                <li>
+                  Take a step back in time among the temples and tombs of
+                  <strong>Luxor</strong>.
+                </li>
+              </ol>
+
+              <!-- Map / Image wrapper -->
+              <figure class="map-figure">
+                <img
+                  src="./images/itinerario_uganda_alla_ricerca_dei_gorilla_nkingo.png"
+                  alt="Egypt route map"
+                  class="img-fluid map-image"
+                />
+              </figure>
+            </article>
+
+            <!-- Itinerary accordion -->
+
+            <div
+              class="accordion left-itinerary-accordion mt-4"
+              id="itineraryAccordion"
+            >
+              <!-- Accordion Item 1 -->
+              <div class="accordion-item custom-acc-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    ITINERARY | EGYPT, PHARAOHS, AND THE DESERT
+                  </button>
+                </h2>
+
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#itineraryAccordion"
+                >
+                  <div class="accordion-body p-4">
+                    <!-- Start itinerary content -->
+                    <div class="itinerary">
+                      <article class="day-block">
+                        <h3 class="day-title">Day 1: Italy / Entebbe</h3>
+                        <p class="day-text">
+                          Flight and departure day: it's the start of our
+                          gorilla tour in Uganda. We meet at the airport. Head
+                          to <strong>Entebbe</strong>.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span> on
+                          board the flight.
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 2: Entebbe – Masindi (5 hours – excluding stops)
+                        </h3>
+                        <p class="day-text">
+                          We arrive very early and head directly to the
+                          <strong>Airport Guest House</strong> (or similar).
+                          After freshening up, we meet our guides and prepare
+                          for the first leg of the trip. In five hours, we reach
+                          the <strong>Ziwa Game Reserve</strong> to spot rhinos
+                          on our first safari. We then continue to
+                          <strong>Masindi</strong>, where we stay for the night.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch, and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Masindi Hotel (or similar).
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 3: Masindi – Murchison Falls (2 hours – excluding
+                          stops)
+                        </h3>
+                        <p class="day-text">
+                          The day begins in the direction of the largest of
+                          Uganda's National Parks:
+                          <strong>Murchison Falls</strong>. We cross the
+                          <strong>Budongo</strong> forest (rich in primates and
+                          ancient mahogany trees) for a trek in search of
+                          chimpanzees before reaching the “Top of the Falls,”
+                          the summit of Murchison Falls, where the Nile narrows
+                          before making a spectacular 43m drop.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Bamboo Village (or similar).
+                        </p>
+                      </article>
+
+                      <!-- Add more day-block articles as needed, following the same structure -->
+                    </div>
+                    <!-- End itinerary content -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion Item 2 -->
+              <div class="accordion-item custom-acc-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    WHAT THE FEE INCLUDES AND DOESN'T | EGYPT, PHARAOHS, AND THE
+                    DESERT
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#itineraryAccordion"
+                >
+                  <div class="accordion-body py-4">
+                    <figure class="map-figure">
+                      <img
+                        src="./images/itinerario_uganda_alla_ricerca_dei_gorilla_nkingo.png"
+                        alt="Egypt route map"
+                        class="img-fluid map-image"
+                      />
+                    </figure>
+
+                    <div class="itinerary">
+                      <article class="day-block">
+                        <h3 class="day-title">Day 1: Italy / Entebbe</h3>
+                        <p class="day-text">
+                          Flight and departure day: it's the start of our
+                          gorilla tour in Uganda. We meet at the airport. Head
+                          to <strong>Entebbe</strong>.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span> on
+                          board the flight.
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 2: Entebbe – Masindi (5 hours – excluding stops)
+                        </h3>
+                        <p class="day-text">
+                          We arrive very early and head directly to the
+                          <strong>Airport Guest House</strong> (or similar).
+                          After freshening up, we meet our guides and prepare
+                          for the first leg of the trip. In five hours, we reach
+                          the <strong>Ziwa Game Reserve</strong> to spot rhinos
+                          on our first safari. We then continue to
+                          <strong>Masindi</strong>, where we stay for the night.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch, and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Masindi Hotel (or similar).
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 3: Masindi – Murchison Falls (2 hours – excluding
+                          stops)
+                        </h3>
+                        <p class="day-text">
+                          The day begins in the direction of the largest of
+                          Uganda's National Parks:
+                          <strong>Murchison Falls</strong>. We cross the
+                          <strong>Budongo</strong> forest (rich in primates and
+                          ancient mahogany trees) for a trek in search of
+                          chimpanzees before reaching the “Top of the Falls,”
+                          the summit of Murchison Falls, where the Nile narrows
+                          before making a spectacular 43m drop.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Bamboo Village (or similar).
+                        </p>
+                      </article>
+
+                      <!-- Add more day-block articles as needed, following the same structure -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion Item 3 -->
+              <div class="accordion-item custom-acc-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    FLIGHT SCHEDULE | EGYPT, PHARAOHS, AND THE DESERT
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#itineraryAccordion"
+                >
+                  <div class="accordion-body py-4">
+                    <div class="itinerary">
+                      <article class="day-block">
+                        <h3 class="day-title">Day 1: Italy / Entebbe</h3>
+                        <p class="day-text">
+                          Flight and departure day: it's the start of our
+                          gorilla tour in Uganda. We meet at the airport. Head
+                          to <strong>Entebbe</strong>.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span> on
+                          board the flight.
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 2: Entebbe – Masindi (5 hours – excluding stops)
+                        </h3>
+                        <p class="day-text">
+                          We arrive very early and head directly to the
+                          <strong>Airport Guest House</strong> (or similar).
+                          After freshening up, we meet our guides and prepare
+                          for the first leg of the trip. In five hours, we reach
+                          the <strong>Ziwa Game Reserve</strong> to spot rhinos
+                          on our first safari. We then continue to
+                          <strong>Masindi</strong>, where we stay for the night.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch, and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Masindi Hotel (or similar).
+                        </p>
+                      </article>
+
+                      <article class="day-block">
+                        <h3 class="day-title">
+                          Day 3: Masindi – Murchison Falls (2 hours – excluding
+                          stops)
+                        </h3>
+                        <p class="day-text">
+                          The day begins in the direction of the largest of
+                          Uganda's National Parks:
+                          <strong>Murchison Falls</strong>. We cross the
+                          <strong>Budongo</strong> forest (rich in primates and
+                          ancient mahogany trees) for a trek in search of
+                          chimpanzees before reaching the “Top of the Falls,”
+                          the summit of Murchison Falls, where the Nile narrows
+                          before making a spectacular 43m drop.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Meals included :</span>
+                          breakfast, lunch and dinner.
+                        </p>
+                        <p class="day-meta">
+                          <span class="meta-label">Overnight stay :</span>
+                          Bamboo Village (or similar).
+                        </p>
+                      </article>
+
+                      <!-- Add more day-block articles as needed, following the same structure -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flex gallery: set --cols on the container to control items-per-row -->
+            <section class="flex-gallery" style="--cols: 3; --gap: 12px">
+              <div class="gallery-cell">
+                <img
+                  src="./images/gallery-1.jpg"
+                  alt="White Desert rock"
+                  loading="lazy"
+                />
+              </div>
+              <div class="gallery-cell">
+                <img
+                  src="./images/gallery-2.jpg"
+                  alt="Desert rock"
+                  loading="lazy"
+                />
+              </div>
+              <div class="gallery-cell">
+                <img
+                  src="./images/gallery-3.jpg"
+                  alt="Cairo city"
+                  loading="lazy"
+                />
+              </div>
+              <div class="gallery-cell">
+                <img
+                  src="./images/gallery-4.jpg"
+                  alt="Desert landscape"
+                  loading="lazy"
+                />
+              </div>
+              <div class="gallery-cell">
+                <img
+                  src="./images/gallery-5.jpg"
+                  alt="Sand formations"
+                  loading="lazy"
+                />
+              </div>
+              <div class="gallery-cell">
+                <img src="./images/gallery-6.jpg" alt="Temple" loading="lazy" />
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="col-12 col-lg-4 custom-form">
+          <!--Book-trip-Section-->
+          <div class="book-trip-wrapper">
+            <a href="#" class="book-trip-btn">
+              <i class="fas fa-ticket-alt"></i>
+              <span>BOOK NOW</span>
+            </a>
+          </div>
+
+          <!---Characteristics-Section -->
+          <div class="mb-3">
+            <div class="custom-border shadow-sm border-0">
+              <div
+                class="card-header custom-characteristics text-white fw-bold"
+              >
+                CHARACTERISTICS
+              </div>
+
+              <div class="card-body ms-2 mt-2">
+                <!-- Trip Type -->
+                <div class="d-flex align-items-center mb-4">
+                  <!-- Font Awesome Icon -->
+                  <i
+                    class="fas fa-mountain fa-2x text-secondary me-3 custom-icon"
+                    style="opacity: 0.8"
+                  ></i>
+
+                  <div>
+                    <small class="d-block characteristics-text"
+                      >Type of trip:</small
+                    >
+                    <span class="fw-bold text-uppercase characteristics-text"
+                      >Naturalism</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Progress Items -->
+                <div class="mb-3">
+                  <small class="characteristics-text"
+                    >Landscapes and panoramas</small
+                  >
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar custom-characteristics"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <small class="characteristics-text"
+                    >Culture and traditions</small
+                  >
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar custom-characteristics"
+                      style="width: 75%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <small class="characteristics-text"
+                    >Spirit of adventure</small
+                  >
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar custom-characteristics"
+                      style="width: 85%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <small class="characteristics-text"
+                    >Physical commitment</small
+                  >
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar custom-characteristics"
+                      style="width: 45%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Information Request Form -->
+          <div class="info-request card mb-4 shadow-sm border-0">
+            <div class="info-header d-flex align-items-center">
+              <span class="collapse-icon me-2">—</span>
+              <h6 class="mb-0 text-white fw-bold">INFORMATION REQUEST</h6>
+            </div>
+
+            <div class="card-body">
+              <form id="infoRequestForm">
+                <!-- Name -->
+                <div class="mb-3">
+                  <label class="form-label small-muted"
+                    >Name <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    required
+                  />
+                </div>
+
+                <!-- Surname -->
+                <div class="mb-3">
+                  <label class="form-label small-muted"
+                    >Surname <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="surname"
+                    required
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label class="form-label small-muted"
+                    >Email <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <!-- Mobile Phone -->
+                <div class="mb-3">
+                  <label class="form-label small-muted"
+                    >Mobile phone <span class="text-danger">*</span></label
+                  >
+                  <input
+                    id="phone"
+                    type="tel"
+                    class="form-control"
+                    name="phone"
+                    required
+                  />
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                  <label class="form-label small-muted"
+                    >Message <span class="text-danger">*</span></label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Privacy Checkbox -->
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyCheck"
+                    required
+                  />
+                  <label
+                    for="privacyCheck"
+                    class="form-check-label small-muted"
+                  >
+                    I have read the
+                    <a href="#" class="privacy-link">privacy policy</a> and
+                    consent to the processing of my personal data
+                    <span class="text-danger">*</span>
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-send">
+                    Send Request
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!--Right column cards-->
+          <div class="side-info">
+            <!-- BLUE CARD -->
+            <div
+              class="info-card card-blue"
+              role="region"
+              aria-label="Made to measure availability"
+            >
+              <div class="info-row">
+                <div class="icon-box" aria-hidden="true">
+                  <!-- Blue SVG  -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <rect width="36" height="36" rx="5" fill="#82B8E4"></rect>
+                    <path
+                      d="M30.4559 14.2856L14.286 30.4559C14.1135 30.6284 13.9088 30.7652 13.6835 30.8586C13.4581 30.9519 13.2166 31 12.9727 31C12.7288 31 12.4873 30.9519 12.262 30.8586C12.0366 30.7652 11.8319 30.6284 11.6594 30.4559L5.54406 24.3411C5.37157 24.1687 5.23475 23.9639 5.1414 23.7386C5.04805 23.5132 5 23.2717 5 23.0277C5 22.7838 5.04805 22.5423 5.1414 22.3169C5.23475 22.0916 5.37157 21.8868 5.54406 21.7144L8.92963 18.3285C8.97275 18.2853 9.02395 18.2511 9.08031 18.2277C9.13667 18.2043 9.19708 18.1923 9.25809 18.1923C9.3191 18.1923 9.37951 18.2043 9.43587 18.2277C9.49223 18.2511 9.54344 18.2853 9.58655 18.3285L13.629 22.3713C13.7193 22.4616 13.8272 22.5322 13.946 22.5789C14.0648 22.6255 14.1919 22.6472 14.3195 22.6425C14.447 22.6378 14.5722 22.6069 14.6873 22.5516C14.8023 22.4964 14.9047 22.418 14.9882 22.3214C15.1406 22.1375 15.2182 21.9028 15.2053 21.6642C15.1923 21.4256 15.09 21.2006 14.9185 21.0342L10.8992 17.0145C10.8124 16.9275 10.7637 16.8096 10.7637 16.6866C10.7637 16.5637 10.8124 16.4458 10.8992 16.3587L12.6402 14.6176C12.6833 14.5744 12.7345 14.5402 12.7909 14.5168C12.8472 14.4935 12.9076 14.4814 12.9686 14.4814C13.0297 14.4814 13.0901 14.4935 13.1464 14.5168C13.2028 14.5402 13.254 14.5744 13.2971 14.6176L17.3396 18.6605C17.4299 18.7507 17.5378 18.8213 17.6566 18.868C17.7754 18.9146 17.9025 18.9363 18.03 18.9316C18.1576 18.9269 18.2828 18.896 18.3978 18.8408C18.5129 18.7855 18.6153 18.7071 18.6987 18.6105C18.8512 18.4266 18.9287 18.1919 18.9158 17.9533C18.9029 17.7147 18.8005 17.4897 18.6291 17.3233L14.6144 13.3002C14.5276 13.2131 14.4788 13.0952 14.4788 12.9723C14.4788 12.8493 14.5276 12.7314 14.6144 12.6443L16.3554 10.9032C16.4424 10.8164 16.5603 10.7676 16.6833 10.7676C16.8062 10.7676 16.9241 10.8164 17.0111 10.9032L21.0536 14.9461C21.1439 15.0365 21.2519 15.1073 21.3708 15.1541C21.4897 15.2008 21.617 15.2226 21.7447 15.2179C21.8723 15.2132 21.9977 15.1822 22.1128 15.1268C22.228 15.0715 22.3305 14.993 22.4139 14.8962C22.5662 14.7121 22.6436 14.4773 22.6304 14.2387C22.6173 14.0001 22.5147 13.7752 22.3431 13.6089L18.3285 9.5858C18.2416 9.49876 18.1929 9.38084 18.1929 9.25789C18.1929 9.13495 18.2416 9.01702 18.3285 8.92998L21.714 5.54411C21.8865 5.37161 22.0912 5.23477 22.3165 5.14141C22.5419 5.04805 22.7834 5 23.0273 5C23.2712 5 23.5127 5.04805 23.738 5.14141C23.9634 5.23477 24.1681 5.37161 24.3406 5.54411L30.4559 11.6589C30.6284 11.8313 30.7653 12.0361 30.8586 12.2614C30.952 12.4868 31 12.7283 31 12.9723C31 13.2162 30.952 13.4577 30.8586 13.6831C30.7653 13.9084 30.6284 14.1132 30.4559 14.2856Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h6 class="info-title">Also available made to measure</h6>
+              </div>
+
+              <div class="info-text">
+                This trip is also available as a customized package for at least
+                two participants.
+              </div>
+
+              <div class="card-actions">
+                <a id="request-quote" href="#request-quote" class="btn-quote"
+                  >Request a quote</a
+                >
+              </div>
+            </div>
+
+            <!-- RED CARD  -->
+            <div
+              class="info-card card-red"
+              role="region"
+              aria-label="Social causes"
+            >
+              <div class="info-row">
+                <div class="icon-box" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <rect width="36" height="36" rx="5" fill="#BC0B16"></rect>
+                    <path
+                      d="M18 17.8867L16.985 16.9597C13.38 13.6801 11 11.5101 11 8.86251C11 6.69248 12.694 5 14.85 5C16.068 5 17.237 5.56884 18 6.46073C18.763 5.56884 19.932 5 21.15 5C23.306 5 25 6.69248 25 8.86251C25 11.5101 22.62 13.6801 19.015 16.9597L18 17.8867Z"
+                      fill="white"
+                    ></path>
+                    <path
+                      d="M5 20.8609C5 20.6417 5.07804 20.4315 5.21696 20.2766C5.35587 20.1216 5.54428 20.0345 5.74074 20.0345H7.96295C8.15941 20.0345 8.34782 20.1216 8.48674 20.2766C8.62565 20.4315 8.70369 20.6417 8.70369 20.8609V29.9472C8.70369 30.1663 8.62565 30.3765 8.48674 30.5315C8.34782 30.6864 8.15941 30.7735 7.96295 30.7735H5.74074C5.54428 30.7735 5.35587 30.6864 5.21696 30.5315C5.07804 30.3765 5 30.1663 5 29.9472V20.8609ZM13.6703 20.1907C14.3607 19.8395 16.0481 20.1907 16.0481 20.1907L20.9563 21.4186C20.9563 21.4186 22.1837 21.8574 23.334 21.8574C24.4844 21.8574 23.7962 23.6142 23.0266 24.2273C22.2577 24.8405 21.6977 24.8074 21.6977 24.8074L17.7348 24.7537C17.7348 24.7537 21.1866 25.4561 22.4903 25.5437C23.1503 25.5883 24.2829 25.0694 25.5496 24.4901C26.7829 23.9249 28.1422 23.3027 29.3155 23.0862C31.6933 22.6482 32.077 25.0173 31.3096 25.8949C30.5429 26.7724 24.4074 30.1067 23.334 30.5454C22.4925 30.8892 21.4755 30.7752 20.3281 30.6462C20.0103 30.6107 19.6822 30.5735 19.3459 30.5454C18.0052 30.4322 16.9814 30.0686 15.9681 29.7092C14.8807 29.3241 13.8059 28.9432 12.3666 28.8779C11.8837 28.8564 10.7533 28.9234 10.1852 28.9605V21.6376C11.1674 21.2476 13.1563 20.4518 13.6703 20.1907Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h6 class="info-title">Travel with Carlo for social causes</h6>
+              </div>
+
+              <div class="info-text">
+                By participating in our trips we will donate &euro;20 on your
+                behalf to the volunteer association
+                <a
+                  id="finale-for-nepal"
+                  class="info-link"
+                  href="#finale-for-nepal"
+                  >Finale for Nepal</a
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---sliding tabs -->
+    <div class="fixed-side-buttons">
+      <div class="side-wrap">
+        <a href="#" class="side-btn book-trip">
+          <i class="fas fa-ticket-alt"></i> <span>Book the trip</span>
+        </a>
+      </div>
+
+      <div class="side-wrap">
+        <a href="#" class="side-btn request-info">
+          <i class="fas fa-info-circle"></i> <span>Request Info</span>
+        </a>
+      </div>
+
+      <div class="side-wrap">
+        <a href="tel:+1234567890" class="side-btn phone-call">
+          <i class="fas fa-phone"></i> <span>Call Us</span>
+        </a>
+      </div>
+    </div>
+
+    <!--Footer section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4 footer-content align-top">
+            <img src="v.svg" alt="sacred himalaya Logo" class="logo" />
+            <h5 class="text-uppercase">Sacred Himalaya</h5>
+            <p>
+              Tour operator for mountaineering, hiking, and trekking, adventure
+              and solidarity travel, as well as cultural and leisure tours.
+              <span class="destinations-link">Discover the destinations</span>
+              with Sacred Himalaya.
+            </p>
+
+            <div class="mt-3">
+              <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
+            </div>
+
+            <div class="mt-2 contact-number">
+              <p>
+                Mobile and WhatsApp:
+                <a href="tel:+393492970535" class="phone-number"
+                  >+39 349.2970535</a
+                >
+              </p>
+            </div>
+
+            <div class="google-rating mt-3">
+              <div class="rating-content d-flex align-items-center">
+                <img
+                  src="icon.svg"
+                  alt="Google Icon"
+                  class="google-icon me-3"
+                />
+                <div>
+                  <div class="rating-stars">
+                    <span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span>
+                    <span class="rating-value ms-2">4.9</span>
+                  </div>
+                  <div class="top-rated fw-bold">Top Rated Service</div>
+                  <div class="verified">verified by Trustindex</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">
+                Subscribe to the Sacred Himalaya Newsletter
+              </h5>
+              <form class="newsletter-form">
+                <div class="mb-2">
+                  <input
+                    type="email"
+                    class="form-control newsletter-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyPolicy"
+                  />
+                  <label class="form-check-label" for="privacyPolicy">
+                    I accept the Privacy Policy
+                  </label>
+                </div>
+                <button class="btn signup-btn" type="submit">Signup</button>
+              </form>
+            </div>
+
+            <div class="mt-4">
+              <h5>Information</h5>
+              <ul>
+                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="#">General Travel Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">let's stay in touch</h5>
+              <div class="social-links mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="mt-4 technical-org">
+              <h5>TECHNICAL ORGANIZATION</h5>
+              <p>
+                Modern Nomads of Viaggigiovani.it Srl<br />
+                Via Milano 17, 38122, Trento<br />
+                Website: www.viaggigiovani.it<br />
+                Registration number, VAT number and Fiscal Code:02092650221<br />
+                Sole Shareholder – Share Capital: €10,000<br />
+                PAT License no. 52 of 12/02/2009<br />
+                RC Policy 1/75910/319/100972789 UnipolSai Assicurazioni SpA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/common.js"></script>
+    <script src="js/trips-details.js"></script>
+  </body>
+</html>
