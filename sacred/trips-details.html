@@ -199,24 +199,17 @@
             <div class="card-body">
               <div class="d-flex align-items-start gap-3 mb-3">
                 <div
-                  class="icon-square icon-button like"
-                  role="button"
+                  class="icon-square departure"
+                  role="img"
                   aria-label="Departure confirmed"
                 >
-                  <!-- Inline SVG (use fill="currentColor" so CSS controls color) -->
-                  <svg
-                    width="27"
-                    height="24"
-                    viewBox="0 0 27 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      d="M26.1292 10.4167C26.1292 9.80771 25.8872 9.22369 25.4566 8.79309C25.026 8.36249 24.442 8.12058 23.8331 8.12058H16.5774L17.6795 2.87399C17.7025 2.75918 17.714 2.6329 17.714 2.50661C17.714 2.03591 17.5188 1.59965 17.2088 1.28968L15.9919 0.0842285L8.43772 7.63839C8.01294 8.06317 7.76037 8.6372 7.76037 9.26863V20.7491C7.76037 21.3581 8.00228 21.9421 8.43288 22.3727C8.86348 22.8033 9.4475 23.0452 10.0565 23.0452H20.3889C21.3418 23.0452 22.1569 22.4712 22.5013 21.6446L25.9684 13.5508C26.0718 13.2868 26.1292 13.0113 26.1292 12.7128V10.4167ZM0.87207 23.0452H5.46427V9.26863H0.87207V23.0452Z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                  <img
+                    src="./images/departure.png"
+                    alt="Departure icon"
+                    width="26"
+                    height="26"
+                    style="display: block"
+                  />
                 </div>
                 <div>
                   <h4 class="status-title">DEPARTURE CONFIRMED</h4>
@@ -228,23 +221,22 @@
               </div>
 
               <div class="d-flex align-items-center gap-3 my-3">
-                <div class="icon-square euro">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                    />
-                  </svg>
+                <div
+                  class="icon-square price"
+                  role="img"
+                  aria-label="price icon"
+                >
+                  <img
+                    src="./images/price.png"
+                    alt="price icon"
+                    width="26"
+                    height="26"
+                    style="display: block"
+                  />
                 </div>
                 <div>
                   <a href="#" class="price-link">Price (tax excluded)</a>
-                  <div class="price-amount">€3390</div>
+                  <div class="price-amount">$3390</div>
                 </div>
               </div>
 
@@ -271,192 +263,64 @@
             <div class="card-body">
               <div class="d-flex align-items-start gap-3 mb-3">
                 <div
-                  class="icon-square icon-button like"
-                  role="button"
-                  aria-label="Departure confirmed"
+                  class="icon-square difficulty"
+                  role="img"
+                  aria-label="Difficulty icon"
                 >
-                  <svg
-                    width="27"
-                    height="24"
-                    viewBox="0 0 27 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      d="M26.1292 10.4167C26.1292 9.80771 25.8872 9.22369 25.4566 8.79309C25.026 8.36249 24.442 8.12058 23.8331 8.12058H16.5774L17.6795 2.87399C17.7025 2.75918 17.714 2.6329 17.714 2.50661C17.714 2.03591 17.5188 1.59965 17.2088 1.28968L15.9919 0.0842285L8.43772 7.63839C8.01294 8.06317 7.76037 8.6372 7.76037 9.26863V20.7491C7.76037 21.3581 8.00228 21.9421 8.43288 22.3727C8.86348 22.8033 9.4475 23.0452 10.0565 23.0452H20.3889C21.3418 23.0452 22.1569 22.4712 22.5013 21.6446L25.9684 13.5508C26.0718 13.2868 26.1292 13.0113 26.1292 12.7128V10.4167ZM0.87207 23.0452H5.46427V9.26863H0.87207V23.0452Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="status-title">DEPARTURE CONFIRMED</h4>
-                  <div class="muted-small">
-                    January 23, 2026 – February 1, 2026
-                    <span class="muted-small">(10 days)</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3 my-3">
-                <div class="icon-square euro">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <a href="#" class="price-link">Price (tax excluded)</a>
-                  <div class="price-amount">€3190</div>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3 mt-4">
-                <div class="icon-square badge-square">
-                  <span class="badge-number">0</span>
-                </div>
-                <div>
-                  <div class="places-title">PLACES AVAILABLE</div>
-                  <div class="custom-small">Participants: min 4 - max 8</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-sm-6 col-lg d-flex">
-          <article class="departure-card h-100 w-100">
-            <header class="card-header">
-              <small class="muted-label">ANOTHER DEPARTURE:</small>
-            </header>
-
-            <div class="card-body">
-              <div class="d-flex align-items-start gap-3 mb-3">
-                <div class="icon-square calendar">
-                  <svg
+                  <img
+                    src="./images/level.png"
+                    alt="Difficulty icon"
                     width="26"
-                    height="27"
-                    viewBox="0 0 26 27"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M22.4 23.637H2.8V9.39832H22.4M18.2 0.337341V2.92619H7V0.337341H4.2V2.92619H2.8C1.246 2.92619 0 4.07823 0 5.51504V23.637C0 24.3236 0.294999 24.9821 0.820101 25.4676C1.3452 25.9531 2.05739 26.2259 2.8 26.2259H22.4C23.1426 26.2259 23.8548 25.9531 24.3799 25.4676C24.905 24.9821 25.2 24.3236 25.2 23.637V5.51504C25.2 4.82844 24.905 4.16995 24.3799 3.68445C23.8548 3.19895 23.1426 2.92619 22.4 2.92619H21V0.337341M19.6 14.576H12.6V21.0482H19.6V14.576Z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                    height="26"
+                    style="display: block"
+                  />
                 </div>
+
                 <div>
-                  <h4 class="status-title">DEPARTURE DATE</h4>
-                  <div class="muted-small">
-                    February 21, 2026 – March 2, 2026
-                    <span class="muted-small">(10 days)</span>
-                  </div>
+                  <h4 class="status-title">DIFFICULTY</h4>
+                  <div class="muted-small">Moderate</div>
                 </div>
               </div>
 
               <div class="d-flex align-items-center gap-3 my-3">
-                <div class="icon-square euro">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <a href="#" class="price-link">Price (tax excluded)</a>
-                  <div class="price-amount">€3190</div>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3 mt-4">
-                <div class="icon-square badge-square badge-green">
-                  <span class="badge-number">5</span>
-                </div>
-                <div>
-                  <div class="places-title">PLACES AVAILABLE</div>
-                  <div class="custom-small">Participants: min 4 - max 8</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-sm-6 col-lg d-flex">
-          <article class="departure-card h-100 w-100">
-            <header class="card-header">
-              <small class="muted-label">ANOTHER DEPARTURE:</small>
-            </header>
-
-            <div class="card-body">
-              <div class="d-flex align-items-start gap-3 mb-3">
-                <div class="icon-square calendar">
-                  <svg
+                <div
+                  class="icon-square accomodation"
+                  role="img"
+                  aria-label="Group size icon"
+                >
+                  <img
+                    src="./images/Accomodation.png"
+                    alt="Group icon"
                     width="26"
-                    height="27"
-                    viewBox="0 0 26 27"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M22.4 23.637H2.8V9.39832H22.4M18.2 0.337341V2.92619H7V0.337341H4.2V2.92619H2.8C1.246 2.92619 0 4.07823 0 5.51504V23.637C0 24.3236 0.294999 24.9821 0.820101 25.4676C1.3452 25.9531 2.05739 26.2259 2.8 26.2259H22.4C23.1426 26.2259 23.8548 25.9531 24.3799 25.4676C24.905 24.9821 25.2 24.3236 25.2 23.637V5.51504C25.2 4.82844 24.905 4.16995 24.3799 3.68445C23.8548 3.19895 23.1426 2.92619 22.4 2.92619H21V0.337341M19.6 14.576H12.6V21.0482H19.6V14.576Z"
-                      fill="currentColor"
-                    />
-                  </svg>
+                    height="26"
+                    style="display: block"
+                  />
                 </div>
+
                 <div>
-                  <h4 class="status-title">DEPARTURE DATE</h4>
-                  <div class="muted-small">
-                    February 21, 2026 – March 2, 2026
-                    <span class="muted-small">(10 days)</span>
-                  </div>
+                  <h4 class="status-title">Accommodation</h4>
+                  <div class="custom-small">Guesthouses / Lodges</div>
                 </div>
               </div>
 
               <div class="d-flex align-items-center gap-3 my-3">
-                <div class="icon-square euro">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 19C11.0333 19 9.28333 18.4417 7.75 17.325C6.21667 16.2083 5.13333 14.7667 4.5 13H1V11H4.05C4 10.6 3.97933 10.229 3.988 9.887C3.99667 9.545 4.01733 9.24933 4.05 9H1V7H4.5C5.13333 5.23333 6.21667 3.79167 7.75 2.675C9.28333 1.55833 11.0333 1 13 1C14.15 1 15.2377 1.20433 16.263 1.613C17.2883 2.02167 18.2007 2.584 19 3.3L17.575 4.7C16.9583 4.16667 16.2627 3.75 15.488 3.45C14.7133 3.15 13.884 3 13 3C11.5833 3 10.3167 3.371 9.2 4.113C8.08333 4.855 7.24167 5.81733 6.675 7H13V9H6.075C6.00833 9.45 5.98333 9.846 6 10.188C6.01667 10.53 6.04167 10.8007 6.075 11H13V13H6.675C7.24167 14.1833 8.08333 15.146 9.2 15.888C10.3167 16.63 11.5833 17.0007 13 17C13.8833 17 14.7127 16.85 15.488 16.55C16.2633 16.25 16.959 15.8333 17.575 15.3L19 16.7C18.2 17.4167 17.2873 17.9793 16.262 18.388C15.2367 18.7967 14.1493 19.0007 13 19Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                    />
-                  </svg>
+                <div
+                  class="icon-square season"
+                  role="img"
+                  aria-label="Season icon"
+                >
+                  <img
+                    src="./images/season.png"
+                    alt="Group icon"
+                    width="26"
+                    height="26"
+                    style="display: block"
+                  />
                 </div>
 
                 <div>
-                  <a href="#" class="price-link">Price (tax excluded)</a>
-                  <div class="price-amount">€3190</div>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3 mt-4">
-                <div class="icon-square badge-square badge-green">
-                  <span class="badge-number">5</span>
-                </div>
-                <div>
-                  <div class="places-title">PLACES AVAILABLE</div>
-                  <div class="custom-small">Participants: min 4 - max 8</div>
+                  <div class="places-title">BEST SEASON</div>
+                  <div class="custom-small">December — February</div>
                 </div>
               </div>
             </div>
@@ -1179,9 +1043,15 @@
               </div>
 
               <div class="card-actions">
-                <a id="request-quote" href="#request-quote" class="btn-quote"
-                  >Request a quote</a
+                <a
+                  id="request-quote"
+                  href="#"
+                  class="btn-quote"
+                  data-bs-toggle="modal"
+                  data-bs-target="#infoRequestModal"
                 >
+                  Request a quote
+                </a>
               </div>
             </div>
 
@@ -1261,6 +1131,125 @@
         <a href="tel:+1234567890" class="side-btn phone-call">
           <i class="fas fa-phone"></i> <span>Call Us</span>
         </a>
+      </div>
+    </div>
+
+    <!--Image preview Modal-->
+
+    <div id="lightboxOverlay" class="lightbox-overlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img id="lightboxImage" class="lightbox-image" src="" alt="Preview" />
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Request a Quote Modal -->
+    <div
+      class="modal fade"
+      id="infoRequestModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <!-- HEADER BAR -->
+          <div
+            class="info-header d-flex align-items-center p-3 position-relative"
+          >
+            <span class="collapse-icon me-2">—</span>
+            <h6 class="mb-0 text-white fw-bold">INFORMATION REQUEST</h6>
+
+            <!-- CLOSE BUTTON -->
+            <button
+              type="button"
+              class="btn-close btn-close-white position-absolute end-0 me-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- FORM -->
+          <div class="modal-body">
+            <form id="infoRequestFormModal">
+              <div class="mb-3">
+                <label class="form-label small-muted"
+                  >Name <span class="text-danger">*</span></label
+                >
+                <input type="text" class="form-control" name="name" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small-muted"
+                  >Surname <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="surname"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small-muted"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small-muted"
+                  >Mobile phone <span class="text-danger">*</span></label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="phone"
+                  id="phoneModal"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small-muted"
+                  >Message <span class="text-danger">*</span></label
+                >
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="privacyCheckModal"
+                  required
+                />
+                <label
+                  for="privacyCheckModal"
+                  class="form-check-label small-muted"
+                >
+                  I have read the
+                  <a href="#" class="privacy-link">privacy policy</a> and
+                  consent to the processing of my personal data
+                  <span class="text-danger">*</span>
+                </label>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-send">Send Request</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
