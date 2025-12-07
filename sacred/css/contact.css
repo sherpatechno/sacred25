@@ -1,0 +1,512 @@
+/* HERO SECTION */
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--banner-img) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #f8f9fa;
+  z-index: 20;
+  padding-top: 150px;
+}
+@media (min-width: 768px) {
+  .banner {
+    min-height: 800px;
+  }
+}
+
+.banner h1 {
+  font-family: "Kanit";
+  color: RGBA(255, 255, 255, 0);
+  font-size: 600%;
+  text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
+  line-height: 0.8;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: inherit;
+  letter-spacing: 10px;
+  word-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-text-stroke-width: 2px;
+  stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+  stroke: #ffffff;
+  margin-bottom: 30px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .banner h1 {
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner h1 {
+    font-size: 400%;
+    letter-spacing: 8px;
+  }
+
+  .banner p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+  .banner h1 {
+    font-size: 300%;
+    letter-spacing: 5px;
+    line-height: 30px;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner h1 {
+    font-size: 250%;
+    letter-spacing: 3px;
+  }
+
+  .banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner h1 {
+    font-size: 200%;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+/* Contact hero styles */
+
+/* Title */
+.contact-hero__title {
+  font-weight: 600;
+  color: #84776f;
+  font-family: "Kanit", Sans-serif;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+  line-height: 1.05;
+  font-size: 2.25rem;
+}
+
+/* Subtitle / paragraph */
+.contact-hero__subtitle {
+  color: #7a7a7a;
+  font-size: 1.05rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+  .contact-hero__title {
+    font-size: 3rem;
+  }
+  .contact-hero__subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-hero {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+  .contact-hero__title {
+    font-size: 1.6rem;
+  }
+  .contact-hero__subtitle {
+    font-size: 0.96rem;
+    padding: 0 8px;
+  }
+}
+
+/* Information Request*/
+
+.info-request .form-control {
+  color: #333 !important;
+  background-color: #fff !important;
+  opacity: 1 !important;
+  z-index: 5 !important;
+  position: relative !important;
+}
+
+.info-request label,
+.info-request .privacy-link,
+.info-request .collapse-icon {
+  position: relative;
+  z-index: 6;
+}
+.info-request {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.info-request .info-header {
+  background: #7d6e67;
+  padding: 14px 18px;
+  border-radius: 10px 10px 0 0;
+  height: 56px;
+}
+
+.info-request .collapse-icon {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.info-request .card-body {
+  background: white;
+  padding: 45px 40px 45px 40px;
+}
+
+.small-muted {
+  color: #6f6660;
+  font-size: 0.9rem;
+}
+
+.info-request .form-control {
+  background: #f7f7f7;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 42px;
+}
+
+.info-request textarea.form-control {
+  height: auto;
+  min-height: 120px;
+}
+
+.flag-addon {
+  background: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 0;
+}
+
+.flag-img {
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.privacy-link {
+  color: #3b7a85;
+  text-decoration: underline;
+}
+
+.btn-send {
+  background: #69b050;
+  color: white;
+  padding: 12px 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-send:hover {
+  filter: brightness(0.95);
+}
+
+.info-request .form-floating-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* floating label: hidden by default; shows only when active or filled */
+.info-request .form-floating-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* base input */
+.info-request .form-control.styled-floating {
+  padding: 18px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 74, 94, 0.1);
+  background: #fff;
+
+  -webkit-appearance: none;
+  height: auto;
+  padding-top: 22px;
+}
+
+/* textarea */
+.info-request .textarea-wrap .form-control.styled-floating {
+  min-height: 120px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* label sits over the border but starts invisible */
+.info-request .floating-label {
+  position: absolute;
+  left: 18px;
+  top: -10px;
+  font-size: 14px;
+  color: #7d6e67;
+  background: #fff;
+  padding: 0 8px;
+  font-weight: 700;
+  pointer-events: none;
+  transition: transform 0.16s ease, color 0.12s ease, top 0.12s ease,
+    opacity 0.12s;
+  z-index: 5;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0; /* HIDDEN by default */
+}
+
+/* when focused or when wrapper has .active or .filled -> show label & line and highlight border */
+.info-request .form-floating-wrap.active .floating-label,
+.info-request .form-floating-wrap.filled .floating-label,
+.info-request .form-control.styled-floating:focus + .floating-label {
+  opacity: 1;
+}
+
+.info-request .form-floating-wrap.active .floating-label::after,
+.info-request .form-floating-wrap.filled .floating-label::after,
+.info-request .form-control.styled-floating:focus + .floating-label::after {
+  opacity: 1;
+}
+
+/* border highlight */
+.info-request .form-control.styled-floating:focus,
+.info-request .form-floating-wrap.active .form-control.styled-floating,
+.info-request .form-floating-wrap.filled .form-control.styled-floating {
+  border-color: #6f6660;
+  box-shadow: 0 12px 30px rgba(130, 184, 228, 0.12);
+}
+
+/* small screens */
+@media (max-width: 575.98px) {
+  .info-request .floating-label {
+    left: 14px;
+    font-size: 13px;
+    top: -10px;
+  }
+  .info-request .form-control.styled-floating {
+    padding: 14px 12px;
+  }
+  .info-request .card-body {
+    background: white;
+    padding: 20px;
+  }
+}
+/*End of send a request form*/
+
+/*Details form*/
+/* Contact stack styles (drop into your stylesheet) */
+.contact-stack {
+  width: 100%;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #2e3a3f;
+}
+
+/* each block */
+.contact-block {
+  padding: 18px 18px 12px;
+  background: transparent;
+}
+
+/* head row */
+.contact-block .cb-head {
+  align-items: flex-start;
+}
+
+/* icon circle */
+.cb-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #dae0e9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #84776f;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 4px; /* align visually with heading */
+  box-shadow: 0 3px 8px rgba(31, 127, 179, 0.06);
+}
+
+/* title / heading */
+.cb-title {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #84776f; /* deep blue */
+  letter-spacing: 0.01em;
+}
+
+/* subtitle & small lines */
+.cb-sub {
+  color: #7a7a7a;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.cb-small {
+  color: #7a7a7a;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+/* links (email/phone) */
+.cb-link {
+  color: #82b8e4;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 4px;
+}
+.cb-link:hover {
+  text-decoration: underline;
+}
+
+/* divider line (thin) */
+.cb-divider {
+  height: 1px;
+  background: rgba(100, 110, 115, 0.12);
+  margin-top: 12px;
+}
+
+/* spacing tweaks on small viewports */
+@media (max-width: 767.98px) {
+  .cb-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  .contact-block {
+    padding: 14px 12px;
+  }
+  .cb-title {
+    font-size: 0.98rem;
+  }
+  .cb-sub,
+  .cb-small {
+    font-size: 0.92rem;
+  }
+}
+
+.contact-stack.card-style {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(17, 22, 26, 0.04);
+  border: 1px solid rgba(20, 184, 166, 0.04);
+}
+
+.contact-block .cb-head > div {
+  min-width: 0;
+}
+
+/* End of details form */
+/*  map section */
+/* Make the section span full browser width */
+.map-fullwidth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper keeps relative positioning for overlay */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Overlay bar at bottom */
+.map-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 28px;
+  background: rgba(18, 24, 30, 0.75);
+  color: #fff;
+  gap: 16px;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+}
+
+/* Label on the left */
+.map-label .map-pin {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* Directions button */
+.btn-get-directions {
+  min-width: 160px;
+  white-space: nowrap;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .map-wrapper {
+    height: 420px;
+  }
+  .map-overlay {
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px;
+  }
+  .map-label {
+    order: 1;
+  }
+  .btn-get-directions {
+    order: 2;
+    align-self: flex-end;
+  }
+}

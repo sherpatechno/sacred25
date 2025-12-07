@@ -1,3 +1,112 @@
+/* HERO SECTION */
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--banner-img) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #f8f9fa;
+  z-index: 20;
+  padding-top: 150px;
+}
+@media (min-width: 768px) {
+  .banner {
+    min-height: 800px;
+  }
+}
+
+.banner h1 {
+  font-family: "Kanit";
+  color: RGBA(255, 255, 255, 0);
+  font-size: 600%;
+  text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
+  line-height: 0.8;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: inherit;
+  letter-spacing: 10px;
+  word-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-text-stroke-width: 2px;
+  stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+  stroke: #ffffff;
+  margin-bottom: 30px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .banner h1 {
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner h1 {
+    font-size: 400%;
+    letter-spacing: 8px;
+  }
+
+  .banner p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+  .banner h1 {
+    font-size: 300%;
+    letter-spacing: 5px;
+    line-height: 30px;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner h1 {
+    font-size: 250%;
+    letter-spacing: 3px;
+  }
+
+  .banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner h1 {
+    font-size: 200%;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
 /* card container */
 .sh-card {
   position: relative;
