@@ -1,0 +1,253 @@
+/* HERO SECTION */
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--banner-img) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #f8f9fa;
+  z-index: 20;
+  padding-top: 150px;
+}
+@media (min-width: 768px) {
+  .banner {
+    min-height: 800px;
+  }
+}
+
+.banner h1 {
+  font-family: "Kanit";
+  color: RGBA(255, 255, 255, 0);
+  font-size: 600%;
+  text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
+  line-height: 0.8;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: inherit;
+  letter-spacing: 10px;
+  word-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-text-stroke-width: 2px;
+  stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+  stroke: #ffffff;
+  margin-bottom: 30px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .banner h1 {
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner h1 {
+    font-size: 400%;
+    letter-spacing: 8px;
+  }
+
+  .banner p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+  .banner h1 {
+    font-size: 300%;
+    letter-spacing: 5px;
+    line-height: 30px;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner h1 {
+    font-size: 250%;
+    letter-spacing: 3px;
+  }
+
+  .banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner h1 {
+    font-size: 200%;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+/* guide section styles */
+.guide-section {
+  position: relative;
+  background-color: #fff;
+  overflow: visible;
+}
+
+@media (min-width: 992px) {
+  .guide-section::after {
+    content: "";
+    position: absolute;
+    right: -8%;
+    top: -8%;
+    width: 60%;
+    height: 120%;
+    background: radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.02) 30%,
+      rgba(0, 0, 0, 0) 60%
+    );
+    transform: rotate(18deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* image wrapper to keep aspect and object-fit */
+.guide-photo {
+  z-index: 2;
+}
+.guide-photo img.object-cover {
+  object-fit: cover;
+  display: block;
+}
+
+/*Button*/
+.companion-btn {
+  background-color: #b80f18;
+  color: #fff;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  height: 60px;
+}
+
+/* heading & text layering */
+.guide-name {
+  color: #444;
+  z-index: 3;
+  position: relative;
+  margin-top: 30px;
+}
+.guide-bio {
+  line-height: 1.8;
+  z-index: 3;
+  position: relative;
+}
+
+/*Folow me link*/
+.follow-bar {
+  background-color: #4b4b4b;
+  padding: 12px 28px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 20px 0;
+}
+
+.follow-text {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Icon box style */
+.follow-icon-box {
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Hover effect optional */
+.follow-icon-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* spacing adjustments for small screens */
+@media (max-width: 767.98px) {
+  .guide-name {
+    font-size: 1.5rem;
+  }
+  .guide-photo {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Overall section styling */
+.info-sticky-section {
+  background: #ffffff;
+}
+
+/* Sticky image parent */
+.sticky-container {
+  position: sticky;
+  top: 100px; /* when header is fixed, adjust this value */
+}
+
+/* Image styling */
+.sticky-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Right-side long content */
+.info-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+/* MOBILE RESPONSIVE: remove sticky on small screens */
+@media (max-width: 767.98px) {
+  .sticky-container {
+    position: static !important;
+    top: auto !important;
+  }
+  .sticky-image {
+    margin-bottom: 20px;
+  }
+}

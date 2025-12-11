@@ -25,7 +25,7 @@
     />
   </head>
   <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/our-team-details.css" />
 
   <body>
     <!-- Navigation -->
@@ -179,287 +179,72 @@
     >
       <div class="container">
         <div class="banner-content">
-          <h1>Contacts</h1>
+          <h1>TEAM DETAILS</h1>
         </div>
       </div>
     </section>
 
-    <!-- Contact hero / heading -->
-    <section class="contact-hero py-5">
+    <!-- Guide Details Section -->
+    <section class="guide-section py-5">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
-            <h1 class="contact-hero__title mb-3">Have Any Questions?</h1>
-            <p class="contact-hero__subtitle mb-0">
-              Fill out the contact form below, and our team will get back to you
-              shortly to help make your travel plans seamless!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Left-Column of Contact-->
-    <section id="Contact-section" class="container py-5">
-      <div class="row justify-content-center g-5 gx-lg-5">
-        <div class="col-12 col-lg-5 custom-form">
-          <!-- Information Request Form -->
-          <div class="info-request card mb-4 shadow-sm border-0">
-            <div class="card-body">
-              <form id="infoRequestForm">
-                <!-- Full Name -->
-                <div class="mb-3 form-floating-wrap">
-                  <input
-                    id="ir_name"
-                    name="name"
-                    type="text"
-                    class="form-control styled-floating"
-                    placeholder=" "
-                    autocomplete="name"
-                    required
-                  />
-                  <label for="ir_name" class="floating-label">
-                    Name <span class="text-danger">*</span></label
-                  >
-                </div>
-
-                <!-- Surname -->
-                <div class="mb-3 form-floating-wrap">
-                  <input
-                    id="ir_surname"
-                    name="surname"
-                    type="text"
-                    class="form-control styled-floating"
-                    placeholder=" "
-                    autocomplete="family-name"
-                    required
-                  />
-                  <label for="ir_surname" class="floating-label"
-                    >Surname <span class="text-danger">*</span></label
-                  >
-                </div>
-
-                <!-- Email -->
-                <div class="mb-3 form-floating-wrap">
-                  <input
-                    id="ir_email"
-                    name="email"
-                    type="email"
-                    class="form-control styled-floating"
-                    placeholder=" "
-                    autocomplete="email"
-                    required
-                  />
-                  <label for="ir_email" class="floating-label"
-                    >Email Address <span class="text-danger">*</span></label
-                  >
-                </div>
-
-                <!-- Mobile Phone -->
-                <div class="mb-3 form-floating-wrap">
-                  <input
-                    id="ir_phone"
-                    name="phone"
-                    type="tel"
-                    class="form-control styled-floating"
-                    placeholder=" "
-                    autocomplete="tel"
-                    required
-                  />
-                  <label for="ir_phone" class="floating-label"
-                    >Mobile phone <span class="text-danger">*</span></label
-                  >
-                </div>
-
-                <!-- Message -->
-                <div class="mb-3 form-floating-wrap textarea-wrap">
-                  <textarea
-                    id="ir_message"
-                    name="message"
-                    class="form-control styled-floating"
-                    placeholder=" "
-                    rows="5"
-                    required
-                  ></textarea>
-                  <label for="ir_message" class="floating-label"
-                    >Your Message <span class="text-danger">*</span></label
-                  >
-                </div>
-
-                <!-- Privacy Checkbox -->
-                <div class="form-check mb-3">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="privacyCheck"
-                    required
-                  />
-                  <label
-                    for="privacyCheck"
-                    class="form-check-label small-muted"
-                  >
-                    I have read the
-                    <a href="#" class="privacy-link">privacy policy</a> and
-                    consent to the processing of my personal data
-                    <span class="text-danger">*</span>
-                  </label>
-                </div>
-
-                <!-- Submit button -->
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-send">
-                    Send Request
-                  </button>
-                </div>
-              </form>
+        <div class="row gx-lg-5 align-items-start">
+          <!-- Image column -->
+          <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+            <div
+              class="guide-photo ratio ratio-1x1 overflow-hidden rounded shadow-sm"
+            >
+              <!-- Replace src with your image path -->
+              <img
+                src="./images/alessandro_oddera.jpg"
+                alt="Guide photo"
+                class="w-100 h-100 object-cover"
+              />
             </div>
           </div>
-        </div>
 
-        <!-- Right column -->
-        <div class="col-12 col-lg-4">
-          <div class="custom-content card mb-4 shadow-sm border-0">
-            <!-- Bootstrap Icons CDN (remove if already included) -->
+          <!-- Content column -->
+          <div class="col-12 col-lg-7 position-relative">
+            <!-- small badge button -->
+            <a href="#" class="companion-btn">Companion</a>
 
-            <div class="contact-stack mt-3 mb-4">
-              <!-- Office Location (Nepal) -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Office Location</h5>
-                    <div class="cb-sub">Nepal</div>
-                    <div class="cb-small">Kapan, Kathmandu</div>
-                  </div>
-                </div>
-                <div class="cb-divider"></div>
-              </div>
+            <h2 class="guide-name display-8 fw-bold mb-3">ALESSANDRO ODDERA</h2>
 
-              <!-- Send An Email -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Send An Email</h5>
-                    <div class="cb-sub">Send us email at</div>
-                    <a
-                      class="cb-link"
-                      href="mailto:info@himalayanibexadventure.com"
-                      >info@himalayanibexadventure.com</a
-                    >
-                  </div>
-                </div>
-                <div class="cb-divider"></div>
-              </div>
+            <div class="guide-bio text-muted mb-4">
+              <p>
+                I was born in Savona, my name is Alino, and I have been working
+                with Viaggia con Carlo for a long time.
+              </p>
 
-              <!-- Phone (Nepal) -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Have Any Questions?</h5>
-                    <div class="cb-sub">Phone:</div>
-                    <a class="cb-link" href="tel:+9779841000919"
-                      >+977 9841000919</a
-                    >
-                  </div>
-                </div>
-                <div class="cb-divider"></div>
-              </div>
+              <p>
+                I spent my youth among the peaks of the Maritime Alps,
+                traversing them with my sealskins, before embarking on the
+                wildest and most beautiful descents in Italy. I can vouch for my
+                ability to be an off-piste skier and, in general, a true outdoor
+                expert. I lead groups mostly in Nepal and Latin America, where I
+                gained experience in Patagonia, Peru, Bolivia, and, of course,
+                Nepal.
+              </p>
 
-              <!-- Office Location (UK) -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Office Location</h5>
-                    <div class="cb-sub">UK</div>
-                    <div class="cb-small">
-                      6H Greensfield Court, Alnwick, Northumberland, NE66 2DE,
-                      UK
-                    </div>
-                  </div>
-                </div>
-                <div class="cb-divider"></div>
-              </div>
+              <p>
+                I like to approach every adventure with a positive and cheerful
+                spirit: experiencing adventure safely, even in large groups, is
+                the key to an enriching experience.
+              </p>
+            </div>
+            <div
+              class="follow-bar d-flex align-items-center justify-content-center"
+            >
+              <span class="follow-text">Follow Alessandro Oddera</span>
 
-              <!-- Phone (UK) -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Have Any Questions?</h5>
-                    <div class="cb-sub">Phone:</div>
-                    <a class="cb-link" href="tel:+447912260635"
-                      >+44 (0) 7912 260635</a
-                    >
-                  </div>
-                </div>
-                <div class="cb-divider"></div>
-              </div>
+              <a href="#" class="follow-icon-box ms-3">
+                <i class="fab fa-facebook-f"></i>
+              </a>
 
-              <!-- Hours of Operation -->
-              <div class="contact-block">
-                <div class="cb-head d-flex align-items-start gap-3">
-                  <div class="cb-icon">
-                    <i class="bi bi-clock-fill" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <h5 class="cb-title">Hours of Operation</h5>
-                    <div class="cb-small">
-                      Monday – Friday: 9:00 AM – 6:00 PM
-                    </div>
-                    <div class="cb-small">Saturday: 10:00 AM – 4:00 PM</div>
-                    <div class="cb-small">Sunday: Closed</div>
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="follow-icon-box ms-2">
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- Google Map Section -->
-
-    <!-- Full-width map section -->
-    <section class="map-fullwidth-section mb-5">
-      <div class="map-wrapper">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14126.113945194436!2d85.358788!3d27.731841000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194581718469%3A0xcbef710ceec523d3!2sHIMALAYAN%20IBEX%20ADVENTURE!5e0!3m2!1sen!2snp!4v1765079758744!5m2!1sen!2snp"
-          aria-label="Himalayan Ibex Adventure location map"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen
-        ></iframe>
-
-        <!-- overlay bar -->
-        <div
-          class="map-overlay d-flex align-items-center justify-content-between"
-        >
-          <!-- LEFT: Your location format -->
-          <div class="map-label d-flex align-items-center">
-            <i class="fas fa-map-marker-alt me-2"></i>
-            <p class="mb-0">Kapan, Kathmandu</p>
-          </div>
-
-          <!-- RIGHT: Your Get Directions link -->
-          <a
-            href="https://www.google.com/maps?q=Kapan%2C+Kathmandu"
-            target="_blank"
-            class="btn btn-primary btn-get-directions"
-          >
-            <i class="fas fa-directions"></i> Get Directions
-          </a>
         </div>
       </div>
     </section>

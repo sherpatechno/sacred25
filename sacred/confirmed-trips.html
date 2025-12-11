@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel with Carlo - Omo Valley</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/confirmed-trips.css" />
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">sacredhimalaya.com</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">SACRED HIMALAYA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#trips">TRIP5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#upcoming">UPCOMING DEPARTURES</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ABOUT US
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Company</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Our Story</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Mission & Values</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Sustainability</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Awards</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Our Team</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Leadership</a></li>
+                    <li><a class="dropdown-item" href="#">Guides</a></li>
+                    <li><a class="dropdown-item" href="#">Partners</a></li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#"
+                        >Regional Experts</a
+                      >
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Africa Specialists</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Asia Specialists</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Europe Specialists</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Testimonials</a></li>
+                <li><a class="dropdown-item" href="#">Press</a></li>
+                <li><a class="dropdown-item" href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SERVICES
+                <i class="fas fa-chevron-down chevron-down ms-1"></i>
+                <i class="fas fa-chevron-up chevron-up ms-1"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Travel Types</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Adventure Travel</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Cultural Immersion</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Luxury Expeditions</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Photography Tours</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#"
+                    >Destinations</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Africa</a></li>
+                    <li><a class="dropdown-item" href="#">Asia</a></li>
+                    <li><a class="dropdown-item" href="#">South America</a></li>
+                    <li><a class="dropdown-item" href="#">Europe</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="#">Custom Trips</a></li>
+                <li><a class="dropdown-item" href="#">Group Bookings</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACTS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero/Banner Section -->
+    <section
+      class="banner"
+      id="home"
+      style="
+        --banner-img: url('../images/photo-1506905925346-21bda4d32df4.jpg');
+      "
+    >
+      <div class="container">
+        <div class="banner-content">
+          <h1>Our Blog</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--Confirmed-Trip Section -->
+    <section>
+      <div class="container py-4">
+        <!--Card1-->
+        <div class="tour-card p-3 mb-4 custom-card">
+          <div class="row align-items-start">
+            <!-- Date Box -->
+            <div class="col-3 col-md-2 text-center date-box d-none d-md-block">
+              <h2 class="mb-0 fw-bold custom-date">20</h2>
+              <span class="text-uppercase small text-secondary">DECEMBER</span>
+            </div>
+
+            <!-- Middle Content -->
+            <div class="col-12 col-md-7">
+              <!-- Row inside the middle section -->
+              <div class="row">
+                <!-- LEFT SIDE: Title + Duration -->
+                <div
+                  class="col-12 col-lg-6 d-flex flex-column align-items-lg-star"
+                >
+                  <h5 class="custom-heading mb-1">
+                    Upper Mustang Trek with Helicopter Return – 11 Days
+                  </h5>
+                  <div class="small text-secondary mb-1">11 Days</div>
+                </div>
+
+                <!-- RIGHT SIDE: Calendar + Badge -->
+                <div
+                  class="col-12 col-lg-6 mt-3 mt-md-0 d-flex flex-column align-items-lg-start custom-right"
+                >
+                  <span class="custom-badge mb-2">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    December 20, 2025 → December 31, 2025
+                  </span>
+
+                  <span class="badge custom-text border rounded-pill px-3 py-2">
+                    <i class="fas fa-hiking me-1"></i> Trekking
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price + Button -->
+            <div class="col-12 col-md-3 mt-3 mt-md-0">
+              <div class="d-flex justify-content-end align-items-end gap-3">
+                <!-- FROM + PRICE -->
+                <div class="text-start">
+                  <div
+                    class="text-uppercase small text-secondary d-flex justify-content-end align-items-end"
+                  >
+                    From
+                  </div>
+                  <h5 class="fw-bold mb-0 custom-price">$ 4900</h5>
+                </div>
+
+                <!-- BUTTON -->
+                <a
+                  href="#"
+                  class="btn btn-primary px-4 py-2 rounded-3 custom-button"
+                >
+                  See tour
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Card2-->
+        <div class="tour-card p-3 mb-4 custom-card">
+          <div class="row align-items-start">
+            <!-- Date Box -->
+            <div class="col-3 col-md-2 text-center date-box d-none d-md-block">
+              <h2 class="mb-0 fw-bold custom-date">20</h2>
+              <span class="text-uppercase small text-secondary">DECEMBER</span>
+            </div>
+
+            <!-- Middle Content -->
+            <div class="col-12 col-md-7">
+              <div class="row">
+                <!-- LEFT SIDE: Title + Duration -->
+                <div
+                  class="col-12 col-lg-6 d-flex flex-column align-items-lg-star"
+                >
+                  <h5 class="custom-heading mb-1">
+                    Upper Mustang Trek with Helicopter Return – 11 Days
+                  </h5>
+                  <div class="small text-secondary mb-1">11 Days</div>
+                </div>
+
+                <!-- RIGHT SIDE: Calendar + Badge -->
+                <div
+                  class="col-12 col-lg-6 mt-3 mt-md-0 d-flex flex-column align-items-lg-start custom-right"
+                >
+                  <span class="custom-badge mb-2">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    December 20, 2025 → December 31, 2025
+                  </span>
+
+                  <span class="badge custom-text border rounded-pill px-3 py-2">
+                    <i class="fas fa-hiking me-1"></i> Trekking
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price + Button -->
+            <div class="col-12 col-md-3 mt-3 mt-md-0">
+              <div class="d-flex justify-content-end align-items-end gap-3">
+                <!-- FROM + PRICE -->
+                <div class="text-start">
+                  <div
+                    class="text-uppercase small text-secondary d-flex justify-content-end align-items-end"
+                  >
+                    From
+                  </div>
+                  <h5
+                    class="fw-bold mb-0 d-flex flex-row gap-2 align-items-center custom-price"
+                  >
+                    $4500
+                    <span
+                      class="text-danger custom-decoration old-price custom-price"
+                    >
+                      $4900
+                    </span>
+                  </h5>
+                </div>
+
+                <!-- BUTTON -->
+                <a
+                  href="#"
+                  class="btn btn-primary px-4 py-2 rounded-3 custom-button"
+                >
+                  See tour
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Card3-->
+        <div class="tour-card p-3 mb-4 custom-card">
+          <div class="row align-items-start">
+            <!-- Date Box -->
+            <div class="col-3 col-md-2 text-center date-box d-none d-md-block">
+              <h2 class="mb-0 fw-bold custom-date">20</h2>
+              <span class="text-uppercase small text-secondary">DECEMBER</span>
+            </div>
+
+            <!-- Middle Content -->
+            <div class="col-12 col-md-7">
+              <!-- Row inside the middle section -->
+              <div class="row">
+                <!-- LEFT SIDE: Title + Duration -->
+                <div
+                  class="col-12 col-lg-6 d-flex flex-column align-items-lg-star"
+                >
+                  <h5 class="custom-heading mb-1">
+                    Upper Mustang Trek with Helicopter Return – 11 Days
+                  </h5>
+                  <div class="small text-secondary mb-1">11 Days</div>
+                </div>
+
+                <!-- RIGHT SIDE: Calendar + Badge -->
+                <div
+                  class="col-12 col-lg-6 mt-3 mt-md-0 d-flex flex-column align-items-lg-start custom-right"
+                >
+                  <span class="custom-badge mb-2">
+                    <i class="far fa-calendar-alt me-1"></i>
+                    December 20, 2025 → December 31, 2025
+                  </span>
+
+                  <span class="badge custom-text border rounded-pill px-3 py-2">
+                    <i class="fas fa-hiking me-1"></i> Trekking
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price + Button -->
+            <div class="col-12 col-md-3 mt-3 mt-md-0">
+              <div class="d-flex justify-content-end align-items-end gap-3">
+                <!-- FROM + PRICE -->
+                <div class="text-start">
+                  <div
+                    class="text-uppercase small text-secondary d-flex justify-content-end align-items-end"
+                  >
+                    From
+                  </div>
+                  <h5
+                    class="fw-bold mb-0 d-flex flex-row gap-2 align-items-center custom-price"
+                  >
+                    $3500
+                    <span
+                      class="text-danger custom-decoration old-price custom-price"
+                    >
+                      $3600
+                    </span>
+                  </h5>
+                </div>
+
+                <!-- BUTTON -->
+                <a
+                  href="#"
+                  class="btn btn-primary px-4 py-2 rounded-3 custom-button"
+                >
+                  See tour
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="reviews-header">
+          <h2 class="reviews-title">
+            See What Our Customers Say About Working With Us
+          </h2>
+          <p class="reviews-subtitle">
+            See what our clients say about the results we've delivered and the
+            impact we've made.
+          </p>
+        </div>
+
+        <div class="reviews-slider-container">
+          <div class="reviews-slider-header">
+            <h3 class="reviews-slider-title">Customer Reviews</h3>
+            <div class="reviews-slider-controls">
+              <button class="reviews-slider-btn" id="reviewsSliderPrev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="reviews-slider-btn" id="reviewsSliderNext">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="reviews-slider">
+            <div class="reviews-slider-track" id="reviewsSliderTrack">
+              <!-- Review Card 1 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">R</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Ross Newman</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  As a local business owner, I'm constantly bombarded by
+                  marketing agencies. Cold emails, DMs, big promises. It's
+                  refreshing to work with a company that actually delivers on
+                  their promises. The Omo Valley tour was beyond my
+                  expectations.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 2 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">E</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Emily Bex</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We'd tried planning our own trip to Nepal but didn't really
+                  know what we were doing. We ended up wasting time and missing
+                  out on incredible experiences. Traveling with Carlo changed
+                  everything - every detail was perfectly arranged.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 3 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">J</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Jade Gray</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We were looking for an authentic cultural experience in
+                  Ethiopia and came across Travel with Carlo. From the first
+                  conversation, they made everything so simple. The attention to
+                  detail and cultural sensitivity was remarkable.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 4 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">A</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Alex Morgan</h4>
+                    <p class="review-date">7 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  We've been working with Travel with Carlo for a little while
+                  now, and it's been brilliant from the start. The support has
+                  been spot on, and the experiences they've curated are simply
+                  unforgettable. Highly recommend their services!
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 5 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">S</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Sophia Williams</h4>
+                    <p class="review-date">5 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  The photography tour in the Omo Valley was absolutely
+                  incredible. The guides were knowledgeable about both
+                  photography and the local culture, and the access we had to
+                  remote villages was unparalleled. Truly a once-in-a-lifetime
+                  experience.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 6 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">M</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Michael Chen</h4>
+                    <p class="review-date">4 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  I've traveled extensively throughout Asia, but the Nepal
+                  trekking experience with Carlo was something special. The
+                  team's attention to safety, comfort, and cultural immersion
+                  made this my best travel experience to date.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 7 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">L</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">Lisa Rodriguez</h4>
+                    <p class="review-date">3 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  The cultural immersion in the Omo Valley was eye-opening. We
+                  were able to interact with local tribes in a respectful and
+                  meaningful way, thanks to Carlo's connections and cultural
+                  sensitivity. This wasn't just tourism; it was genuine cultural
+                  exchange.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+
+              <!-- Review Card 8 -->
+              <div class="review-card">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">D</div>
+                  <div class="reviewer-details">
+                    <h4 class="reviewer-name">David Thompson</h4>
+                    <p class="review-date">2 months ago</p>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                <p class="review-text">
+                  As a solo traveler, I was initially hesitant about joining a
+                  group tour, but Travel with Carlo made me feel completely
+                  comfortable. The small group size allowed for personal
+                  connections, and the itinerary was perfectly balanced between
+                  structured activities and free time.
+                </p>
+                <a href="#" class="review-read-more">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-verified">
+          <p>Verified by TrustIndex 😊</p>
+          <div class="verified-badge">
+            <i class="fas fa-check-circle"></i> All reviews are verified
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4 footer-content align-top">
+            <img src="v.svg" alt="sacred himalaya Logo" class="logo" />
+            <h5 class="text-uppercase">Sacred Himalaya</h5>
+            <p>
+              Tour operator for mountaineering, hiking, and trekking, adventure
+              and solidarity travel, as well as cultural and leisure tours.
+              <span class="destinations-link">Discover the destinations</span>
+              with Sacred Himalaya.
+            </p>
+
+            <div class="mt-3">
+              <p>&copy; 2025 sacredhimalaya.com. All rights reserved.</p>
+            </div>
+
+            <div class="mt-2 contact-number">
+              <p>
+                Mobile and WhatsApp:
+                <a href="tel:+393492970535" class="phone-number"
+                  >+39 349.2970535</a
+                >
+              </p>
+            </div>
+
+            <div class="google-rating mt-3">
+              <div class="rating-content d-flex align-items-center">
+                <img
+                  src="icon.svg"
+                  alt="Google Icon"
+                  class="google-icon me-3"
+                />
+                <div>
+                  <div class="rating-stars">
+                    <span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span><span class="star">★</span
+                    ><span class="star">★</span>
+                    <span class="rating-value ms-2">4.9</span>
+                  </div>
+                  <div class="top-rated fw-bold">Top Rated Service</div>
+                  <div class="verified">verified by Trustindex</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">
+                Subscribe to the Sacred Himalaya Newsletter
+              </h5>
+              <form class="newsletter-form">
+                <div class="mb-2">
+                  <input
+                    type="email"
+                    class="form-control newsletter-input"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-check mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="privacyPolicy"
+                  />
+                  <label class="form-check-label" for="privacyPolicy">
+                    I accept the Privacy Policy
+                  </label>
+                </div>
+                <button class="btn signup-btn" type="submit">Signup</button>
+              </form>
+            </div>
+
+            <div class="mt-4">
+              <h5>Information</h5>
+              <ul>
+                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="#">General Travel Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 align-top">
+            <div class="mt-4">
+              <h5 class="text-uppercase">let's stay in touch</h5>
+              <div class="social-links mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="mt-4 technical-org">
+              <h5>TECHNICAL ORGANIZATION</h5>
+              <p>
+                Modern Nomads of Viaggigiovani.it Srl<br />
+                Via Milano 17, 38122, Trento<br />
+                Website: www.viaggigiovani.it<br />
+                Registration number, VAT number and Fiscal Code:02092650221<br />
+                Sole Shareholder – Share Capital: €10,000<br />
+                PAT License no. 52 of 12/02/2009<br />
+                RC Policy 1/75910/319/100972789 UnipolSai Assicurazioni SpA
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/common.js"></script>
+    <script src="./js/blog-details.js"></script>
+  </body>
+</html>

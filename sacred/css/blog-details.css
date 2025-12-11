@@ -1,0 +1,491 @@
+/* HERO SECTION */
+.banner {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--banner-img) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #f8f9fa;
+  z-index: 20;
+  padding-top: 150px;
+}
+@media (min-width: 768px) {
+  .banner {
+    min-height: 800px;
+  }
+}
+
+.banner h1 {
+  font-family: "Kanit";
+  color: RGBA(255, 255, 255, 0);
+  font-size: 600%;
+  text-shadow: 0px 1px 3px RGBA(0, 0, 0, 0);
+  line-height: 0.8;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: inherit;
+  letter-spacing: 10px;
+  word-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-text-stroke-width: 2px;
+  stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+  stroke: #ffffff;
+  margin-bottom: 30px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .banner h1 {
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner h1 {
+    font-size: 400%;
+    letter-spacing: 8px;
+  }
+
+  .banner p {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+  .banner h1 {
+    font-size: 300%;
+    letter-spacing: 5px;
+    line-height: 30px;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner h1 {
+    font-size: 250%;
+    letter-spacing: 3px;
+  }
+
+  .banner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner h1 {
+    font-size: 200%;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+}
+
+/* END HERO SECTION */
+
+/* BLOG DETAILS CONTENT */
+
+/* left column card */
+.blog-wrapper {
+  position: relative;
+}
+
+.custom-blog {
+  margin: 20px 0 20px 0;
+}
+.left-card {
+  max-width: 220px;
+  padding-top: 8px;
+}
+
+/* title and date styling */
+.site-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #222;
+  margin-bottom: 0;
+}
+
+.date {
+  color: #8a8a8a;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* right column text style - serif, italic, narrow measure like screenshot */
+.content-text {
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #444;
+  line-height: 1.9;
+  font-size: 1.02rem;
+  max-width: 900px;
+  margin-left: 0;
+}
+
+.content-text p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+/* On small screens: stack and center header block, make paragraph readable */
+@media (max-width: 767.98px) {
+  .left-col {
+    margin-bottom: 1rem;
+  }
+
+  .left-card {
+    max-width: 220px;
+  }
+
+  .content-text {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+}
+
+/* Only enable sticky on desktop */
+@media screen and (min-width: 992px) {
+  .blog-aside {
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+  }
+}
+
+/*------Similar blogs section-----*/
+
+body {
+  background: #f4f4f4;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #222;
+}
+
+/* section title */
+.similar-section .section-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  margin-bottom: 28px;
+  color: #333;
+}
+
+/* ---------- CARDS TRACK (horizontal) ---------- */
+.cards-track {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  /* create a consistent gap between items */
+  gap: 24px;
+}
+
+/* Hide default scrollbar visually but keep it usable */
+.cards-track {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
+}
+.cards-track::-webkit-scrollbar {
+  height: 9px;
+}
+.cards-track::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+/* Each card column (controls card width responsively) */
+
+/* Mobile: full width stacked */
+.card-col {
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* small screens (>=576px): 50% width */
+@media (min-width: 576px) {
+  .card-col {
+    min-width: 48%;
+    flex: 0 0 48%;
+  }
+}
+
+/* medium screens (>=768px): ~33% width (show 3) */
+@media (min-width: 768px) {
+  .card-col {
+    min-width: 32%;
+    flex: 0 0 32%;
+  }
+}
+
+/* large screens  */
+@media (min-width: 992px) {
+  .card-col {
+    min-width: 24%;
+    flex: 0 0 24%;
+  }
+}
+
+/* On very large screens keep consistent layout */
+@media (min-width: 1400px) {
+  .card-col {
+    min-width: 23%;
+    flex: 0 0 23%;
+  }
+}
+
+/* ---------- POST CARD ---------- */
+.post-card {
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(33, 33, 33, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  min-height: 320px;
+}
+
+/* lift on hover  */
+@media (hover: hover) {
+  .post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(33, 33, 33, 0.12);
+  }
+}
+
+/* image wrap & image */
+.post-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.post-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* badge */
+.post-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(4px);
+}
+.post-badge i {
+  font-size: 12px;
+}
+.post-badge .badge-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* body, title & meta */
+.post-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.post-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  margin: 0 0 18px 0;
+  line-height: 1.15;
+}
+.post-title a {
+  color: #111;
+  text-decoration: none;
+}
+.post-title a:hover {
+  text-decoration: underline;
+}
+.post-meta {
+  color: #777;
+  font-size: 15px;
+}
+.author-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.02);
+}
+.author-name {
+  margin-right: 8px;
+  color: #666;
+  font-weight: 500;
+}
+.post-date {
+  color: #8a8a8a;
+  font-weight: 600;
+}
+
+/* ---------- NAV BUTTONS ---------- */
+.carousel-nav {
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(33, 33, 33, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+.carousel-nav i {
+  font-size: 18px;
+  color: #333;
+}
+.left-nav {
+  left: -32px;
+}
+.right-nav {
+  right: -32px;
+}
+
+/* hide on small screens */
+@media (max-width: 991.98px) {
+  /* default (desktop)  */
+  .carousel-nav {
+    position: absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(33, 33, 33, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    cursor: pointer;
+  }
+
+  /* move buttons inside the container edges on mobile and make them smaller */
+  @media (max-width: 991.98px) {
+    .carousel-nav {
+      width: 44px;
+      height: 44px;
+
+      transform: none;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 6px 18px rgba(33, 33, 33, 0.1);
+      opacity: 1 !important;
+      display: inline-flex !important;
+    }
+
+    /* left button: inside left padding */
+    .left-nav {
+      left: 4px;
+    }
+
+    /* right button: inside right padding */
+    .right-nav {
+      right: 4px;
+    }
+
+    /* smaller icon size */
+    .carousel-nav i {
+      font-size: 14px;
+    }
+  }
+}
+
+/* dragging cursor */
+.cards-track.is-dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* responsive tweaks */
+@media (max-width: 575.98px) {
+  .post-card-img-wrap {
+    height: 200px;
+  }
+  .post-card-body {
+    padding: 16px;
+  }
+  .section-title {
+    font-size: 28px;
+    margin-left: 6px;
+  }
+}
+
+.carousel-nav {
+  opacity: 0.95;
+  transition: opacity 0.12s ease;
+}
+
+/* container width */
+.container {
+  max-width: 1200px;
+}
+
+.similar-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cards-track {
+  scrollbar-width: none !important;
+}
+.cards-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cards-track {
+  -ms-overflow-style: none;
+}
+
+/*For scrollable function*/
