@@ -352,6 +352,14 @@ body {
   height: 3px;
   background-color: var(--accent-color);
 }
+.about-flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.about-col {
+  flex: 1;
+}
 
 /* Why With Us Section */
 .why-section {
@@ -1634,6 +1642,10 @@ body {
 
   .trip-card {
     margin-bottom: 25px;
+  }
+  /*about section*/
+  .about-flex {
+    flex-direction: column;
   }
 
   /* Adjust card layout for mobile */
