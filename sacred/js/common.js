@@ -212,4 +212,88 @@ document.addEventListener("DOMContentLoaded", function () {
     tripsRow.classList.add("three-cards");
   }
   // For 4+ cards, no special class needed (uses default)
+
+  /* Mobile accordion inside panels */
+  if (window.innerWidth <= 991) {
+    const collapse = document.querySelector(".navbar-collapse");
+    const mainPanel = document.getElementById("main-panel");
+
+    document
+      .querySelectorAll(".nav-item.dropdown > .nav-link")
+      .forEach((link, i) => {
+        const dropdown = link.nextElementSibling;
+        const panelId = `panel-${i}`;
+
+        // Create panel
+        const panel = document.createElement("div");
+        panel.className = "mobile-panel";
+        panel.id = panelId;
+
+        panel.innerHTML = `
+        <button class="panel-back">← Back</button>
+        ${dropdown.innerHTML}
+      `;
+
+        collapse.appendChild(panel);
+
+        // Open panel
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          document
+            .querySelectorAll(".mobile-panel")
+            .forEach((p) => p.classList.remove("active"));
+          panel.offsetHeight;
+          panel.classList.add("active");
+        });
+
+        // Back button
+        panel.querySelector(".panel-back").addEventListener("click", () => {
+          document
+            .querySelectorAll(".mobile-panel")
+            .forEach((p) => p.classList.remove("active"));
+          mainPanel.classList.add("active");
+        });
+      });
+  }
 });
+//close button
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".navbar");
+  const collapse = document.getElementById("navbarNav");
+  const closeBtn = document.querySelector(".navbar-close");
+  const toggler = document.querySelector(".navbar-toggler");
+
+  if (!navbar || !collapse || !closeBtn) return;
+
+  // Close menu when ✕ is clicked
+  closeBtn.addEventListener("click", function () {
+    // Use Bootstrap API to close collapse
+    const bsCollapse =
+      bootstrap.Collapse.getInstance(collapse) ||
+      new bootstrap.Collapse(collapse, { toggle: false });
+
+    bsCollapse.hide();
+
+    // Reset mobile panels
+    document.querySelectorAll(".mobile-panel").forEach((panel) => {
+      panel.classList.remove("active");
+    });
+
+    const mainPanel = document.getElementById("main-panel");
+    if (mainPanel) mainPanel.classList.add("active");
+  });
+});
+(function syncNavbarState() {
+  const navbar = document.querySelector(".navbar");
+  const collapse = document.getElementById("navbarNav");
+
+  if (!navbar || !collapse) return;
+
+  collapse.addEventListener("show.bs.collapse", () => {
+    navbar.classList.add("menu-open");
+  });
+
+  collapse.addEventListener("hide.bs.collapse", () => {
+    navbar.classList.remove("menu-open");
+  });
+})();
