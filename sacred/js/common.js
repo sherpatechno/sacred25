@@ -381,3 +381,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("click", function (e) {
+  if (window.innerWidth > 991) return;
+
+  const toggle = e.target.closest(".mobile-panel .dropdown-toggle");
+  if (!toggle) return;
+
+  e.preventDefault();
+
+  const parent = toggle.parentElement;
+  const menu = toggle.nextElementSibling;
+
+  if (!menu || !menu.classList.contains("dropdown-menu")) return;
+
+  // Close sibling dropdowns (optional but clean UX)
+  parent.parentElement.querySelectorAll(".dropdown-menu.show").forEach((m) => {
+    if (m !== menu) m.classList.remove("show");
+  });
+
+  menu.classList.toggle("show");
+});

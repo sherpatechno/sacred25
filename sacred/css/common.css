@@ -1673,9 +1673,42 @@ body {
 
   /* Dropdowns only open when .show is added (on tap) */
   .dropdown-menu {
-    display: none;
     position: static;
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  .mobile-panel .dropdown-menu {
+    display: none;
+    padding-left: 15px;
+    background: none;
+  }
+
+  .mobile-panel .dropdown-menu.show {
+    display: block;
+  }
+
+  .mobile-panel .dropdown-item {
+    font-size: 1rem;
+  }
+
+  /* Indent nested dropdowns */
+  .mobile-panel .dropdown-submenu .dropdown-menu {
+    padding-left: 20px;
+  }
+
+  .mobile-panel ul,
+  .mobile-panel ol {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+  }
+
+  .mobile-panel li {
+    list-style: none !important;
+  }
+
+  /* Kill ::marker explicitly (important for modern browsers) */
+  .mobile-panel li::marker {
+    content: "" !important;
   }
 
   .dropdown.show > .dropdown-menu {
