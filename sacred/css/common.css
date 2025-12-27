@@ -29,6 +29,10 @@ body {
   z-index: 1030;
   border-radius: 30px;
 }
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
 
 .navbar.scrolled {
   background-color: rgba(0, 0, 0, 0.95);
@@ -42,7 +46,7 @@ body {
 
 .navbar-brand {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--text-light) !important;
   letter-spacing: 1px;
   margin-left: 20px;
@@ -51,7 +55,7 @@ body {
 .navbar-nav .nav-link {
   color: var(--text-light) !important;
   font-weight: 500;
-  margin: 0 10px;
+  margin: 0 5px;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -73,6 +77,62 @@ body {
 
 .navbar-nav .nav-link:hover::after {
   width: 100%;
+}
+.navbar-collapse {
+  display: flex !important;
+  justify-content: center;
+}
+
+.navbar-search {
+  margin-left: auto;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 0px 2px 0px 14px;
+
+  height: 44px;
+}
+
+.navbar-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 0.95rem;
+  color: #333;
+
+  width: 150px;
+}
+
+.navbar-search input::placeholder {
+  color: #888;
+}
+
+.navbar-search button {
+  background: #000;
+  border: none;
+
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar-search button:hover {
+  background: #333;
 }
 
 /* Dropdown Menu Styles */
@@ -1631,44 +1691,84 @@ body {
     display: none;
   }
 
-  .navbar-collapse {
-    position: fixed;
-    inset: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 1);
-    padding: 0;
-    overflow: hidden;
-    z-index: 2000;
+  .navbar-search input {
+    display: none;
   }
 
+  /* Remove pill / box */
+  .navbar-search {
+    background: none;
+    padding: 0;
+  }
+
+  /* Icon only */
+  .navbar-search button {
+    background: none;
+    border: none;
+    padding: 5px 10px 0px 0px;
+
+    width: auto;
+    height: auto;
+
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+
+    /* START = navbar pill */
+    top: 45px;
+    left: 20px;
+    right: 20px;
+    height: 64px;
+
+    background: #000;
+    border-radius: 32px;
+    overflow: hidden;
+
+    z-index: 3000;
+    transform: scale(0.94);
+    opacity: 0;
+
+    transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 0.15s ease, border-radius 0.28s ease;
+  }
+
+  /* FULLSCREEN STATE */
+  .navbar-collapse.show {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+
+    border-radius: 0;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Kill Bootstrap animation */
   .navbar-collapse.collapse {
     display: block;
-    opacity: 0;
     pointer-events: none;
   }
 
   .navbar-collapse.show {
-    opacity: 1;
     pointer-events: auto;
   }
 
   /* Panel base */
-
   .mobile-panel {
     position: absolute;
     inset: 0;
     padding: 90px 30px 40px;
-    background-color: rgba(0, 0, 0, 1);
+    background: #000;
 
-    transform: translateX(100%);
-    will-change: transform;
     transform: translate3d(100%, 0, 0);
-    backface-visibility: hidden;
-    transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 
-  /* Main menu visible */
+    will-change: transform;
+  }
 
   .mobile-panel.active,
   .mobile-panel.main {
@@ -1694,28 +1794,58 @@ body {
     cursor: pointer;
   }
   /*Close button*/
-  .navbar-close {
-    position: absolute;
-    top: 22px;
-    right: 25px;
-
-    background: none;
+  .navbar-toggler {
     border: none;
-    color: #fff;
-    font-size: 1.8rem;
-    line-height: 1;
-    cursor: pointer;
-
-    display: none;
-    z-index: 2100;
   }
 
-  .navbar.menu-open .navbar-close {
-    display: block;
+  .navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: background 0.2s ease;
   }
 
-  .navbar.menu-open .navbar-toggler {
-    display: none;
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, top 0.25s ease;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -7px;
+  }
+
+  .navbar-toggler-icon::after {
+    top: 7px;
+  }
+
+  /* OPEN STATE → X */
+  .navbar.menu-open .navbar-toggler-icon {
+    background: transparent;
+  }
+
+  .navbar.menu-open .navbar-toggler-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .navbar.menu-open .navbar-toggler-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .navbar.menu-open {
+    z-index: 4000;
+  }
+  .navbar-toggler {
+    position: relative;
+    z-index: 4100;
   }
 
   .trip-card {
@@ -1808,7 +1938,7 @@ body {
   }
 
   .navbar-brand {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-left: 10px;
   }
 
@@ -1878,5 +2008,259 @@ body {
   .reviewer-avatar {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+}
+
+/* ===============================
+   SEARCH OVERLAY BASE
+================================ */
+.search-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+
+  z-index: 5000;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* OPEN STATE */
+.search-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ===============================
+   SEARCH HEADER
+================================ */
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 18px 24px;
+}
+
+.search-header input {
+  flex: 1;
+  height: 44px;
+
+  border-radius: 999px;
+  border: none;
+  outline: none;
+
+  padding: 0 18px;
+  font-size: 1rem;
+}
+
+.search-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hint text */
+.search-hint {
+  padding: 0 24px 24px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+@media (min-width: 991px) {
+  .search-overlay {
+    height: 350px;
+    transform: translateY(-30px);
+  }
+
+  .search-overlay {
+    /* keep same position & size */
+    transform-origin: top center;
+
+    /* subtle zoom start */
+    transform: scale(0.96);
+    opacity: 0;
+
+    transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 0.22s ease;
+  }
+
+  .search-overlay.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Hide close button on desktop */
+  .search-close {
+    display: none;
+  }
+
+  /* Header layout */
+  .search-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 20px;
+    gap: 24px;
+  }
+
+  .search-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    white-space: nowrap;
+  }
+
+  /* Input + icon wrapper */
+  .search-input-wrap {
+    position: relative;
+    flex: 1;
+  }
+
+  .search-input-wrap input {
+    width: 100%;
+    height: 48px;
+    padding: 0 52px 0 20px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  /* Icon inside input */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .search-icon:hover {
+    background: #333;
+  }
+
+  .search-hint {
+    max-width: 1200px;
+    margin-left: 31rem;
+  }
+}
+/* ===============================
+   MOBILE BEHAVIOR
+================================ */
+@media (max-width: 991px) {
+  .search-overlay {
+    height: 100vh;
+  }
+
+  body.search-open {
+    overflow: hidden;
+  }
+
+  .search-close {
+    font-size: 1.8rem;
+  }
+  /* Close button wrapper */
+  .custom-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+  }
+  .search-header {
+    padding: 20px 24px;
+    margin-top: 90px;
+  }
+  .search-hint {
+    padding: 0px 40px 24px;
+  }
+  .search-overlay .search-brand {
+    display: none;
+  }
+  .search-header {
+    position: relative;
+  }
+
+  /* INPUT */
+  .search-header input {
+    width: 20.5rem;
+    height: 44px;
+
+    border-radius: 999px;
+    border: none;
+    outline: none;
+
+    font-size: 1rem;
+  }
+
+  /* ICON INSIDE INPUT */
+  .search-icon {
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #000;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* Optional hover */
+  .search-icon:hover {
+    background: #222;
+  }
+  .search-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    background: #fff;
+    border: none;
+
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .search-close:hover {
+    background: rgba(0, 0, 0, 0.55);
   }
 }

@@ -242,7 +242,6 @@ document.addEventListener("DOMContentLoaded", function () {
           document
             .querySelectorAll(".mobile-panel")
             .forEach((p) => p.classList.remove("active"));
-          panel.offsetHeight;
           panel.classList.add("active");
         });
 
@@ -297,3 +296,88 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.remove("menu-open");
   });
 })();
+
+//Search Overlay
+document.addEventListener("DOMContentLoaded", function () {
+  const searchOverlay = document.getElementById("searchOverlay");
+  const searchWrapper = document.querySelector(".navbar-search");
+  const searchButton = document.querySelector(".navbar-search button");
+  const searchInputOverlay = searchOverlay.querySelector("input");
+  const searchClose = document.querySelector(".search-close");
+  const navbar = document.querySelector(".navbar");
+
+  if (!searchOverlay || !searchWrapper || !navbar) return;
+
+  /* ===============================
+     DESKTOP BEHAVIOR (HOVER)
+  ================================ */
+  if (window.innerWidth >= 992) {
+    let isOpen = false;
+
+    function openDesktopSearch() {
+      if (isOpen) return;
+      isOpen = true;
+      searchOverlay.classList.add("active");
+      navbar.classList.add("search-active");
+
+      setTimeout(() => {
+        searchInputOverlay.focus();
+      }, 120);
+    }
+
+    function closeDesktopSearch() {
+      if (!isOpen) return;
+      isOpen = false;
+      searchOverlay.classList.remove("active");
+      navbar.classList.remove("search-active");
+    }
+
+    // Hover / focus opens
+    searchWrapper.addEventListener("mouseenter", openDesktopSearch);
+    searchWrapper.addEventListener("focusin", openDesktopSearch);
+
+    // Leaving overlay closes
+    searchOverlay.addEventListener("mouseleave", closeDesktopSearch);
+
+    // Leaving navbar closes (premium delay)
+    navbar.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        if (!navbar.matches(":hover") && !searchOverlay.matches(":hover")) {
+          closeDesktopSearch();
+        }
+      }, 120);
+    });
+
+    return;
+  }
+
+  /* ===============================
+     MOBILE BEHAVIOR (CLICK)
+  ================================ */
+  searchButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    searchOverlay.classList.add("active");
+    document.body.classList.add("search-open");
+
+    setTimeout(() => {
+      searchInputOverlay.focus();
+    }, 150);
+  });
+
+  if (searchClose) {
+    searchClose.addEventListener("click", closeMobileSearch);
+  }
+
+  function closeMobileSearch() {
+    searchOverlay.classList.remove("active");
+    document.body.classList.remove("search-open");
+  }
+
+  // ESC support (mobile only)
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeMobileSearch();
+    }
+  });
+});

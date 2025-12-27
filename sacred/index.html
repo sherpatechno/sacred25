@@ -27,24 +27,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">sacredhimalaya.com</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <button
-          class="navbar-close d-lg-none"
-          type="button"
-          aria-label="Close menu"
-        >
-          ✕
-        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="mobile-panel main active" id="main-panel">
@@ -180,8 +162,47 @@
             </ul>
           </div>
         </div>
+        <div class="navbar-search d-flex">
+          <input type="text" placeholder="Search" aria-label="Search" />
+          <button aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
     </nav>
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <!-- CLOSE BUTTON -->
+      <button class="search-close" aria-label="Close search">✕</button>
+
+      <div class="search-header">
+        <div class="search-brand">sacredhimalaya.com</div>
+        <div class="search-input-wrap">
+          <input
+            type="text"
+            placeholder="Find your next adventure"
+            aria-label="Search"
+          />
+
+          <button class="search-icon" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <p class="search-hint">Start typing to see recommendations.</p>
+    </div>
 
     <!-- Hero/Banner Section -->
     <section class="banner" id="home">
