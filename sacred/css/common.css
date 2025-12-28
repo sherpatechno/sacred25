@@ -18,7 +18,7 @@ body {
 /* Navbar Styles */
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 15px 0;
   transition: all 0.3s ease;
   position: fixed;
@@ -35,8 +35,8 @@ body {
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 5px 15px rgb(253 253 253 / 39%);
   top: 0;
   left: 0;
   right: 0;
@@ -47,13 +47,13 @@ body {
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--text-light) !important;
+  color: rgba(0, 0, 0, 1) !important;
   letter-spacing: 1px;
   margin-left: 20px;
 }
 
 .navbar-nav .nav-link {
-  color: var(--text-light) !important;
+  color: rgba(0, 0, 0, 1) !important;
   font-weight: 500;
   margin: 0 5px;
   transition: color 0.3s ease;
@@ -93,10 +93,10 @@ body {
 
   margin-left: auto;
 
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.85);
   border-radius: 999px;
   padding: 0px 2px 0px 14px;
-
+  margin-right: 10px;
   height: 44px;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 .navbar-search button {
-  background: #000;
+  background: #fff;
   border: none;
 
   width: 41px;
@@ -127,7 +127,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  color: #fff;
+  color: #000;
   cursor: pointer;
 }
 
@@ -137,7 +137,7 @@ body {
 
 /* Dropdown Menu Styles */
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(255, 255, 255, 0.85);
   border: none;
   padding: 10px 0;
   margin-top: 10px;
@@ -157,7 +157,7 @@ body {
 }
 
 .dropdown-item {
-  color: var(--text-light);
+  color: rgba(0, 0, 0, 1);
   padding: 8px 20px;
   transition: all 0.3s ease;
   position: relative;
@@ -1721,7 +1721,10 @@ body {
   }
 
   .dropdown-submenu > .dropdown-item::after {
-    display: none;
+    display: inline-block !important;
+  }
+  .mobile-panel .dropdown-submenu > .dropdown-item::after {
+    content: none !important;
   }
 
   .navbar-search input {
@@ -1742,7 +1745,7 @@ body {
     width: auto;
     height: auto;
 
-    color: #fff;
+    color: #000;
     font-size: 1.2rem;
   }
 
@@ -1794,7 +1797,7 @@ body {
     position: absolute;
     inset: 0;
     padding: 90px 20px 40px;
-    background: #000;
+    background: #fff;
 
     transform: translate3d(100%, 0, 0);
     transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -1810,7 +1813,7 @@ body {
   /* Menu links */
   .mobile-panel a {
     display: block;
-    color: #fff;
+    color: #000;
     font-size: 1.15rem;
     margin-bottom: 22px;
     text-decoration: none;
@@ -1824,7 +1827,7 @@ body {
 
     background: none;
     border: none;
-    color: #fff;
+    color: #000;
     font-size: 1rem;
     cursor: pointer;
     padding: 0;
@@ -1845,7 +1848,7 @@ body {
     position: relative;
     width: 24px;
     height: 2px;
-    background: #fff;
+    background: #000;
     transition: background 0.2s ease;
   }
 
@@ -1856,7 +1859,7 @@ body {
     left: 0;
     width: 24px;
     height: 2px;
-    background: #fff;
+    background: #000;
     transition: transform 0.25s ease, top 0.25s ease;
   }
 

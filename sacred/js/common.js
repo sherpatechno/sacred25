@@ -216,7 +216,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //mobile accordian
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth <= 991) {
+  let mobileInitialized = false;
+
+  function initMobileMenu() {
+    if (window.innerWidth > 991 || mobileInitialized) return;
+
     const collapse = document.querySelector(".navbar-collapse");
     const mainPanel = document.getElementById("main-panel");
 
@@ -226,12 +230,20 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".nav-item.dropdown > .nav-link")
       .forEach((link) => {
         const dropdown = link.nextElementSibling;
-        if (!dropdown) return;
+        if (!dropdown || link.dataset.mobileBound) return;
 
-        link.removeAttribute("data-bs-toggle");
+        // Mark as processed
+        link.dataset.mobileBound = "true";
+
+        // Store original attribute
+        if (link.hasAttribute("data-bs-toggle")) {
+          link.dataset.originalToggle = "dropdown";
+          link.removeAttribute("data-bs-toggle");
+        }
 
         const panel = document.createElement("div");
         panel.className = "mobile-panel";
+        panel.dataset.mobilePanel = "true";
 
         panel.innerHTML = `
           <div class="panel-header">
@@ -245,7 +257,10 @@ document.addEventListener("DOMContentLoaded", () => {
         collapse.appendChild(panel);
 
         link.addEventListener("click", (e) => {
+          if (window.innerWidth > 991) return;
+
           e.preventDefault();
+
           document
             .querySelectorAll(".mobile-panel")
             .forEach((p) => p.classList.remove("active"));
@@ -258,7 +273,70 @@ document.addEventListener("DOMContentLoaded", () => {
           mainPanel.classList.add("active");
         });
       });
+
+    mobileInitialized = true;
   }
+
+  function destroyMobileMenu() {
+    if (window.innerWidth <= 991) return;
+
+    // Remove mobile panels
+    document.querySelectorAll("[data-mobile-panel]").forEach((panel) => {
+      panel.remove();
+    });
+
+    // Restore Bootstrap attributes
+    document
+      .querySelectorAll(".nav-item.dropdown > .nav-link")
+      .forEach((link) => {
+        if (link.dataset.originalToggle) {
+          link.setAttribute("data-bs-toggle", "dropdown");
+        }
+        delete link.dataset.mobileBound;
+      });
+
+    mobileInitialized = false;
+  }
+
+  // Initial run
+  initMobileMenu();
+
+  // Handle resize properly
+  window.addEventListener("resize", () => {
+    destroyMobileMenu();
+    initMobileMenu();
+  });
+});
+
+// MOBILE: only ONE submenu open at a time per level
+document.addEventListener("click", function (e) {
+  if (window.innerWidth > 991) return;
+
+  const toggle = e.target.closest(
+    ".mobile-panel .panel-body .dropdown-item.dropdown-toggle"
+  );
+
+  if (!toggle) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const submenu = toggle.nextElementSibling;
+  if (!submenu || !submenu.classList.contains("dropdown-menu")) return;
+
+  const parentMenu = toggle.closest(".dropdown-menu");
+
+  // Close ALL sibling submenus at this level
+  parentMenu
+    ?.querySelectorAll(":scope > li > .dropdown-menu.show")
+    .forEach((menu) => {
+      if (menu !== submenu) {
+        menu.classList.remove("show");
+      }
+    });
+
+  // Toggle current submenu
+  submenu.classList.toggle("show");
 });
 
 //close button
