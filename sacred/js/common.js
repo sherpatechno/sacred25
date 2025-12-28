@@ -212,51 +212,55 @@ document.addEventListener("DOMContentLoaded", function () {
     tripsRow.classList.add("three-cards");
   }
   // For 4+ cards, no special class needed (uses default)
+});
 
-  /* Mobile accordion inside panels */
+//mobile accordian
+document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 991) {
     const collapse = document.querySelector(".navbar-collapse");
     const mainPanel = document.getElementById("main-panel");
 
+    if (!collapse || !mainPanel) return;
+
     document
       .querySelectorAll(".nav-item.dropdown > .nav-link")
-      .forEach((link, i) => {
+      .forEach((link) => {
         const dropdown = link.nextElementSibling;
+        if (!dropdown) return;
 
-        // Create right slide panel
+        link.removeAttribute("data-bs-toggle");
+
         const panel = document.createElement("div");
         panel.className = "mobile-panel";
 
         panel.innerHTML = `
-        <div class="panel-header">
-          <button class="panel-back" aria-label="Back">← Back</button>
-        </div>
-        <div class="panel-body">
-          ${dropdown.innerHTML}
-        </div>
-      `;
+          <div class="panel-header">
+            <button class="panel-back">← Back</button>
+          </div>
+          <div class="panel-body">
+            ${dropdown.innerHTML}
+          </div>
+        `;
 
         collapse.appendChild(panel);
 
-        // Open right panel
         link.addEventListener("click", (e) => {
           e.preventDefault();
           document
             .querySelectorAll(".mobile-panel")
             .forEach((p) => p.classList.remove("active"));
+
           panel.classList.add("active");
         });
 
-        // Back to main menu
         panel.querySelector(".panel-back").addEventListener("click", () => {
-          document
-            .querySelectorAll(".mobile-panel")
-            .forEach((p) => p.classList.remove("active"));
+          panel.classList.remove("active");
           mainPanel.classList.add("active");
         });
       });
   }
 });
+
 //close button
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
