@@ -1687,7 +1687,7 @@ body {
   }
 
   .mobile-panel .dropdown-item {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   /* Indent nested dropdowns */
@@ -1728,7 +1728,6 @@ body {
     display: none;
   }
 
-  /* Remove pill / box */
   .navbar-search {
     background: none;
     padding: 0;
@@ -1750,7 +1749,6 @@ body {
   .navbar-collapse {
     position: fixed;
 
-    /* START = navbar pill */
     top: 45px;
     left: 20px;
     right: 20px;
@@ -1791,10 +1789,11 @@ body {
   }
 
   /* Panel base */
+
   .mobile-panel {
     position: absolute;
     inset: 0;
-    padding: 90px 30px 40px;
+    padding: 90px 20px 40px;
     background: #000;
 
     transform: translate3d(100%, 0, 0);
@@ -1819,13 +1818,23 @@ body {
 
   /* Back button */
   .panel-back {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+
     background: none;
     border: none;
     color: #fff;
     font-size: 1rem;
-    margin-bottom: 30px;
     cursor: pointer;
+    padding: 0;
   }
+
+  .mobile-panel.main .panel-header,
+  .mobile-panel.main .panel-back {
+    display: none !important;
+  }
+
   /*Close button*/
   .navbar-toggler {
     border: none;

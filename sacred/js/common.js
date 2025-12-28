@@ -222,21 +222,23 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelectorAll(".nav-item.dropdown > .nav-link")
       .forEach((link, i) => {
         const dropdown = link.nextElementSibling;
-        const panelId = `panel-${i}`;
 
-        // Create panel
+        // Create right slide panel
         const panel = document.createElement("div");
         panel.className = "mobile-panel";
-        panel.id = panelId;
 
         panel.innerHTML = `
-        <button class="panel-back">← Back</button>
-        ${dropdown.innerHTML}
+        <div class="panel-header">
+          <button class="panel-back" aria-label="Back">← Back</button>
+        </div>
+        <div class="panel-body">
+          ${dropdown.innerHTML}
+        </div>
       `;
 
         collapse.appendChild(panel);
 
-        // Open panel
+        // Open right panel
         link.addEventListener("click", (e) => {
           e.preventDefault();
           document
@@ -245,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
           panel.classList.add("active");
         });
 
-        // Back button
+        // Back to main menu
         panel.querySelector(".panel-back").addEventListener("click", () => {
           document
             .querySelectorAll(".mobile-panel")
