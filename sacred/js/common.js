@@ -304,16 +304,61 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchOverlay = document.getElementById("searchOverlay");
   const searchWrapper = document.querySelector(".navbar-search");
   const searchButton = document.querySelector(".navbar-search button");
-  const searchInputOverlay = searchOverlay.querySelector("input");
+  const searchInputOverlay = searchOverlay?.querySelector("input");
   const searchClose = document.querySelector(".search-close");
   const navbar = document.querySelector(".navbar");
+  const searchResults = document.getElementById("searchResults");
 
-  if (!searchOverlay || !searchWrapper || !navbar) return;
+  if (!searchOverlay || !searchInputOverlay || !navbar) return;
+
+  function closeSearch() {
+    searchOverlay.classList.remove("active");
+    document.body.classList.remove("search-open");
+    searchResults && (searchResults.innerHTML = "");
+    searchInputOverlay.value = "";
+  }
 
   /* ===============================
-     DESKTOP BEHAVIOR (HOVER)
+    Demo data(more data can be fetched)
   ================================ */
-  if (window.innerWidth >= 992) {
+  const searchData = [
+    "Journeys: Morocco Highlights",
+    "Journeys: Explore Machu Picchu",
+    "Journeys: Highlights of Costa Rica",
+    "Journeys: Discover Nepal",
+    "Journeys: Explore Southern Africa",
+  ];
+
+  searchInputOverlay.addEventListener("input", function () {
+    if (!searchResults) return;
+
+    const query = this.value.trim().toLowerCase();
+    searchResults.innerHTML = "";
+
+    if (!query) return;
+
+    const matches = searchData.filter((item) =>
+      item.toLowerCase().includes(query)
+    );
+
+    matches.forEach((item) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<i class="fas fa-search"></i> ${item}`;
+      searchResults.appendChild(li);
+    });
+
+    if (matches.length) {
+      const viewAll = document.createElement("li");
+      viewAll.className = "view-all";
+      viewAll.innerHTML = `View all "${query}" tours →`;
+      searchResults.appendChild(viewAll);
+    }
+  });
+
+  /* ===============================
+   DESKTOP BEHAVIOR (HOVER)
+=============================== */
+  if (window.innerWidth >= 992 && searchWrapper) {
     let isOpen = false;
 
     function openDesktopSearch() {
@@ -321,10 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isOpen = true;
       searchOverlay.classList.add("active");
       navbar.classList.add("search-active");
-
-      setTimeout(() => {
-        searchInputOverlay.focus();
-      }, 120);
+      setTimeout(() => searchInputOverlay.focus(), 120);
     }
 
     function closeDesktopSearch() {
@@ -334,14 +376,10 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("search-active");
     }
 
-    // Hover / focus opens
     searchWrapper.addEventListener("mouseenter", openDesktopSearch);
     searchWrapper.addEventListener("focusin", openDesktopSearch);
-
-    // Leaving overlay closes
     searchOverlay.addEventListener("mouseleave", closeDesktopSearch);
 
-    // Leaving navbar closes (premium delay)
     navbar.addEventListener("mouseleave", () => {
       setTimeout(() => {
         if (!navbar.matches(":hover") && !searchOverlay.matches(":hover")) {
@@ -349,58 +387,68 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }, 120);
     });
-
-    return;
   }
 
   /* ===============================
      MOBILE BEHAVIOR (CLICK)
   ================================ */
-  searchButton.addEventListener("click", function (e) {
+  searchButton?.addEventListener("click", function (e) {
     e.preventDefault();
-
     searchOverlay.classList.add("active");
     document.body.classList.add("search-open");
-
-    setTimeout(() => {
-      searchInputOverlay.focus();
-    }, 150);
+    setTimeout(() => searchInputOverlay.focus(), 150);
   });
 
-  if (searchClose) {
-    searchClose.addEventListener("click", closeMobileSearch);
-  }
+  // ✅ CLOSE BUTTON — now ALWAYS works
+  searchClose?.addEventListener("click", closeSearch);
 
-  function closeMobileSearch() {
-    searchOverlay.classList.remove("active");
-    document.body.classList.remove("search-open");
-  }
-
-  // ESC support (mobile only)
+  // ESC support
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeMobileSearch();
-    }
+    if (e.key === "Escape") closeSearch();
   });
 });
 
-document.addEventListener("click", function (e) {
-  if (window.innerWidth > 991) return;
+/* =====================================
+   RESET STATE ON BREAKPOINT CHANGE
+   (Fixes mobile → desktop broken layout)
+===================================== */
 
-  const toggle = e.target.closest(".mobile-panel .dropdown-toggle");
-  if (!toggle) return;
+let lastIsDesktop = window.innerWidth >= 992;
 
-  e.preventDefault();
+window.addEventListener("resize", () => {
+  const isDesktop = window.innerWidth >= 992;
 
-  const parent = toggle.parentElement;
-  const menu = toggle.nextElementSibling;
+  // Only run when crossing breakpoint
+  if (isDesktop !== lastIsDesktop) {
+    lastIsDesktop = isDesktop;
 
-  if (!menu || !menu.classList.contains("dropdown-menu")) return;
+    // Body states
+    document.body.classList.remove("search-open");
 
-  // Close sibling dropdowns (optional but clean UX)
-  parent.parentElement.querySelectorAll(".dropdown-menu.show").forEach((m) => {
-    if (m !== menu) m.classList.remove("show");
-  });
+    // Navbar states
+    const navbar = document.querySelector(".navbar");
+    navbar?.classList.remove("menu-open", "search-active");
 
-  menu.classList.toggle("show");
+    // Search overlay
+    document.getElementById("searchOverlay")?.classList.remove("active");
+
+    // Mobile panels
+    document
+      .querySelectorAll(".mobile-panel.active")
+      .forEach((p) => p.classList.remove("active"));
+
+    // Dropdowns
+    document
+      .querySelectorAll(".dropdown-menu.show")
+      .forEach((m) => m.classList.remove("show"));
+
+    // Reset Bootstrap collapse (if open)
+    const collapse = document.getElementById("navbarNav");
+    if (collapse && typeof bootstrap !== "undefined") {
+      const instance =
+        bootstrap.Collapse.getInstance(collapse) ||
+        new bootstrap.Collapse(collapse, { toggle: false });
+      instance.hide();
+    }
+  }
 });
