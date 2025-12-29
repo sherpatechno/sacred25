@@ -324,19 +324,47 @@ document.addEventListener("click", function (e) {
   const submenu = toggle.nextElementSibling;
   if (!submenu || !submenu.classList.contains("dropdown-menu")) return;
 
-  const parentMenu = toggle.closest(".dropdown-menu");
+  const panelBody = toggle.closest(".panel-body");
+  const parentMenu = toggle.closest(".dropdown-menu") || panelBody;
 
-  // Close ALL sibling submenus at this level
-  parentMenu
-    ?.querySelectorAll(":scope > li > .dropdown-menu.show")
-    .forEach((menu) => {
-      if (menu !== submenu) {
-        menu.classList.remove("show");
-      }
-    });
+  //  CLOSE ALL OTHER SUBMENUS FIRST
+  parentMenu.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+    if (menu !== submenu) {
+      menu.classList.remove("show");
+    }
+  });
+
+  //  FORCE SCROLL RESET AFTER CLOSING
+  if (panelBody) {
+    panelBody.scrollTop = 0;
+  }
 
   // Toggle current submenu
   submenu.classList.toggle("show");
+  toggle.classList.toggle("active", submenu.classList.contains("show"));
+
+  //  ENSURE SCROLL IS CORRECT AFTER OPEN
+  if (panelBody) {
+    panelBody.scrollTop = 0;
+  }
+});
+//  FIX ghost space for NON-dropdown items
+document.addEventListener("click", function (e) {
+  if (window.innerWidth > 991) return;
+
+  const panelBody = e.target.closest(".mobile-panel .panel-body");
+  if (!panelBody) return;
+
+  // Ignore dropdown toggles
+  if (e.target.closest(".dropdown-item.dropdown-toggle")) return;
+
+  //  Close ALL open submenus
+  panelBody
+    .querySelectorAll(".dropdown-menu.show")
+    .forEach((menu) => menu.classList.remove("show"));
+
+  // 🔥 Reset scroll
+  panelBody.scrollTop = 0;
 });
 
 //close button

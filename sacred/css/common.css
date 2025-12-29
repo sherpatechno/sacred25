@@ -1679,6 +1679,7 @@ body {
   .mobile-panel .dropdown-menu {
     display: none;
     padding-left: 15px;
+    margin: 0;
     background: none;
   }
 
@@ -1688,6 +1689,9 @@ body {
 
   .mobile-panel .dropdown-item {
     font-size: 1.3rem;
+  }
+  .mobile-panel .dropdown-submenu {
+    display: block;
   }
 
   /* Indent nested dropdowns */
@@ -1723,8 +1727,8 @@ body {
   .dropdown-submenu > .dropdown-item::after {
     display: inline-block !important;
   }
-  .mobile-panel .dropdown-submenu > .dropdown-item::after {
-    content: none !important;
+  .dropdown-submenu > .dropdown-item::after {
+    content: none;
   }
 
   .navbar-search input {
@@ -1794,15 +1798,42 @@ body {
   /* Panel base */
 
   .mobile-panel {
-    position: absolute;
+    position: fixed;
     inset: 0;
-    padding: 90px 20px 40px;
     background: #fff;
+
+    display: flex;
+    flex-direction: column;
 
     transform: translate3d(100%, 0, 0);
     transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
-
     will-change: transform;
+  }
+  .mobile-panel .panel-header,
+  .mobile-panel .mobile-back-wrapper {
+    flex-shrink: 0;
+    padding: 30px 20px;
+  }
+
+  /* Scrollable content */
+  .mobile-panel .panel-body,
+  .mobile-panel.main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 60px;
+  }
+
+  /* Hide scrollbar visually */
+  .mobile-panel .panel-body::-webkit-scrollbar,
+  .mobile-panel.main::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-panel .panel-body,
+  .mobile-panel.main {
+    scrollbar-width: none;
   }
 
   .mobile-panel.active,
@@ -1832,7 +1863,74 @@ body {
     cursor: pointer;
     padding: 0;
   }
+  .mobile-panel i.fas.fa-chevron-down,
+  .mobile-panel i.fas.fa-chevron-up {
+    display: none !important;
+  }
+  .mobile-panel .dropdown-item,
+  .mobile-panel .nav-link {
+    position: relative;
+    padding-right: 44px;
+  }
 
+  .mobile-panel a::after,
+  .mobile-panel .dropdown-item::after,
+  .mobile-panel .nav-link::after {
+    content: none !important;
+  }
+  .mobile-panel a,
+  .mobile-panel .dropdown-item {
+    color: #000;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ACTIVE / FOCUS → FORCE YELLOW */
+
+  .mobile-panel a:focus,
+  .mobile-panel .dropdown-item:focus {
+    color: var(--accent-color) !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* MAIN PANEL → RIGHT ARROW */
+  .mobile-panel.main .nav-item.dropdown > .nav-link::before {
+    content: "\f105";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+  }
+  /* RIGHT PANEL → DOWN ARROW */
+  /* default = down */
+  .mobile-panel:not(.main) .dropdown-item.dropdown-toggle::before {
+    content: "\f107"; /* chevron-down */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    transition: transform 0.25s ease;
+  }
+
+  /* open = up */
+  .mobile-panel:not(.main) .dropdown-item.dropdown-toggle.active::before {
+    content: "\f106"; /* chevron-up */
+  }
+
+  .mobile-panel a,
+  .mobile-panel .dropdown-item {
+    padding-right: 44px;
+    position: relative;
+  }
   .mobile-panel.main .panel-header,
   .mobile-panel.main .panel-back {
     display: none !important;
@@ -2065,8 +2163,8 @@ body {
   right: 0;
   top: 0;
 
-  background: rgba(0, 0, 0, 1);
-  color: #fff;
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
 
   z-index: 5000;
 
@@ -2105,6 +2203,14 @@ body {
 
   padding: 0 18px;
   font-size: 1rem;
+}
+.search-input-wrap input {
+  background-color: #000;
+  color: #fff;
+}
+.search-input-wrap input::placeholder {
+  color: #fff;
+  opacity: 0.7; /* optional – makes it softer */
 }
 
 .search-close {
@@ -2193,8 +2299,8 @@ body {
     border-radius: 50%;
     border: none;
 
-    background: #000;
-    color: #fff;
+    background: #fff;
+    color: #000;
 
     display: flex;
     align-items: center;
@@ -2224,7 +2330,7 @@ body {
     align-items: center;
     gap: 12px;
     padding: 5px 0;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     cursor: pointer;
   }
@@ -2266,7 +2372,7 @@ body {
     align-items: center;
     gap: 12px;
     padding: 10px 0;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     cursor: pointer;
   }
